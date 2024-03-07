@@ -20,6 +20,16 @@ export default {
 </template>
 
 <style module lang="scss">
+@mixin paragraph_14 {
+  font-size: 14px;
+  line-height: 16.8px;
+}
+
+@mixin paragraph_16 {
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
 .paragraph_400 {
   font-weight: 400;
 }
@@ -29,17 +39,27 @@ export default {
 }
 
 .paragraph_14 {
-  font-size: 14px;
-  line-height: 16.8px;
+  @include paragraph_14;
 }
 
 .paragraph_16 {
-  font-size: 16px;
-  line-height: 22.4px;
+  @include paragraph_16;
+
+  @include media-tablet {
+    @include paragraph_14;
+  }
 }
 
 .paragraph_18 {
   font-size: 18px;
   line-height: 21.6px;
+
+  @include media-tablet {
+    @include paragraph_16;
+  }
+
+  @include media-mobile {
+    @include paragraph_14;
+  }
 }
 </style>
