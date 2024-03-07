@@ -1,2 +1,8 @@
 @forward "variables";
 @import "media";
+@import "/node_modules/the-new-css-reset/css/reset.css";
+@import "fonts";
+
+body {
+  font: 16px "TT Firs Neue";
+}
