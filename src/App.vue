@@ -1,16 +1,19 @@
 <script>
 import Button from "@/components/Button.vue";
+import Container from "@/components/Container.vue";
 
 export default {
-  components: { Button },
+  components: { Button, Container },
 };
 </script>
 
 <template>
-  hi my name is Button
+  <Container>
+    hi my name is Button
 
-  <Button text="Подать заявку"></Button>
-  <Button text="Получить консультацию"></Button>
+    <Button text="Подать заявку"></Button>
+    <Button text="Получить консультацию"></Button>
+  </Container>
 </template>
 
 <style></style>
