@@ -1,13 +1,20 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
-import Container from "@/components/Container.vue";
+import BaseContainer from "@/components/BaseContainer.vue";
 import Heading from "@/components/Heading.vue";
 import Paragraph from "@/components/Paragraph.vue";
 import Stack from "@/components/Stack.vue";
 import BigWordItem from "@/components/BigWordItem.vue";
 
 export default {
-  components: { BaseButton, Container, Heading, Paragraph, Stack, BigWordItem },
+  components: {
+    BaseButton,
+    BaseContainer,
+    Heading,
+    Paragraph,
+    Stack,
+    BigWordItem,
+  },
   data() {
     return {
       creditData: [
@@ -34,7 +41,7 @@ export default {
 </script>
 
 <template>
-  <Container :class="[$style['first-screen']]">
+  <BaseContainer :class="[$style['first-screen']]">
     <Stack gap="40" :class="[$style['first-screen__content']]">
       <div :class="[$style['first-screen__text']]">
         <Heading>Льготные кредиты на&nbsp;инвестиционные цели</Heading>
@@ -66,7 +73,7 @@ export default {
       />
       <div :class="[$style['first-screen__blur']]"></div>
     </div>
-  </Container>
+  </BaseContainer>
 </template>
 
 <style lang="scss" module>
