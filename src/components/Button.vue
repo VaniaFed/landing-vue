@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <button :class="[$style.button, $style.variant]" v-bind="$attrs">
+  <button :class="[$style.button, $style[variant]]" v-bind="$attrs">
     <slot></slot>
   </button>
 </template>
