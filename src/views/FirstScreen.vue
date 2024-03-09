@@ -1,8 +1,8 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
 import BaseContainer from "@/components/BaseContainer.vue";
-import Heading from "@/components/Heading.vue";
-import Paragraph from "@/components/Paragraph.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
+import BaseParagraph from "@/components/BaseParagraph.vue";
 import Stack from "@/components/Stack.vue";
 import BigWordItem from "@/components/BigWordItem.vue";
 
@@ -10,8 +10,8 @@ export default {
   components: {
     BaseButton,
     BaseContainer,
-    Heading,
-    Paragraph,
+    BaseHeading,
+    BaseParagraph,
     Stack,
     BigWordItem,
   },
@@ -44,11 +44,11 @@ export default {
   <BaseContainer :class="[$style['first-screen']]">
     <Stack gap="40" :class="[$style['first-screen__content']]">
       <div :class="[$style['first-screen__text']]">
-        <Heading>Льготные кредиты на&nbsp;инвестиционные цели</Heading>
-        <Paragraph :class="[$style['first-screen__description']]" size="16"
+        <BaseHeading>Льготные кредиты на&nbsp;инвестиционные цели</BaseHeading>
+        <BaseParagraph :class="[$style['first-screen__description']]" size="16"
           >Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
           для компаний, реализующих инвестиционные проекты в сферах науки,
-          промышленности и ИТ</Paragraph
+          промышленности и ИТ</BaseParagraph
         >
       </div>
       <Stack asRow gap="50" :class="[$style['first-screen__details']]">

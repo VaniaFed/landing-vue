@@ -1,24 +1,32 @@
 <script>
-import Paragraph from "@/components/Paragraph.vue";
+import BaseParagraph from "@/components/BaseParagraph.vue";
 import Stack from "@/components/Stack.vue";
-import Heading from "@/components/Heading.vue";
+import BaseHeading from "@/components/BaseHeading.vue";
 
 export default {
   props: ["title", "text_before", "big_text", "text_after"],
-  components: { Paragraph, Stack, Heading },
+  components: { BaseParagraph, Stack, BaseHeading },
 };
 </script>
 
 <template>
-  <Paragraph :class="[$style['big-word-item__title']]">{{ title }}</Paragraph>
+  <BaseParagraph :class="[$style['big-word-item__title']]">{{
+    title
+  }}</BaseParagraph>
   <Stack gap="10" asRow :class="[$style['big-word-item__list']]">
-    <Heading v-if="text_before !== undefined" level="h3" variant="medium_24">{{
-      text_before
-    }}</Heading>
-    <Heading level="h3" variant="great">{{ big_text }}</Heading>
-    <Heading v-if="text_after !== undefined" level="h3" variant="medium_24">{{
-      text_after
-    }}</Heading>
+    <BaseHeading
+      v-if="text_before !== undefined"
+      level="h3"
+      variant="medium_24"
+      >{{ text_before }}</BaseHeading
+    >
+    <BaseHeading level="h3" variant="great">{{ big_text }}</BaseHeading>
+    <BaseHeading
+      v-if="text_after !== undefined"
+      level="h3"
+      variant="medium_24"
+      >{{ text_after }}</BaseHeading
+    >
   </Stack>
 </template>
 
