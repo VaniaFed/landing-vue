@@ -1,18 +1,27 @@
+<script>
+export default {};
+</script>
+
 <template>
   <div class="container">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
 <style scoped lang="scss">
-$padding: 32px;
+$padding: 80px;
+$padding-tablet: 32px;
 $padding-mobile: 20px;
 
 .container {
-  max-width: calc(1240px - $padding);
+  max-width: calc($desktop-large-breakpoint - ($padding / 2));
   width: 100%;
   margin: 0 auto;
   padding: 0 $padding;
+
+  @include media-tablet {
+    padding: 0 $padding-tablet;
+  }
 
   @include media-mobile {
     padding: 0 $padding-mobile;
