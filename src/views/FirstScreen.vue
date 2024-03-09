@@ -1,5 +1,5 @@
 <script>
-import Button from "@/components/Button.vue";
+import BaseButton from "@/components/BaseButton.vue";
 import Container from "@/components/Container.vue";
 import Heading from "@/components/Heading.vue";
 import Paragraph from "@/components/Paragraph.vue";
@@ -7,7 +7,7 @@ import Stack from "@/components/Stack.vue";
 import BigWordItem from "@/components/BigWordItem.vue";
 
 export default {
-  components: { Button, Container, Heading, Paragraph, Stack, BigWordItem },
+  components: { BaseButton, Container, Heading, Paragraph, Stack, BigWordItem },
   data() {
     return {
       creditData: [
@@ -55,8 +55,8 @@ export default {
         </li>
       </Stack>
       <Stack asRow gap="10" :class="[$style['first-screen__buttons']]">
-        <Button variant="primary">Подать заявку</Button>
-        <Button>Получить консультацию</Button>
+        <BaseButton variant="primary">Подать заявку</BaseButton>
+        <BaseButton>Получить консультацию</BaseButton>
       </Stack>
     </Stack>
     <div :class="[$style['first-screen__image-wrapper']]">
