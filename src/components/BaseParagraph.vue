@@ -15,7 +15,7 @@ export default {
 
 <template>
   <p :class="[$style['paragraph_' + size], $style['paragraph_' + weight]]">
-    <slot></slot>
+    <slot />
   </p>
 </template>
 

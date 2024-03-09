@@ -15,22 +15,22 @@ export default {
 
 <template>
   <h1 v-if="level === 'h1'" :class="[$style[variant]]">
-    <slot></slot>
+    <slot />
   </h1>
   <h2 v-else-if="level === 'h2'" :class="[$style[variant]]">
-    <slot></slot>
+    <slot />
   </h2>
   <h3 v-else-if="level === 'h3'" :class="[$style[variant]]">
-    <slot></slot>
+    <slot />
   </h3>
   <h4 v-else-if="level === 'h4'" :class="[$style[variant]]">
-    <slot></slot>
+    <slot />
   </h4>
   <h5 v-else-if="level === 'h5'" :class="[$style[variant]]">
-    <slot></slot>
+    <slot />
   </h5>
   <h6 v-else-if="level === 'h6'" :class="[$style[variant]]">
-    <slot></slot>
+    <slot />
   </h6>
 </template>
 
