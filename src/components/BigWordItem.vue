@@ -1,11 +1,11 @@
 <script>
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import Stack from "@/components/Stack.vue";
+import BaseStack from "@/components/BaseStack.vue";
 import BaseHeading from "@/components/BaseHeading.vue";
 
 export default {
   props: ["title", "text_before", "big_text", "text_after"],
-  components: { BaseParagraph, Stack, BaseHeading },
+  components: { BaseParagraph, BaseStack, BaseHeading },
 };
 </script>
 
@@ -13,7 +13,7 @@ export default {
   <BaseParagraph :class="[$style['big-word-item__title']]">{{
     title
   }}</BaseParagraph>
-  <Stack gap="10" asRow :class="[$style['big-word-item__list']]">
+  <BaseStack gap="10" asRow :class="[$style['big-word-item__list']]">
     <BaseHeading
       v-if="text_before !== undefined"
       level="h3"
@@ -27,7 +27,7 @@ export default {
       variant="medium_24"
       >{{ text_after }}</BaseHeading
     >
-  </Stack>
+  </BaseStack>
 </template>
 
 <style module lang="scss">

@@ -3,7 +3,7 @@ import BaseButton from "@/components/BaseButton.vue";
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseHeading from "@/components/BaseHeading.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import Stack from "@/components/Stack.vue";
+import BaseStack from "@/components/BaseStack.vue";
 import BigWordItem from "@/components/BigWordItem.vue";
 
 export default {
@@ -12,7 +12,7 @@ export default {
     BaseContainer,
     BaseHeading,
     BaseParagraph,
-    Stack,
+    BaseStack,
     BigWordItem,
   },
   data() {
@@ -42,7 +42,7 @@ export default {
 
 <template>
   <BaseContainer :class="[$style['first-screen']]">
-    <Stack gap="40" :class="[$style['first-screen__content']]">
+    <BaseStack gap="40" :class="[$style['first-screen__content']]">
       <div :class="[$style['first-screen__text']]">
         <BaseHeading>Льготные кредиты на&nbsp;инвестиционные цели</BaseHeading>
         <BaseParagraph :class="[$style['first-screen__description']]" size="16"
@@ -51,7 +51,7 @@ export default {
           промышленности и ИТ</BaseParagraph
         >
       </div>
-      <Stack asRow gap="50" :class="[$style['first-screen__details']]">
+      <BaseStack asRow gap="50" :class="[$style['first-screen__details']]">
         <li v-for="data in creditData" :key="data.title">
           <BigWordItem
             :title="data.title"
@@ -60,12 +60,12 @@ export default {
             :text_after="data.text_after"
           />
         </li>
-      </Stack>
-      <Stack asRow gap="10" :class="[$style['first-screen__buttons']]">
+      </BaseStack>
+      <BaseStack asRow gap="10" :class="[$style['first-screen__buttons']]">
         <BaseButton variant="primary">Подать заявку</BaseButton>
         <BaseButton>Получить консультацию</BaseButton>
-      </Stack>
-    </Stack>
+      </BaseStack>
+    </BaseStack>
     <div :class="[$style['first-screen__image-wrapper']]">
       <img
         src="/images/first-screen-banking.png"
