@@ -1,5 +1,47 @@
+@mixin media-desktop-large {
+  @media (max-width: $desktop-large-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-desktop-medium {
+  @media (max-width: $desktop-medium-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media (max-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-laptop {
+  @media (max-width: $laptop-breakpoint) {
+    @content;
+  }
+}
+
 @mixin media-tablet {
   @media (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-tablet-medium {
+  @media (max-width: $tablet-medium-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-tablet-small {
+  @media (max-width: $tablet-small-breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-mobile-large {
+  @media (max-width: $mobile-large-breakpoint) {
     @content;
   }
 }

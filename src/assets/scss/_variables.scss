@@ -1,2 +1,28 @@
+$desktop-large-breakpoint: 1440px;
+$desktop-medium-breakpoint: 1320px;
+$desktop-breakpoint: 1175px;
+$laptop-breakpoint: 1024px;
 $tablet-breakpoint: 768px;
+$tablet-medium-breakpoint: 640px;
+$tablet-small-breakpoint: 520px;
+$mobile-large-breakpoint: 420px;
 $mobile-breakpoint: 320px;
+
+$black: #000;
+$white: #fff;
+$gray-1: #999999;
+$gray-2: #cfd0d3;
+$gray-3: #e2e2e4;
+$gray-4: #f8f8f8;
+
+$green: #16ff00;
+$aqua: #4dffc9;
+
+$gradient-green: linear-gradient(90deg, $green 0%, $aqua 99.91%, $aqua 99.91%);
+$gradient-purple: linear-gradient(69.47deg, #6260b7 10.09%, #9379cf 83.62%);
+$gradient-purple-2: linear-gradient(107.92deg, #6f6dca 18.23%, #906dca 81.11%);
+
+$shadow: 0px 4px 20px 0px #002e451a;
+$shadow-hover: 0px 4px 20px 3px #002e451a;
+$shadow-2: 0px 4px 36px 0px #00000014;
+$shadow-text: 0px 4px 4px #00000040;
