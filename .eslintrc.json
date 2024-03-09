@@ -2,7 +2,7 @@
   "settings": {
     "import/resolver": {
       "alias": {
-        "map": [["@/components", "./src/components"]],
+        "map": [["@/", "./src/"]],
         "extensions": [".js", ".vue", ".json"]
       }
     }
