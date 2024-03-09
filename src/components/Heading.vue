@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    size: {
+    level: {
       type: String,
       default: "h1",
     },
@@ -14,22 +14,22 @@ export default {
 </script>
 
 <template>
-  <h1 v-if="size === 'h1'" :class="[$style[variant]]">
+  <h1 v-if="level === 'h1'" :class="[$style[variant]]">
     <slot></slot>
   </h1>
-  <h2 v-else-if="size === 'h2'" :class="[$style[variant]]">
+  <h2 v-else-if="level === 'h2'" :class="[$style[variant]]">
     <slot></slot>
   </h2>
-  <h3 v-else-if="size === 'h3'" :class="[$style[variant]]">
+  <h3 v-else-if="level === 'h3'" :class="[$style[variant]]">
     <slot></slot>
   </h3>
-  <h4 v-else-if="size === 'h4'" :class="[$style[variant]]">
+  <h4 v-else-if="level === 'h4'" :class="[$style[variant]]">
     <slot></slot>
   </h4>
-  <h5 v-else-if="size === 'h5'" :class="[$style[variant]]">
+  <h5 v-else-if="level === 'h5'" :class="[$style[variant]]">
     <slot></slot>
   </h5>
-  <h6 v-else-if="size === 'h6'" :class="[$style[variant]]">
+  <h6 v-else-if="level === 'h6'" :class="[$style[variant]]">
     <slot></slot>
   </h6>
 </template>
@@ -39,12 +39,27 @@ export default {
   font-size: 70px;
   font-weight: 600;
   line-height: 70px;
+
+  @include media-tablet {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  @include media-mobile {
+    font-size: 30px;
+    line-height: 30px;
+  }
 }
 
 .medium_40 {
   font-size: 40px;
   font-weight: 500;
   line-height: 44px;
+
+  @include media-tablet {
+    font-size: 30px;
+    line-height: 33px;
+  }
 }
 
 .medium_32 {
