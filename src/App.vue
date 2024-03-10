@@ -1,9 +1,12 @@
 <script>
 import FirstScreen from "@/views/FirstScreen.vue";
-import LandingSection from "./components/LandingSection.vue";
+import CreditCanGet from "@/views/CreditCanGet.vue";
 
 export default {
-  components: { FirstScreen, LandingSection },
+  components: {
+    FirstScreen,
+    CreditCanGet,
+  },
 };
 </script>
 
@@ -11,8 +14,9 @@ export default {
   <header>header</header>
   <main>
     <FirstScreen />
+    <CreditCanGet />
   </main>
   <footer>footer</footer>
 </template>
 
-<style lang="scss" module></style>
+<style lang="scss" scoped></style>

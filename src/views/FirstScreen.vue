@@ -41,17 +41,17 @@ export default {
 </script>
 
 <template>
-  <BaseContainer :class="[$style['first-screen']]">
-    <BaseStack gap="40" :class="[$style['first-screen__content']]">
-      <div :class="[$style['first-screen__text']]">
+  <BaseContainer class="first-screen">
+    <BaseStack gap="40" class="first-screen__content">
+      <div class="first-screen__text">
         <BaseHeading>Льготные кредиты на&nbsp;инвестиционные цели</BaseHeading>
-        <BaseParagraph :class="[$style['first-screen__description']]" size="16"
+        <BaseParagraph class="first-screen__description" size="16"
           >Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
           для компаний, реализующих инвестиционные проекты в сферах науки,
           промышленности и ИТ</BaseParagraph
         >
       </div>
-      <BaseStack asRow gap="50" :class="[$style['first-screen__details']]">
+      <BaseStack asRow gap="50" class="first-screen__details">
         <li v-for="data in creditData" :key="data.title">
           <BigWordItem
             :title="data.title"
@@ -61,33 +61,30 @@ export default {
           />
         </li>
       </BaseStack>
-      <BaseStack asRow gap="10" :class="[$style['first-screen__buttons']]">
+      <BaseStack asRow gap="10" class="first-screen__buttons">
         <BaseButton variant="primary">Подать заявку</BaseButton>
         <BaseButton>Получить консультацию</BaseButton>
       </BaseStack>
     </BaseStack>
-    <div :class="[$style['first-screen__image-wrapper']]">
-      <img
-        src="/images/first-screen-banking.png"
-        :class="[$style['first-screen__img']]"
-      />
-      <div :class="[$style['first-screen__blur']]"></div>
+    <div class="first-screen__image-wrapper">
+      <img src="/images/first-screen-banking.png" class="first-screen__img" />
+      <div class="first-screen__blur"></div>
     </div>
   </BaseContainer>
 </template>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
 .first-screen {
   position: relative;
-  max-width: 1400px !important;
+  max-width: 1400px;
   overflow: hidden;
-  padding: 70px 80px 83px !important;
+  padding: 70px 80px 83px;
   background: $gradient-purple-2;
   color: $white;
   border-radius: 0 0 80px 80px;
 
   @include media-tablet {
-    padding: 40px 32px 102px !important;
+    padding: 40px 32px 102px;
     border-radius: 0 0 60px 60px;
   }
 
@@ -96,7 +93,7 @@ export default {
   }
 
   @include media-mobile-large {
-    padding: 40px 20px !important;
+    padding: 40px 20px;
   }
 
   @include media-mobile {

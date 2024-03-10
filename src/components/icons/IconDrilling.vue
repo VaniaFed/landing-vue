@@ -46,4 +46,4 @@ export default {
   </svg>
 </template>
 
-<style module lang="scss"></style>
+<style scoped lang="scss"></style>
