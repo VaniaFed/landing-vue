@@ -29,3 +29,5 @@ export default {
 </template>
 
 <style lang="scss" scoped></style>
+
+<style src="the-new-css-reset/css/reset.css"></style>
