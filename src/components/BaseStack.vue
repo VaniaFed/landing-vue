@@ -14,15 +14,12 @@ export default {
 </script>
 
 <template>
-  <div
-    :class="[$style.stack, asRow && $style['stack_row']]"
-    :style="{ gap: `${gap}px` }"
-  >
+  <div :class="['stack', asRow && 'stack_row']" :style="{ gap: `${gap}px` }">
     <slot />
   </div>
 </template>
 
-<style module lang="scss">
+<style scoped lang="scss">
 .stack {
   display: flex;
   flex-direction: column;

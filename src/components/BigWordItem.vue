@@ -10,10 +10,8 @@ export default {
 </script>
 
 <template>
-  <BaseParagraph :class="[$style['big-word-item__title']]">{{
-    title
-  }}</BaseParagraph>
-  <BaseStack gap="10" asRow :class="[$style['big-word-item__list']]">
+  <BaseParagraph class="big-word-item__title">{{ title }}</BaseParagraph>
+  <BaseStack gap="10" asRow class="big-word-item__list">
     <BaseHeading
       v-if="text_before !== undefined"
       level="h3"
@@ -30,7 +28,7 @@ export default {
   </BaseStack>
 </template>
 
-<style module lang="scss">
+<style lang="scss">
 .big-word-item__title {
   margin-bottom: 18px;
 

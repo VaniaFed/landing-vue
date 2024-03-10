@@ -1,9 +1,18 @@
 <script>
 import FirstScreen from "@/views/FirstScreen.vue";
-import LandingSection from "./components/LandingSection.vue";
+import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
+import CreditCanGet from "@/views/CreditCanGet.vue";
+import CreditRequirements from "@/views/CreditRequirements.vue";
+import CreditStages from "@/views/CreditStages.vue";
 
 export default {
-  components: { FirstScreen, LandingSection },
+  components: {
+    FirstScreen,
+    WhoCanGetCredit,
+    CreditCanGet,
+    CreditRequirements,
+    CreditStages,
+  },
 };
 </script>
 
@@ -11,8 +20,12 @@ export default {
   <header>header</header>
   <main>
     <FirstScreen />
+    <WhoCanGetCredit />
+    <CreditCanGet />
+    <CreditRequirements />
+    <CreditStages />
   </main>
   <footer>footer</footer>
 </template>
 
-<style lang="scss" module></style>
+<style lang="scss" scoped></style>

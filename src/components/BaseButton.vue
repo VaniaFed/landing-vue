@@ -5,12 +5,12 @@ export default {
 </script>
 
 <template>
-  <button :class="[$style['base-button'], $style[variant]]" v-bind="$attrs">
+  <button :class="['base-button', variant]" v-bind="$attrs">
     <slot />
   </button>
 </template>
 
-<style module lang="scss">
+<style scoped lang="scss">
 .base-button {
   padding: 8px 21px;
   text-align: center;

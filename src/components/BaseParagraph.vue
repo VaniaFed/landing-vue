@@ -14,12 +14,12 @@ export default {
 </script>
 
 <template>
-  <p :class="[$style['paragraph_' + size], $style['paragraph_' + weight]]">
+  <p :class="[`paragraph_${size}`, `paragraph_${weight}`]">
     <slot />
   </p>
 </template>
 
-<style module lang="scss">
+<style scoped lang="scss">
 @mixin paragraph_14 {
   font-size: 14px;
   line-height: 16.8px;
@@ -58,7 +58,7 @@ export default {
     @include paragraph_16;
   }
 
-  @include media-mobile {
+  @include media-mobile-large {
     @include paragraph_14;
   }
 }
