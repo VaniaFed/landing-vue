@@ -1,25 +1,31 @@
 <script>
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseHeading from "@/components/BaseHeading.vue";
+import BaseTag from "@/components/BaseTag.vue";
 
 export default {
   props: {
-    title: {
-      type: String,
-    },
+    title: String,
+    tagLabel: String,
   },
   components: {
     BaseContainer,
     BaseHeading,
+    BaseTag,
   },
 };
 </script>
 
 <template>
   <BaseContainer class="base-section">
-    <BaseHeading class="base-section__title">
-      {{ title }}
-    </BaseHeading>
+    <header class="base-section__header">
+      <BaseHeading class="base-section__title">
+        {{ title }}
+      </BaseHeading>
+      <BaseTag>
+        {{ tagLabel }}
+      </BaseTag>
+    </header>
     <!-- TODO: description -->
     <!-- <BaseParagraph>{{ description }}</BaseParagraph> -->
     <slot />
@@ -31,7 +37,9 @@ export default {
   padding-top: 60px;
   padding-bottom: 60px;
 
-  &__title {
+  &__header {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 40px;
 
     @include media-tablet {

@@ -37,6 +37,7 @@ export default {
       ],
     };
   },
+  // TODO: img parallax
 };
 </script>
 

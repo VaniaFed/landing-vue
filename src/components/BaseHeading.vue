@@ -62,10 +62,26 @@ export default {
   }
 }
 
+.medium_36 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 39.6px;
+
+  @include media-mobile {
+    font-size: 30px;
+    line-height: 33px;
+  }
+}
+
 .medium_32 {
   font-size: 32px;
   font-weight: 500;
   line-height: 38.4px;
+
+  @include media-tablet {
+    font-size: 24px;
+    line-height: 26.4px;
+  }
 }
 
 .medium_24 {
