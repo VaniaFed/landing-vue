@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      cardsInfo: [
+      cards: [
         {
           title: "Компании, занимающиеся обрабатывающим производством",
           code: "ОВЭД 10-33*",
@@ -54,13 +54,13 @@ export default {
   >
     <BaseStack asRow class="credit-can-get__layout">
       <CompanyCard
-        v-for="card in cardsInfo"
+        v-for="card in cards"
         :title="card.title"
         :code="card.code"
         :details="card.details"
+        :key="card.title"
       >
         <template v-slot:icon>
-          {{ card.icon }}
           <component :is="card.iconName" />
         </template>
       </CompanyCard>

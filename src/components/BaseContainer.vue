@@ -23,7 +23,7 @@ $padding-mobile: 20px;
     padding: 0 $padding-tablet;
   }
 
-  @include media-mobile {
+  @include media-mobile-large {
     padding: 0 $padding-mobile;
   }
 }

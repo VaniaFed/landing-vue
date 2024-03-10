@@ -1,11 +1,13 @@
 <script>
 import FirstScreen from "@/views/FirstScreen.vue";
 import CreditCanGet from "@/views/CreditCanGet.vue";
+import CreditRequirements from "@/views/CreditRequirements.vue";
 
 export default {
   components: {
     FirstScreen,
     CreditCanGet,
+    CreditRequirements,
   },
 };
 </script>
@@ -15,6 +17,7 @@ export default {
   <main>
     <FirstScreen />
     <CreditCanGet />
+    <CreditRequirements />
   </main>
   <footer>footer</footer>
 </template>

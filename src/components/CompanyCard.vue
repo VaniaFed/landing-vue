@@ -39,11 +39,10 @@ export default {
 
 <style lang="scss" scoped>
 .company-card {
+  box-shadow: $shadow-2;
+
   @include media-laptop {
     flex-direction: row;
-  }
-
-  @include media-tablet {
     gap: 20px;
   }
 

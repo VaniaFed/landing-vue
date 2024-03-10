@@ -52,12 +52,12 @@ export default {
         >
       </div>
       <BaseStack asRow gap="50" class="first-screen__details">
-        <li v-for="data in creditData" :key="data.title">
+        <li v-for="item in creditData" :key="item.title">
           <BigWordItem
-            :title="data.title"
-            :text_before="data.text_before"
-            :big_text="data.big_text"
-            :text_after="data.text_after"
+            :title="item.title"
+            :text_before="item.text_before"
+            :big_text="item.big_text"
+            :text_after="item.text_after"
           />
         </li>
       </BaseStack>
@@ -94,9 +94,6 @@ export default {
 
   @include media-mobile-large {
     padding: 40px 20px;
-  }
-
-  @include media-mobile {
     border-radius: 0 0 30px 30px;
   }
 
