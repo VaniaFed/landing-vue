@@ -9,12 +9,23 @@ export default {
       type: String,
       default: "20",
     },
+    spaceBetween: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
 
 <template>
-  <div :class="['stack', asRow && 'stack_row']" :style="{ gap: `${gap}px` }">
+  <div
+    :class="{
+      stack: true,
+      stack_row: asRow,
+      'stack_space-between': spaceBetween,
+    }"
+    :style="{ gap: `${gap}px` }"
+  >
     <slot />
   </div>
 </template>
@@ -27,5 +38,9 @@ export default {
 
 .stack_row {
   flex-direction: row;
+}
+
+.stack_space-between {
+  justify-content: space-between;
 }
 </style>
