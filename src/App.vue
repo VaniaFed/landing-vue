@@ -1,4 +1,5 @@
 <script>
+import BaseHeader from "@/views/BaseHeader.vue";
 import FirstScreen from "@/views/FirstScreen.vue";
 import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
 import CreditCanGet from "@/views/CreditCanGet.vue";
@@ -12,12 +13,13 @@ export default {
     CreditCanGet,
     CreditRequirements,
     CreditStages,
+    BaseHeader,
   },
 };
 </script>
 
 <template>
-  <header>header</header>
+  <BaseHeader />
   <main>
     <FirstScreen />
     <WhoCanGetCredit />

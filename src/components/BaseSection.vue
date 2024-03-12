@@ -22,7 +22,7 @@ export default {
       <BaseHeading class="base-section__title">
         {{ title }}
       </BaseHeading>
-      <BaseTag>
+      <BaseTag v-if="tagLabel" size="large">
         {{ tagLabel }}
       </BaseTag>
     </header>
