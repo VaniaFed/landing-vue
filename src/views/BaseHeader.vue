@@ -8,6 +8,7 @@ import IconSearch from "@/components/icons/IconSearch.vue";
 import IconBurger from "@/components/icons/IconBurger.vue";
 import useDeviceDetection from "@/hooks/useDeviceDetection.js";
 import IconButton from "@/components/IconButton.vue";
+import BaseParagraph from "@/components/BaseParagraph.vue";
 
 export default {
   props: {},
@@ -20,6 +21,7 @@ export default {
     HeaderLogin,
     BaseContainer,
     BaseTabList,
+    BaseParagraph,
   },
   data() {
     return {
@@ -34,6 +36,36 @@ export default {
         },
       ],
       hideInactiveOn: ["laptop"],
+      navs: [
+        {
+          text: "Спрос и кооперация",
+          href: "#",
+        },
+        {
+          text: "Поддержка стартапов",
+          href: "#",
+        },
+        {
+          text: "Гранты",
+          href: "#",
+        },
+        {
+          text: "Инфраструктура",
+          href: "#",
+        },
+        {
+          text: "Патентование",
+          href: "#",
+        },
+        {
+          text: "Проекты для мегаполиса",
+          href: "#",
+        },
+        {
+          text: "О Кластере",
+          href: "#",
+        },
+      ],
     };
   },
   computed: {
@@ -72,13 +104,23 @@ export default {
       </BaseContainer>
     </div>
     <div class="header__bottom">
-      <div class="header__category">Инвестиции</div>
-      <nav>
-        <li>
-          <a href="#"></a>
-        </li>
-      </nav>
-      <IconSearch class="header__search-icon" />
+      <BaseContainer class="header__bottom-container">
+        <BaseParagraph class="header__category" size="14" weight="600">
+          Инвестиции
+        </BaseParagraph>
+        <div class="header__nav-wrapper">
+          <nav class="header__nav">
+            <li v-for="navItem in navs" :key="navItem.text" class="nav__item">
+              <a :href="navItem">
+                <BaseParagraph size="14" class="nav__paragraph">
+                  {{ navItem.text }}
+                </BaseParagraph>
+              </a>
+            </li>
+          </nav>
+        </div>
+        <IconSearch class="header__search-icon" />
+      </BaseContainer>
     </div>
   </header>
 </template>
@@ -168,6 +210,7 @@ export default {
 
   &__search-icon {
     width: 18px;
+    margin-left: 10px;
   }
 
   &__burger {
@@ -184,9 +227,62 @@ export default {
     }
   }
 
+  &__bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
   &__bottom {
+    height: 48px;
+    display: flex;
+
     @include media-mobile-large {
       display: none;
+    }
+  }
+
+  &__category {
+    display: flex;
+    align-items: center;
+    margin-right: 42px;
+    text-shadow: $shadow-text-bold;
+
+    @include media-tablet {
+      margin-right: 20px;
+      font-size: 12px;
+      font-weight: 400;
+      text-shadow: none;
+    }
+  }
+
+  &__nav-wrapper {
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    align-items: center;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 42px;
+    min-height: min-content;
+
+    @include media-tablet {
+      gap: 20px;
+    }
+  }
+}
+
+.nav {
+  &__item {
+    width: max-content;
+  }
+
+  &__paragraph {
+    @include media-tablet {
+      font-size: 12px;
+      font-weight: 400;
     }
   }
 }

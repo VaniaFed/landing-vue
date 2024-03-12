@@ -38,6 +38,10 @@ export default {
   font-weight: 500;
 }
 
+.paragraph_600 {
+  font-weight: 600;
+}
+
 .paragraph_14 {
   @include paragraph_14;
 }

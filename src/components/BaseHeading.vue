@@ -54,11 +54,14 @@ export default {
 .medium_40 {
   font-size: 40px;
   font-weight: 500;
-  line-height: 44px;
+  line-height: 110%;
 
   @include media-tablet {
     font-size: 30px;
-    line-height: 33px;
+  }
+
+  @include media-mobile-large {
+    font-size: 20px;
   }
 }
 
