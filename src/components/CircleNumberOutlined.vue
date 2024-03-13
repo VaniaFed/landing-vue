@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <div class="circle-number">
+  <div class="circle-number-outlined">
     <BaseHeading>
       {{ number }}
     </BaseHeading>
@@ -23,7 +23,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.circle-number {
+.circle-number-outlined {
   width: 60px;
   height: 60px;
   display: flex;

@@ -6,6 +6,7 @@ import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
 import CreditCanGet from "@/views/CreditCanGet.vue";
 import CreditRequirements from "@/views/CreditRequirements.vue";
 import CreditStages from "@/views/CreditStages.vue";
+import HowToGetCredit from "@/views/HowToGetCredit.vue";
 
 export default {
   components: {
@@ -16,6 +17,7 @@ export default {
     CreditCanGet,
     CreditRequirements,
     CreditStages,
+    HowToGetCredit,
   },
 };
 </script>
@@ -29,6 +31,7 @@ export default {
     <CreditCanGet />
     <CreditRequirements />
     <CreditStages />
+    <HowToGetCredit />
   </main>
   <footer>footer</footer>
 </template>
