@@ -4,23 +4,19 @@ import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseSection from "@/components/BaseSection.vue";
 import BaseStack from "@/components/BaseStack.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
-import IconCart from "@/components/icons/IconCart.vue";
-import IconGears from "@/components/icons/IconGears.vue";
 import IconMspBank from "@/components/icons/IconMspBank.vue";
-import IconPartners from "@/components/icons/IconPartners.vue";
+import Opportunities from "./Opportunities.vue";
 
 export default {
   props: {},
   components: {
+    Opportunities,
     BaseSection,
     BaseHeading,
     BaseParagraph,
     BaseStack,
     CircleIcon,
     IconMspBank,
-    IconCart,
-    IconGears,
-    IconPartners,
   },
   data() {
     return {
@@ -126,21 +122,9 @@ export default {
         </BaseStack>
       </div>
     </div>
-    <div class="opportunities">
-      <BaseHeading class="opportunities__title" variant="medium_32"
-        >На что можно потратить льготный кредит</BaseHeading
-      >
-      <BaseStack spaceBetween asRow class="opportunities__list">
-        <div class="opportunities__item" v-for="oppItem in opportunities">
-          <CircleIcon class="invest-credits__circle-icon">
-            <component :is="oppItem.iconName" class="invest-credits__icon" />
-          </CircleIcon>
-          <BaseParagraph class="opportunities__text">
-            {{ oppItem.text }}
-          </BaseParagraph>
-        </div>
-      </BaseStack>
-    </div>
+    <Opportunities :items="opportunities"
+      >На что можно потратить льготный кредит</Opportunities
+    >
   </BaseSection>
 </template>
 
@@ -199,25 +183,6 @@ export default {
 
     @include media-tablet {
       margin-bottom: 0;
-    }
-  }
-
-  &__circle-icon {
-    width: 94px !important;
-    height: 94px !important;
-    box-shadow: $shadow-2;
-
-    @include media-tablet {
-      width: 60px !important;
-      height: 60px !important;
-    }
-  }
-
-  &__icon {
-    width: 54px;
-
-    @include media-tablet {
-      width: 34.47px;
     }
   }
 }
@@ -387,64 +352,6 @@ export default {
 
   @include media-mobile-large {
     height: 24px;
-  }
-}
-
-.opportunities {
-  padding: 40px;
-  box-shadow: $shadow-2;
-  border-radius: 30px;
-
-  @include media-tablet {
-    padding: 40px 30px;
-  }
-
-  @include media-mobile-large {
-    padding: 30px 20px;
-    border-radius: 20px;
-  }
-
-  &__title {
-    margin-bottom: 30px;
-
-    @include media-tablet {
-      line-height: 110%;
-    }
-
-    @include media-mobile-large {
-      margin-bottom: 20px;
-      font-size: 20px;
-    }
-  }
-
-  &__list {
-    display: flex;
-    @media (max-width: 720px) {
-      flex-direction: column !important;
-    }
-
-    @include media-mobile-large {
-      gap: 16px !important;
-    }
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    @include media-tablet {
-      gap: 16px;
-    }
-  }
-
-  &__text {
-    max-width: 251px;
-
-    @include media-tablet {
-      font-size: 14px;
-      line-height: 120%;
-    }
   }
 }
 </style>

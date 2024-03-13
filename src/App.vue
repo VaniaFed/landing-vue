@@ -1,7 +1,7 @@
 <script>
 import BaseHeader from "@/views/BaseHeader.vue";
 import FirstScreen from "@/views/FirstScreen.vue";
-import InvestCredits from "@/views/InvestCredits.vue";
+import InvestCredits from "@/views/InvestCredits/InvestCredits.vue";
 import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
 import CreditCanGet from "@/views/CreditCanGet.vue";
 import CreditRequirements from "@/views/CreditRequirements.vue";
