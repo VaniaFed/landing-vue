@@ -1,20 +1,18 @@
 <script>
-import BaseHeading from "@/components/BaseHeading.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseSection from "@/components/BaseSection.vue";
-import BaseStack from "@/components/BaseStack.vue";
 import Opportunities from "./Opportunities.vue";
 import CreditSubjects from "./CreditSubjects.vue";
+import CreditRateCard from "./CreditRateCard.vue";
 
 export default {
   props: {},
   components: {
-    Opportunities,
     CreditSubjects,
+    CreditRateCard,
+    Opportunities,
     BaseSection,
-    BaseHeading,
     BaseParagraph,
-    BaseStack,
   },
   data() {
     return {
@@ -46,37 +44,7 @@ export default {
     </BaseParagraph>
     <div class="invest-credits__top">
       <CreditSubjects class="invest-credits__credit-subjects" />
-      <div class="credit-rate invest-credits__credit-rate">
-        <BaseHeading class="credit-rate__title" variant="medium_24"
-          >Льготная ставка в&nbsp;рамках программы</BaseHeading
-        >
-        <BaseStack asRow gap="43" class="credit-rate__list">
-          <div class="rate-item">
-            <div class="rate-item__header">
-              <BaseHeading class="rate-item__from" variant="medium_24"
-                >от</BaseHeading
-              >
-              <BaseHeading class="rate-item__amount" variant="medium_40"
-                >3%</BaseHeading
-              >
-            </div>
-            <BaseParagraph class="rate-item__text"
-              >действует первые три года</BaseParagraph
-            >
-          </div>
-          <div class="rate-item">
-            <div class="rate-item__header">
-              <BaseHeading class="rate-item__from" variant="medium_24"
-                >от</BaseHeading
-              >
-              <BaseHeading class="rate-item__amount" variant="medium_40"
-                >11%</BaseHeading
-              >
-            </div>
-            <BaseParagraph class="rate-item__text">далее</BaseParagraph>
-          </div>
-        </BaseStack>
-      </div>
+      <CreditRateCard class="invest-credits__credit-rate-card" />
     </div>
     <Opportunities :items="opportunities"
       >На что можно потратить льготный кредит</Opportunities
@@ -86,11 +54,6 @@ export default {
 
 <style scoped lang="scss">
 .invest-credits {
-  &:deep(.invest-credits__header) {
-    max-width: 818px;
-    margin-bottom: 20px !important;
-  }
-
   &__text {
     max-width: 638px;
     line-height: 120% !important;
@@ -123,15 +86,20 @@ export default {
       margin-bottom: 40px;
     }
 
-    @include media-mobile-large {
+    @include media-tablet-medium {
       flex-direction: column;
       align-items: flex-start;
       gap: 40px;
     }
   }
 
-  &__credit-rate {
+  &:deep(.invest-credits__credit-rate-card) {
     flex-grow: 1;
+  }
+
+  &:deep(.invest-credits__header) {
+    max-width: 818px;
+    margin-bottom: 20px !important;
   }
 
   &:deep(.invest-credits__credit-subjects) {
@@ -139,63 +107,6 @@ export default {
 
     @include media-tablet {
       margin-bottom: 0;
-    }
-  }
-}
-
-.credit-rate {
-  padding: 40px;
-  background: $gray-4;
-  border-radius: 30px;
-
-  @include media-laptop {
-    padding: 30px;
-    padding-bottom: 40px;
-  }
-
-  @include media-mobile-large {
-    width: 100%;
-    padding: 30px 20px 32px;
-    border-radius: 20px;
-  }
-
-  &__title {
-    margin-bottom: 24px;
-    max-width: 266px;
-
-    @include media-tablet {
-      max-width: 194px;
-      margin-bottom: 22px;
-      font-size: 16px;
-      line-height: 120%;
-    }
-  }
-
-  &__list {
-    @include media-laptop {
-      gap: 28px !important;
-    }
-  }
-}
-
-.rate-item {
-  &__header {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-  }
-
-  &__text {
-    margin-top: 2px;
-
-    @include media-tablet {
-      max-width: 132px;
-      line-height: 120%;
-    }
-  }
-  &__amount {
-    @include media-mobile-large {
-      font-size: 30px;
     }
   }
 }
