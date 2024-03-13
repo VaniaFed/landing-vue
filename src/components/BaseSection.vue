@@ -7,6 +7,7 @@ export default {
   props: {
     title: String,
     tagLabel: String,
+    headerClass: String,
   },
   components: {
     BaseContainer,
@@ -18,7 +19,9 @@ export default {
 
 <template>
   <BaseContainer class="base-section">
-    <header class="base-section__header">
+    <header
+      :class="{ 'base-section__header': true, [headerClass]: headerClass }"
+    >
       <BaseHeading class="base-section__title">
         {{ title }}
       </BaseHeading>
@@ -26,8 +29,6 @@ export default {
         {{ tagLabel }}
       </BaseTag>
     </header>
-    <!-- TODO: description -->
-    <!-- <BaseParagraph>{{ description }}</BaseParagraph> -->
     <slot />
   </BaseContainer>
 </template>
