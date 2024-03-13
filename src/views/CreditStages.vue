@@ -10,6 +10,7 @@ export default {
   <BaseSection
     title="Отбор заявок на получение льготного инвестиционного кредита"
     tagLabel="проходит в 2 этапа"
+    withPlus
     >content</BaseSection
   >
 </template>

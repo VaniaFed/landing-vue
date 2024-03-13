@@ -51,6 +51,7 @@ export default {
   <BaseSection
     class="credit-can-get"
     title="Если вы не состоите в Реестре стартапов и технологических компаний, то льготный кредит могут получить:"
+    withPlus
   >
     <BaseStack asRow class="credit-can-get__layout">
       <CompanyCard

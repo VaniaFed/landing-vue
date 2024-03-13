@@ -93,7 +93,7 @@ export default {
 </script>
 
 <template>
-  <BaseSection title="Требования для получения льготного кредита">
+  <BaseSection title="Требования для получения льготного кредита" withPlus>
     <BaseGrid class="credit-requirements__layout">
       <RequirementsCard
         v-for="card in cards"

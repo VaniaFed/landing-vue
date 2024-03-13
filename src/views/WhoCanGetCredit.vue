@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <BaseSection title="Кто может получить кредит на льготных условиях">
+  <BaseSection title="Кто может получить кредит на льготных условиях" withPlus>
     <div class="card">
       <div class="card__content">
         <div class="card__top">

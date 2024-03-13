@@ -34,9 +34,10 @@ export default {
 
 <template>
   <BaseSection
-    title="Льготные кредиты на&nbsp;инвестиционные цели для&nbsp;субъектов МСП"
     class="invest-credits"
     headerClass="invest-credits__header"
+    title="Льготные кредиты на&nbsp;инвестиционные цели для&nbsp;субъектов МСП"
+    withPlus
   >
     <BaseParagraph class="invest-credits__text">
       — это мера финансовой поддержки, реализуемая Правительством Москвы,
