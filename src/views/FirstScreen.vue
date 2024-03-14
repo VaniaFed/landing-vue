@@ -95,7 +95,7 @@ export default {
     margin: 0;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     padding: 40px 20px;
     border-radius: 0 0 30px 30px;
   }
@@ -157,7 +157,7 @@ export default {
       bottom: -180px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       max-width: 300px;
       right: -85px;
       bottom: 34px;

@@ -54,7 +54,7 @@ export default {
     padding: 40px 30px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     padding: 30px 20px;
     border-radius: 20px;
   }
@@ -66,7 +66,7 @@ export default {
       line-height: 110%;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       margin-bottom: 20px;
       font-size: 20px;
     }
@@ -78,7 +78,7 @@ export default {
       flex-direction: column !important;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       gap: 16px !important;
     }
   }

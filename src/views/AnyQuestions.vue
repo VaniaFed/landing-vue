@@ -55,7 +55,7 @@ export default {
   background-size: cover;
   border-radius: 20px;
 
-  @include media-mobile-large {
+  @include media-mobile {
     padding: 30px 20px 40px !important;
   }
 
@@ -66,7 +66,7 @@ export default {
       margin-bottom: 50px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       margin-bottom: 30px;
     }
   }
@@ -81,7 +81,7 @@ export default {
   }
 
   &__subtitle {
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 18px;
       line-height: 120%;
     }
@@ -97,7 +97,7 @@ export default {
     gap: 20px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     gap: 10px;
   }
 
@@ -106,7 +106,7 @@ export default {
     color: $gray-12;
     line-height: 120%;
 
-    @include media-mobile-large {
+    @include media-mobile {
       line-height: 140%;
     }
   }
@@ -132,14 +132,14 @@ export default {
       font-size: 30px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 20px;
     }
   }
 }
 
 .any-questions-container {
-  @include media-mobile-large {
+  @include media-mobile {
     padding: 0 !important;
   }
 }

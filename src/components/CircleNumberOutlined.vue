@@ -32,7 +32,7 @@ export default {
   border: 1px solid $green;
   border-radius: 60px;
 
-  @include media-mobile-large {
+  @include media-mobile {
     width: 43px;
     height: 43px;
   }
@@ -42,7 +42,7 @@ export default {
       font-size: 36px !important;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 30px !important;
     }
   }

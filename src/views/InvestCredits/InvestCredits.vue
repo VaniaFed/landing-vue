@@ -69,7 +69,7 @@ export default {
       margin-bottom: 40px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       line-height: 140% !important;
       margin-bottom: 20px;
     }

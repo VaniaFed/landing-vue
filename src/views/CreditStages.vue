@@ -113,13 +113,13 @@ export default {
 .credit-stages {
   padding-top: 80px;
 
-  @include media-mobile-large {
+  @include media-mobile {
     padding: 0;
     padding-top: 40px;
   }
 
   &:deep(.credit-stages__header) {
-    @include media-mobile-large {
+    @include media-mobile {
       padding: 20px;
       padding-bottom: 0;
     }
@@ -130,7 +130,7 @@ export default {
       font-size: 24px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 20px;
     }
   }
@@ -153,7 +153,7 @@ export default {
       flex-direction: column;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       margin-bottom: 4px;
     }
   }
@@ -172,7 +172,7 @@ export default {
     border-radius: 30px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     padding: 30px 20px 20px;
   }
 
@@ -222,7 +222,7 @@ export default {
       background-position: bottom left;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       left: 0;
       bottom: 0;
       background-position: center -10px;
@@ -242,7 +242,7 @@ export default {
       background-size: 890px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       bottom: 105px;
       left: 171px;
       background-size: 934px;
@@ -278,7 +278,7 @@ export default {
       max-width: none;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       gap: 10px;
     }
   }
@@ -290,7 +290,7 @@ export default {
   &__title {
     line-height: 110%;
 
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 20px;
     }
   }
@@ -301,7 +301,7 @@ export default {
       height: 61px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       display: none;
     }
   }
@@ -343,7 +343,7 @@ export default {
       max-width: none;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       padding: 20px;
     }
   }
@@ -351,7 +351,7 @@ export default {
   &__text {
     line-height: 120%;
 
-    @include media-mobile-large {
+    @include media-mobile {
       line-height: 140%;
     }
   }

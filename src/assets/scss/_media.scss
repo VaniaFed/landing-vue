@@ -40,12 +40,6 @@
   }
 }
 
-@mixin media-mobile-large {
-  @media (max-width: $mobile-large-breakpoint) {
-    @content;
-  }
-}
-
 @mixin media-mobile {
   @media (max-width: $mobile-breakpoint) {
     @content;

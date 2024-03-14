@@ -45,7 +45,7 @@ export default {
     line-height: 40px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     font-size: 30px;
     line-height: 30px;
   }
@@ -60,7 +60,7 @@ export default {
     font-size: 30px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     font-size: 20px;
   }
 }

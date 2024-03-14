@@ -39,7 +39,7 @@ export default {
       margin-bottom: 4px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       margin-bottom: 2px;
       font-size: 16px !important;
     }
@@ -51,7 +51,7 @@ export default {
 
   &__before,
   &__after {
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 18px !important;
     }
   }

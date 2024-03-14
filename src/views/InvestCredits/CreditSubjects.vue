@@ -84,7 +84,7 @@ export default {
       gap: 20px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       gap: 16px;
     }
   }
@@ -99,13 +99,13 @@ export default {
         margin-left: -19px;
       }
 
-      @include media-mobile-large {
+      @include media-mobile {
         margin-left: 0;
         margin-top: -8px;
       }
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       flex-direction: column;
     }
   }
@@ -113,7 +113,7 @@ export default {
   &__icon-button {
     background: $gray-4;
 
-    @include media-mobile-large {
+    @include media-mobile {
       width: 46px;
       height: 46px;
     }
@@ -122,7 +122,7 @@ export default {
   &__icon {
     width: 58.2px;
 
-    @include media-mobile-large {
+    @include media-mobile {
       width: 30px;
     }
   }
@@ -133,7 +133,7 @@ export default {
       line-height: 120%;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 16px;
       line-height: 112%;
     }
@@ -148,7 +148,7 @@ export default {
       line-height: 120%;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       max-width: none;
       line-height: 140%;
     }
@@ -158,7 +158,7 @@ export default {
 .icon-msp-corp {
   width: 50px;
 
-  @include media-mobile-large {
+  @include media-mobile {
     width: 23px;
   }
 }
@@ -166,7 +166,7 @@ export default {
 .icon-msk-gov {
   height: 52px;
 
-  @include media-mobile-large {
+  @include media-mobile {
     height: 24px;
   }
 }

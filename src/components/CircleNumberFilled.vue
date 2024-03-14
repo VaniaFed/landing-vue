@@ -16,7 +16,11 @@ export default {
 
 <template>
   <div class="circle-number-filled">
-    <BaseHeading variant="medium_36" class="circle-number-filled__title" level="h3">
+    <BaseHeading
+      variant="medium_36"
+      class="circle-number-filled__title"
+      level="h3"
+    >
       {{ number }}
     </BaseHeading>
   </div>
@@ -37,7 +41,7 @@ export default {
     height: 40px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     width: 30px;
     height: 30px;
   }
@@ -47,7 +51,7 @@ export default {
       font-size: 24px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 16px;
     }
   }

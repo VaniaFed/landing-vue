@@ -37,7 +37,7 @@ export default {
   &__button {
     padding: 0;
 
-    @include media-mobile-large {
+    @include media-mobile {
       padding: 12px;
     }
   }

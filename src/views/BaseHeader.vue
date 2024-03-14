@@ -142,7 +142,7 @@ export default {
     height: 70px;
     border-bottom: 1px solid $gray-35;
 
-    @include media-mobile-large {
+    @include media-mobile {
       height: 38px;
     }
   }
@@ -156,7 +156,7 @@ export default {
       gap: 6px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       flex-grow: 1;
     }
   }
@@ -183,7 +183,7 @@ export default {
       justify-content: flex-end;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       flex-grow: 0;
       gap: 0px;
       margin-right: -14px;
@@ -192,7 +192,7 @@ export default {
 
   &__tabs,
   &__cluster {
-    @include media-mobile-large {
+    @include media-mobile {
       display: none;
     }
   }
@@ -221,7 +221,7 @@ export default {
     &-button {
       display: none;
 
-      @include media-mobile-large {
+      @include media-mobile {
         display: flex;
       }
     }
@@ -237,7 +237,7 @@ export default {
     height: 48px;
     display: flex;
 
-    @include media-mobile-large {
+    @include media-mobile {
       display: none;
     }
   }

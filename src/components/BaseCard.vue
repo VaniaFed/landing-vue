@@ -27,7 +27,7 @@ export default {
   box-shadow: $shadow;
   border-radius: 30px;
 
-  @include media-mobile-large {
+  @include media-mobile {
     padding: 24px 20px;
   }
 
@@ -36,7 +36,7 @@ export default {
     height: 70px;
     flex-shrink: 0;
 
-    @include media-mobile-large {
+    @include media-mobile {
       width: 52px;
       height: 52px;
     }

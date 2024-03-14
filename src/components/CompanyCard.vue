@@ -54,7 +54,7 @@ export default {
   &__title {
     line-height: 120%;
 
-    @include media-mobile-large {
+    @include media-mobile {
     }
   }
   &__code {
@@ -64,7 +64,7 @@ export default {
       line-height: 110%;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       line-height: 120%;
     }
   }

@@ -67,7 +67,7 @@ export default {
 
 <style scoped lang="scss">
 .who-can-get-credit {
-  @include media-mobile-large {
+  @include media-mobile {
     padding-top: 20px !important;
   }
 }
@@ -105,7 +105,7 @@ export default {
   }
 
   &__title {
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 16px;
       line-height: 113%;
     }
@@ -117,7 +117,7 @@ export default {
       line-height: 19.2px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       line-height: 140%;
     }
   }
@@ -144,7 +144,7 @@ export default {
     background: $white;
     border-radius: 100px;
 
-    @include media-mobile-large {
+    @include media-mobile {
       width: 60px;
       height: 60px;
     }
@@ -154,7 +154,7 @@ export default {
     width: 54px;
     height: 54px;
 
-    @include media-mobile-large {
+    @include media-mobile {
       height: 40px;
     }
   }
@@ -169,7 +169,7 @@ export default {
       line-height: 16.8px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 12px;
       line-height: 120%;
     }
@@ -182,7 +182,7 @@ export default {
   &__button {
     margin-top: 40px;
 
-    @include media-mobile-large {
+    @include media-mobile {
       margin-top: 208px;
     }
   }
@@ -200,7 +200,7 @@ export default {
       top: unset;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       top: unset;
       right: 0;
       bottom: 69px;

@@ -62,7 +62,7 @@ export default {
     @include paragraph_16;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     @include paragraph_14;
   }
 }

@@ -58,7 +58,7 @@ export default {
     padding-bottom: 40px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     width: 100%;
     padding: 30px 20px 32px;
     border-radius: 20px;
@@ -99,7 +99,7 @@ export default {
     }
   }
   &__amount {
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 30px;
     }
   }

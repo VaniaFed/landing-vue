@@ -69,7 +69,7 @@ export default {
       margin-bottom: 30px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       margin-bottom: 20px;
     }
   }
@@ -92,7 +92,7 @@ $border-size: 2px;
     gap: 34px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     gap: 16px;
   }
 
@@ -114,7 +114,7 @@ $border-size: 2px;
       height: 100%;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       left: calc($circle-mobile-size / 2 - $border-size / 2);
     }
   }
@@ -137,7 +137,7 @@ $border-size: 2px;
       flex-direction: row;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       gap: 16px;
     }
   }
@@ -155,7 +155,7 @@ $border-size: 2px;
       flex-direction: row;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       flex-direction: column;
       gap: 4px;
     }
@@ -169,7 +169,7 @@ $border-size: 2px;
       font-size: 16px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       flex-basis: auto;
       font-size: 14px;
     }
@@ -183,7 +183,7 @@ $border-size: 2px;
       line-height: 120% !important;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       font-size: 12px;
     }
   }
