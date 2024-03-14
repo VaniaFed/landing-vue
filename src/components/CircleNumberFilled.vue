@@ -16,7 +16,7 @@ export default {
 
 <template>
   <div class="circle-number-filled">
-    <BaseHeading variant="medium_36" class="circle-number-filled__title">
+    <BaseHeading variant="medium_36" class="circle-number-filled__title" level="h3">
       {{ number }}
     </BaseHeading>
   </div>

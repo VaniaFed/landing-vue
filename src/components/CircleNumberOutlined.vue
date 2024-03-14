@@ -16,7 +16,7 @@ export default {
 
 <template>
   <div class="circle-number-outlined">
-    <BaseHeading>
+    <BaseHeading level="h3">
       {{ number }}
     </BaseHeading>
   </div>

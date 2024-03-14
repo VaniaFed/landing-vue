@@ -24,7 +24,7 @@ export default {
     <div class="card">
       <div class="card__content">
         <div class="card__top">
-          <BaseHeading class="card__title" variant="medium_32">
+          <BaseHeading class="card__title" variant="medium_32" level="h3">
             Компании из Реестра стартапов и технологических компаний
           </BaseHeading>
           <BaseParagraph class="card__text">

@@ -3,7 +3,7 @@ export default {
   props: {
     level: {
       type: String,
-      default: "h1",
+      default: "h2",
     },
     variant: {
       type: String,

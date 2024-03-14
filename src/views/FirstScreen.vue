@@ -45,7 +45,9 @@ export default {
   <BaseContainer class="first-screen">
     <BaseStack gap="40" class="first-screen__content">
       <div class="first-screen__text">
-        <BaseHeading>Льготные кредиты на&nbsp;инвестиционные цели</BaseHeading>
+        <BaseHeading level="h1"
+          >Льготные кредиты на&nbsp;инвестиционные цели</BaseHeading
+        >
         <BaseParagraph class="first-screen__description" size="16"
           >Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
           для компаний, реализующих инвестиционные проекты в сферах науки,

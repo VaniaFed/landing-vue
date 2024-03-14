@@ -21,7 +21,7 @@ export default {
     <BaseHeading level="h3" variant="great">{{ big_text }}</BaseHeading>
     <BaseHeading
       v-if="text_after !== undefined"
-      level="h3"
+      level="h4"
       variant="medium_24"
       >{{ text_after }}</BaseHeading
     >
