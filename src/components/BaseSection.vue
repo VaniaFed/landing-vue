@@ -9,6 +9,7 @@ export default {
     title: String,
     tagLabel: String,
     headerClass: String,
+    headingClass: String,
     withPlus: {
       type: Boolean,
       default: false,
@@ -26,9 +27,12 @@ export default {
 <template>
   <BaseContainer class="base-section">
     <header
+      v-if="title"
       :class="{ 'base-section__header': true, [headerClass]: headerClass }"
     >
-      <BaseHeading class="base-section__title">
+      <BaseHeading
+        :class="{ 'base-section__title': true, [headingClass]: headingClass }"
+      >
         {{ title }}
       </BaseHeading>
       <BaseTag v-if="tagLabel" size="large">
@@ -46,8 +50,10 @@ export default {
   padding-bottom: 60px;
 
   &__header {
+    position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     margin-bottom: 40px;
 
     @include media-tablet {
@@ -56,11 +62,15 @@ export default {
 
     @include media-mobile-large {
       margin-bottom: 20px;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
     }
   }
 
   &__plus {
     position: absolute;
+    top: 0;
     width: 32px;
     margin-left: -32px;
     margin-top: -32px;

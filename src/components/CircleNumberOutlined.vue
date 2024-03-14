@@ -16,7 +16,7 @@ export default {
 
 <template>
   <div class="circle-number-outlined">
-    <BaseHeading level="h3">
+    <BaseHeading level="h3" class="circle-number-outlined__title">
       {{ number }}
     </BaseHeading>
   </div>
@@ -30,5 +30,21 @@ export default {
   align-items: center;
   justify-content: center;
   border: 1px solid $green;
+  border-radius: 60px;
+
+  @include media-mobile-large {
+    width: 43px;
+    height: 43px;
+  }
+
+  &__title {
+    @include media-tablet {
+      font-size: 36px !important;
+    }
+
+    @include media-mobile-large {
+      font-size: 30px !important;
+    }
+  }
 }
 </style>
