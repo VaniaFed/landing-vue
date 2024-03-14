@@ -22,12 +22,12 @@ export default {
 <style scoped lang="scss">
 @mixin paragraph_14 {
   font-size: 14px;
-  line-height: 16.8px;
+  line-height: 120%;
 }
 
 @mixin paragraph_16 {
   font-size: 16px;
-  line-height: 22.4px;
+  line-height: 140%;
 }
 
 .paragraph_400 {
@@ -56,7 +56,7 @@ export default {
 
 .paragraph_18 {
   font-size: 18px;
-  line-height: 21.6px;
+  line-height: 120%;
 
   @include media-tablet {
     @include paragraph_16;

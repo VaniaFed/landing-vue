@@ -90,6 +90,6 @@ export default {
 .medium_24 {
   font-size: 24px;
   font-weight: 500;
-  line-height: 28.8px;
+  line-height: 120%;
 }
 </style>

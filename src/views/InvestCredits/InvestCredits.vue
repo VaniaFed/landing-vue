@@ -55,6 +55,12 @@ export default {
 
 <style scoped lang="scss">
 .invest-credits {
+  padding-top: 80px;
+
+  @include media-tablet {
+    padding-top: 40px;
+  }
+
   &__text {
     max-width: 638px;
     line-height: 120% !important;

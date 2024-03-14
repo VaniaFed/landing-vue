@@ -49,6 +49,11 @@ export default {
   padding-top: 60px;
   padding-bottom: 60px;
 
+  @include media-tablet {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   &__header {
     position: relative;
     display: flex;

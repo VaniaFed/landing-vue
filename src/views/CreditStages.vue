@@ -111,8 +111,11 @@ export default {
 
 <style scoped lang="scss">
 .credit-stages {
+  padding-top: 80px;
+
   @include media-mobile-large {
     padding: 0;
+    padding-top: 40px;
   }
 
   &:deep(.credit-stages__header) {
@@ -141,6 +144,10 @@ export default {
     justify-content: space-between;
 
     margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @include media-laptop {
       flex-direction: column;
@@ -205,7 +212,7 @@ export default {
   }
 
   &_green::after {
-    background: url("/public/images/vectors-green.svg") no-repeat;
+    background: url("/images/vectors-green.svg") no-repeat;
     background-position: top right;
     background-size: 815px;
 
@@ -225,7 +232,7 @@ export default {
 
   &_blue::after {
     left: 374px;
-    background: url("/public/images/vectors-blue.svg") no-repeat;
+    background: url("/images/vectors-blue.svg") no-repeat;
     background-position: top left;
     background-size: 70%;
 
