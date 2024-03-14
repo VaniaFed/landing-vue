@@ -29,6 +29,7 @@ export default {
         {
           title: "В Московском инновационном кластере",
           iconName: "IconLogoCompact",
+          additionalClass: "invest-card_green",
           items: [
             {
               text: "Подтверждаете статус участника Реестра стартапов или МИК и статус субъекта МСП",
@@ -152,6 +153,8 @@ export default {
 }
 
 .invest-card {
+  overflow: hidden;
+  position: relative;
   padding: 40px;
   padding-right: 50px;
   background: $green-2;
@@ -180,7 +183,69 @@ export default {
 
     & .invest-card__content {
       padding: 0;
+      max-width: 550px;
+      margin-right: 10px;
+
+      @include media-tablet {
+        max-width: none;
+        margin: 0;
+      }
     }
+  }
+
+  &_green::after,
+  &_blue::after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &_green::after {
+    background: url("/public/images/vectors-green.svg") no-repeat;
+    background-position: top right;
+    background-size: 815px;
+
+    @include media-tablet {
+      bottom: 5px;
+      left: 122px;
+      background-position: bottom left;
+    }
+
+    @include media-mobile-large {
+      left: 0;
+      bottom: 0;
+      background-position: center -10px;
+      background-size: 1215px;
+    }
+  }
+
+  &_blue::after {
+    left: 374px;
+    background: url("/public/images/vectors-blue.svg") no-repeat;
+    background-position: top left;
+    background-size: 70%;
+
+    @include media-tablet {
+      left: 185px;
+      background-position: left;
+      background-size: 890px;
+    }
+
+    @include media-mobile-large {
+      bottom: 105px;
+      left: 171px;
+      background-size: 934px;
+    }
+  }
+
+  &__meta,
+  &__content {
+    z-index: 2;
+    position: relative;
   }
 
   &__meta {
@@ -246,6 +311,7 @@ export default {
     width: 30px;
     height: 30px;
     background: $gradient-green;
+    box-shadow: $shadow-2;
   }
 
   &__content {
@@ -264,6 +330,7 @@ export default {
     padding: 25px 30px;
     background: $white;
     border-radius: 20px;
+    box-shadow: $shadow-2;
 
     @include media-laptop {
       max-width: none;
