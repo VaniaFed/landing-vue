@@ -91,6 +91,8 @@ export default {
   }
 
   &__content {
+    z-index: 10;
+    position: relative;
     padding-right: 420px;
 
     @include media-tablet {
@@ -101,6 +103,7 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding-right: 0;
     }
   }
 
