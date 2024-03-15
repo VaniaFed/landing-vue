@@ -74,6 +74,7 @@ export default {
               text: "Календарь мероприятий",
             },
           ],
+          additionalClass: "links-part",
         },
         {
           category: "Новаторам",
@@ -139,7 +140,13 @@ export default {
           </div>
         </div>
         <div class="base-footer__links">
-          <div class="base-footer__column" v-for="link in links">
+          <div
+            :class="{
+              'base-footer__column': true,
+              [link.additionalClass]: link.additionalClass,
+            }"
+            v-for="link in links"
+          >
             <BaseParagraph class="column__heading" weight="500">{{
               link.category
             }}</BaseParagraph>
@@ -170,7 +177,16 @@ export default {
 
 <style scoped lang="scss">
 .base-footer {
+  margin-top: 40px;
   border-top: 1px solid $gray-3;
+
+  @include media-tablet {
+    margin-top: 20px;
+  }
+
+  @include media-mobile {
+    margin-top: 60px;
+  }
 
   &__top {
     display: flex;
@@ -183,14 +199,30 @@ export default {
     }
 
     @include media-tablet {
+      margin-bottom: 60px;
       padding-top: 41px;
       gap: 62px;
+    }
+
+    @include media-mobile {
+      margin-bottom: 40px;
+      text-align: center;
     }
   }
 
   &__bottom {
     padding: 28px 0;
     border-top: 1px solid $gray-3;
+
+    @include media-tablet {
+      padding-top: 17px;
+      padding-bottom: 16px;
+    }
+
+    @include media-mobile {
+      margin: 0 -20px;
+      padding: 11px 20px 14px;
+    }
   }
 
   &__logo {
@@ -198,6 +230,12 @@ export default {
 
     @include media-tablet {
       width: 179px;
+    }
+  }
+
+  &__contacts {
+    @include media-mobile {
+      width: 100%;
     }
   }
 
@@ -212,6 +250,10 @@ export default {
       flex-grow: 20px;
       margin-right: -20px;
     }
+
+    @include media-mobile {
+      display: none;
+    }
   }
 
   &__column {
@@ -221,12 +263,16 @@ export default {
 
     @include media-tablet {
       gap: 20px;
-      width: 50%;
+      width: 224px;
     }
   }
 
   &__user-agreement {
     color: $text-tertiary;
+
+    @include media-mobile {
+      font-size: 12px;
+    }
   }
 }
 
@@ -249,12 +295,28 @@ export default {
   }
 }
 
+.links-part {
+  @include media-tablet {
+    margin-top: -15px;
+  }
+
+  .column__heading {
+    @media (max-width: 882px) {
+      display: none;
+    }
+  }
+}
+
 .contacts {
   &__bottom {
     margin-top: 50px;
 
     @include media-tablet {
       margin-top: 24px;
+    }
+
+    @include media-mobile {
+      margin-top: 20px;
     }
   }
 
@@ -266,10 +328,19 @@ export default {
     @include media-tablet {
       gap: 16px;
     }
+
+    @include media-mobile {
+      align-items: center;
+    }
   }
 
   &__button {
     margin-top: 24px;
+
+    @include media-mobile {
+      width: 100%;
+      margin-top: 20px;
+    }
   }
 
   &__socials {
@@ -279,6 +350,11 @@ export default {
 
     @include media-tablet {
       margin-top: 34px;
+    }
+
+    @include media-mobile {
+      justify-content: center;
+      margin-top: 25px;
     }
   }
 
@@ -300,6 +376,16 @@ export default {
 
   &__icon {
     width: 18px;
+  }
+}
+
+.links-part {
+  @include media-tablet {
+    order: 1;
+  }
+
+  @media (max-width: 762px) {
+    order: 0;
   }
 }
 </style>
