@@ -104,7 +104,7 @@ export default {
           <component :is="card.iconName" />
         </template>
         <template v-slot:content>
-          <BaseParagraph weight="500">
+          <BaseParagraph weight="500" class="requirements-card__title">
             {{ card.title }}
           </BaseParagraph>
           <BaseParagraph size="16" class="requirements-card__text">
@@ -134,7 +134,16 @@ export default {
   }
 }
 
-.requirements-card__text {
-  margin-top: 8px;
+.requirements-card {
+  &__title {
+    @include media-mobile {
+      font-size: 16px;
+      line-height: 112%;
+    }
+  }
+
+  &__text {
+    margin-top: 8px;
+  }
 }
 </style>
