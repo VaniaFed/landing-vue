@@ -1,5 +1,6 @@
 <script>
-import BaseHeader from "@/views/BaseHeader.vue";
+import BaseHeader from "@/components/BaseHeader.vue";
+import BaseFooter from "@/components/BaseFooter.vue";
 import FirstScreen from "@/views/FirstScreen.vue";
 import InvestCredits from "@/views/InvestCredits/InvestCredits.vue";
 import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
@@ -8,7 +9,6 @@ import CreditRequirements from "@/views/CreditRequirements.vue";
 import CreditStages from "@/views/CreditStages.vue";
 import HowToGetCredit from "@/views/HowToGetCredit.vue";
 import AnyQuestions from "@/views/AnyQuestions.vue";
-import BaseFooter from "@/views/BaseFooter.vue";
 
 export default {
   components: {
