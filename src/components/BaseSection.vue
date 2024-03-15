@@ -2,32 +2,44 @@
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseHeading from "@/components/BaseHeading.vue";
 import BaseTag from "@/components/BaseTag.vue";
+import PlusIcon from "@/components/icons/PlusIcon.vue";
 
 export default {
   props: {
     title: String,
     tagLabel: String,
+    headerClass: String,
+    headingClass: String,
+    withPlus: {
+      type: Boolean,
+      default: false,
+    },
   },
   components: {
     BaseContainer,
     BaseHeading,
     BaseTag,
+    PlusIcon,
   },
 };
 </script>
 
 <template>
   <BaseContainer class="base-section">
-    <header class="base-section__header">
-      <BaseHeading class="base-section__title">
+    <header
+      v-if="title"
+      :class="{ 'base-section__header': true, [headerClass]: headerClass }"
+    >
+      <BaseHeading
+        :class="{ 'base-section__title': true, [headingClass]: headingClass }"
+      >
         {{ title }}
       </BaseHeading>
-      <BaseTag>
+      <BaseTag v-if="tagLabel" size="large">
         {{ tagLabel }}
       </BaseTag>
+      <PlusIcon v-if="withPlus" class="base-section__plus" />
     </header>
-    <!-- TODO: description -->
-    <!-- <BaseParagraph>{{ description }}</BaseParagraph> -->
     <slot />
   </BaseContainer>
 </template>
@@ -37,17 +49,39 @@ export default {
   padding-top: 60px;
   padding-bottom: 60px;
 
+  @include media-tablet {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   &__header {
+    position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
     margin-bottom: 40px;
 
     @include media-tablet {
       margin-bottom: 30px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       margin-bottom: 20px;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  }
+
+  &__plus {
+    position: absolute;
+    top: 0;
+    width: 32px;
+    margin-left: -32px;
+    margin-top: -32px;
+
+    @include media-tablet {
+      display: none;
     }
   }
 }

@@ -45,7 +45,9 @@ export default {
   <BaseContainer class="first-screen">
     <BaseStack gap="40" class="first-screen__content">
       <div class="first-screen__text">
-        <BaseHeading>Льготные кредиты на&nbsp;инвестиционные цели</BaseHeading>
+        <BaseHeading level="h1"
+          >Льготные кредиты на&nbsp;инвестиционные цели</BaseHeading
+        >
         <BaseParagraph class="first-screen__description" size="16"
           >Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
           для компаний, реализующих инвестиционные проекты в сферах науки,
@@ -93,7 +95,7 @@ export default {
     margin: 0;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     padding: 40px 20px;
     border-radius: 0 0 30px 30px;
   }
@@ -155,7 +157,7 @@ export default {
       bottom: -180px;
     }
 
-    @include media-mobile-large {
+    @include media-mobile {
       max-width: 300px;
       right: -85px;
       bottom: 34px;

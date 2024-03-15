@@ -16,32 +16,44 @@ export default {
       v-if="text_before !== undefined"
       level="h3"
       variant="medium_24"
+      class="big-word-item__before"
       >{{ text_before }}</BaseHeading
     >
     <BaseHeading level="h3" variant="great">{{ big_text }}</BaseHeading>
     <BaseHeading
       v-if="text_after !== undefined"
-      level="h3"
+      level="h4"
       variant="medium_24"
+      class="big-word-item__after"
       >{{ text_after }}</BaseHeading
     >
   </BaseStack>
 </template>
 
 <style lang="scss">
-.big-word-item__title {
-  margin-bottom: 18px;
+.big-word-item {
+  &__title {
+    margin-bottom: 18px;
 
-  @include media-tablet {
-    margin-bottom: 4px;
+    @include media-tablet {
+      margin-bottom: 4px;
+    }
+
+    @include media-mobile {
+      margin-bottom: 2px;
+      font-size: 16px !important;
+    }
   }
 
-  @include media-mobile-large {
-    margin-bottom: 2px;
+  &__list {
+    align-items: baseline;
   }
-}
 
-.big-word-item__list {
-  align-items: baseline;
+  &__before,
+  &__after {
+    @include media-mobile {
+      font-size: 18px !important;
+    }
+  }
 }
 </style>

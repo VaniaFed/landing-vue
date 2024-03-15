@@ -21,5 +21,9 @@ export default {
   @include media-tablet {
     padding: 20px;
   }
+
+  @include media-mobile {
+    border-radius: 20px;
+  }
 }
 </style>

@@ -24,13 +24,13 @@ export default {
     </template>
 
     <template v-slot:content>
-      <BaseParagraph weight="500">
+      <BaseParagraph weight="500" class="company-card__title">
         {{ title }}
       </BaseParagraph>
-      <BaseHeading level="h4" variant="medium_24" class="company-card__code">
+      <BaseHeading level="h5" variant="medium_24" class="company-card__code">
         {{ code }}
       </BaseHeading>
-      <BaseParagraph size="14" class="company-card__details">
+      <BaseParagraph size="14" class="company-card__details" v-if="details">
         {{ details }}
       </BaseParagraph>
     </template>
@@ -51,8 +51,22 @@ export default {
     gap: 16px;
   }
 
+  &__title {
+    line-height: 120%;
+
+    @include media-mobile {
+    }
+  }
   &__code {
     margin-top: 10px;
+
+    @include media-tablet {
+      line-height: 110%;
+    }
+
+    @include media-mobile {
+      line-height: 120%;
+    }
   }
 
   &__details {

@@ -54,12 +54,12 @@ export default {
         },
         {
           title:
-            "Наличие статуса субъекта малого и среднего предпринимательства",
+            "Наличие статуса субъекта малого и\u00A0среднего предпринимательства",
           iconName: "IconPriorities",
         },
         {
           title:
-            "Продолжительность регистрации в качестве юрлица или ИП составляет не менее 12 месяцев до дня подачи заявки",
+            "Продолжительность регистрации в\u00A0качестве юрлица или ИП составляет не менее 12 месяцев до дня подачи заявки",
           iconName: "IconCalendar",
         },
         {
@@ -69,7 +69,7 @@ export default {
         },
         {
           title:
-            "Положительные значения чистых активов и чистой прибыли за последний отчетный период",
+            "Положительные значения чистых активов и чистой прибыли за\u00A0последний отчетный период",
           iconName: "IconChart",
         },
         {
@@ -93,7 +93,7 @@ export default {
 </script>
 
 <template>
-  <BaseSection title="Требования для получения льготного кредита">
+  <BaseSection title="Требования для получения льготного кредита" withPlus>
     <BaseGrid class="credit-requirements__layout">
       <RequirementsCard
         v-for="card in cards"
@@ -104,10 +104,10 @@ export default {
           <component :is="card.iconName" />
         </template>
         <template v-slot:content>
-          <BaseParagraph size="18" weight="500">
+          <BaseParagraph weight="500" class="requirements-card__title">
             {{ card.title }}
           </BaseParagraph>
-          <BaseParagraph>
+          <BaseParagraph size="16" class="requirements-card__text">
             {{ card.description }}
             <BaseLink v-if="card.link" v-bind="card.link.attrs">
               {{ card.link.text }}
@@ -131,6 +131,19 @@ export default {
 
   @include media-tablet-small {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.requirements-card {
+  &__title {
+    @include media-mobile {
+      font-size: 16px;
+      line-height: 112%;
+    }
+  }
+
+  &__text {
+    margin-top: 8px;
   }
 }
 </style>

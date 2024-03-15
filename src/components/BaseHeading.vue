@@ -3,7 +3,7 @@ export default {
   props: {
     level: {
       type: String,
-      default: "h1",
+      default: "h2",
     },
     variant: {
       type: String,
@@ -45,7 +45,7 @@ export default {
     line-height: 40px;
   }
 
-  @include media-mobile-large {
+  @include media-mobile {
     font-size: 30px;
     line-height: 30px;
   }
@@ -54,11 +54,14 @@ export default {
 .medium_40 {
   font-size: 40px;
   font-weight: 500;
-  line-height: 44px;
+  line-height: 110%;
 
   @include media-tablet {
     font-size: 30px;
-    line-height: 33px;
+  }
+
+  @include media-mobile {
+    font-size: 20px;
   }
 }
 
@@ -87,6 +90,6 @@ export default {
 .medium_24 {
   font-size: 24px;
   font-weight: 500;
-  line-height: 28.8px;
+  line-height: 120%;
 }
 </style>

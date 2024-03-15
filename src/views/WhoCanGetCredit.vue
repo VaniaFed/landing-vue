@@ -20,11 +20,15 @@ export default {
 </script>
 
 <template>
-  <BaseSection title="Кто может получить кредит на льготных условиях">
+  <BaseSection
+    title="Кто может получить кредит на льготных условиях"
+    withPlus
+    class="who-can-get-credit"
+  >
     <div class="card">
       <div class="card__content">
         <div class="card__top">
-          <BaseHeading class="card__title" variant="medium_32">
+          <BaseHeading class="card__title" variant="medium_32" level="h3">
             Компании из Реестра стартапов и технологических компаний
           </BaseHeading>
           <BaseParagraph class="card__text">
@@ -46,7 +50,7 @@ export default {
           >
         </div>
         <BaseButton variant="primary" class="card__button"
-          >Подробнее о Реесте</BaseButton
+          >Подробнее о Реестре</BaseButton
         >
       </div>
       <img
@@ -62,6 +66,12 @@ export default {
 </template>
 
 <style scoped lang="scss">
+.who-can-get-credit {
+  @include media-mobile {
+    padding-top: 20px !important;
+  }
+}
+
 .card {
   overflow: hidden;
   position: relative;
@@ -81,16 +91,26 @@ export default {
   }
 
   &__content {
-    max-width: 612px;
+    z-index: 10;
+    position: relative;
+    padding-right: 420px;
 
     @include media-tablet {
-      max-width: 500px;
+      padding-right: 130px;
     }
 
     @include media-mobile {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      padding-right: 0;
+    }
+  }
+
+  &__title {
+    @include media-mobile {
+      font-size: 16px;
+      line-height: 113%;
     }
   }
 
@@ -98,6 +118,10 @@ export default {
     margin-top: 20px;
     @include media-tablet {
       line-height: 19.2px;
+    }
+
+    @include media-mobile {
+      line-height: 140%;
     }
   }
 
@@ -122,11 +146,20 @@ export default {
     height: 80px;
     background: $white;
     border-radius: 100px;
+
+    @include media-mobile {
+      width: 60px;
+      height: 60px;
+    }
   }
 
   &__icon {
     width: 54px;
     height: 54px;
+
+    @include media-mobile {
+      height: 40px;
+    }
   }
 
   &__paragraph {
@@ -139,6 +172,11 @@ export default {
       line-height: 16.8px;
     }
 
+    @include media-mobile {
+      font-size: 12px;
+      line-height: 120%;
+    }
+
     &_bold {
       font-weight: 500;
     }
@@ -146,12 +184,16 @@ export default {
 
   &__button {
     margin-top: 40px;
+
+    @include media-mobile {
+      margin-top: 208px;
+    }
   }
 
   &__img {
     position: absolute;
     z-index: 7;
-    top: 0;
+    bottom: 0;
     right: 11px;
 
     @include media-tablet {
@@ -159,6 +201,16 @@ export default {
       bottom: 18px;
       right: -22px;
       top: unset;
+    }
+
+    @include media-mobile {
+      top: unset;
+      right: 0;
+      bottom: 69px;
+      left: -10px;
+      transform: rotate(3deg);
+      width: 224px;
+      margin: 0 auto;
     }
   }
 }

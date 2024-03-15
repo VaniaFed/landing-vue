@@ -1,0 +1,25 @@
+<script>
+export default {
+  props: {},
+  components: {},
+};
+</script>
+
+<template>
+  <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M3.9375 5.625L9 9.5625L14.0625 5.625"
+      stroke="black"
+      stroke-linejoin="round"
+    />
+    <rect
+      x="1.92871"
+      y="3.85693"
+      width="14.1429"
+      height="10.2857"
+      stroke="black"
+    />
+  </svg>
+</template>
+
+<style scoped lang="scss"></style>

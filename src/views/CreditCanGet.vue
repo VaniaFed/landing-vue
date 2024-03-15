@@ -29,6 +29,7 @@ export default {
           code: "ОВЭД 10-33*",
           details: "* за исключением ОВЭД 12 — производство табачных изделий",
           iconName: "IconDrilling",
+          additionalClass: "credit-can-get__small-card",
         },
         {
           title: "Компании из сферы информации и связи",
@@ -50,7 +51,8 @@ export default {
 <template>
   <BaseSection
     class="credit-can-get"
-    title="Если вы не состоите в Реестре стартапов и технологических компаний, то льготный кредит могут получить:"
+    title="Если вы не состоите в Реестре стартапов и&nbsp;технологических компаний, то льготный кредит могут получить:"
+    withPlus
   >
     <BaseStack asRow class="credit-can-get__layout">
       <CompanyCard
@@ -59,6 +61,7 @@ export default {
         :code="card.code"
         :details="card.details"
         :key="card.title"
+        :class="card.additionalClass"
       >
         <template v-slot:icon>
           <component :is="card.iconName" />
@@ -76,6 +79,14 @@ export default {
 
   @include media-tablet {
     gap: 10px !important;
+  }
+}
+
+.credit-can-get__small-card {
+  max-width: 370px;
+
+  @include media-laptop {
+    max-width: none;
   }
 }
 </style>
