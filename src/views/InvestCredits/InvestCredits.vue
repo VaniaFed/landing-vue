@@ -83,9 +83,12 @@ export default {
 
     @include media-laptop {
       gap: 60px;
+      align-items: flex-start;
+      margin-top: 24px;
     }
 
     @include media-tablet {
+      align-items: stretch;
       gap: 29px;
       margin-top: 0;
       margin-bottom: 40px;
@@ -93,7 +96,6 @@ export default {
 
     @include media-tablet-medium {
       flex-direction: column;
-      align-items: flex-start;
       gap: 40px;
     }
   }

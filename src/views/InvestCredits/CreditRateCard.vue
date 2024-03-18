@@ -44,6 +44,10 @@ export default {
     padding-bottom: 40px;
   }
 
+  @include media-tablet {
+    margin-top: 17px;
+  }
+
   @include media-mobile {
     width: 100%;
     padding: 30px 20px 32px;

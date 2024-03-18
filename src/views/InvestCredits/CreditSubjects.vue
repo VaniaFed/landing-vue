@@ -64,6 +64,7 @@ export default {
 
   @include media-laptop {
     gap: 30px;
+    flex-direction: column;
   }
 
   @include media-tablet {
