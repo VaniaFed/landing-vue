@@ -49,6 +49,7 @@ export default {
     line-height: 120%;
 
     @include media-mobile {
+      font-size: 14px;
     }
   }
 
@@ -60,6 +61,7 @@ export default {
     }
 
     @include media-mobile {
+      font-size: 18px;
       line-height: 120%;
     }
   }
@@ -71,6 +73,10 @@ export default {
 
     @include media-tablet-small {
       margin-top: 16px;
+    }
+
+    @include media-mobile {
+      font-size: 12px;
     }
   }
 }

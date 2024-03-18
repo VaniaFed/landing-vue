@@ -263,6 +263,7 @@ export default {
   }
 
   &__user-agreement {
+    display: block;
     color: $text-tertiary;
 
     @include media-mobile {
