@@ -1,6 +1,5 @@
 <script>
 import BaseSection from "@/components/BaseSection.vue";
-import BaseGrid from "@/components/BaseGrid.vue";
 import RequirementsCard from "@/components/RequirementsCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseLink from "@/components/BaseLink.vue";
@@ -18,7 +17,6 @@ export default {
   props: {},
   components: {
     BaseSection,
-    BaseGrid,
     RequirementsCard,
     BaseParagraph,
     BaseLink,
@@ -94,7 +92,7 @@ export default {
 
 <template>
   <BaseSection title="Требования для получения льготного кредита" withPlus>
-    <BaseGrid class="credit-requirements__layout">
+    <div class="credit-requirements__layout">
       <RequirementsCard
         v-for="card in cards"
         :key="card.title"
@@ -115,12 +113,16 @@ export default {
           </BaseParagraph>
         </template>
       </RequirementsCard>
-    </BaseGrid>
+    </div>
   </BaseSection>
 </template>
 
 <style scoped lang="scss">
 .credit-requirements__layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
   @include media-laptop {
     grid-template-columns: repeat(2, 1fr);
   }
