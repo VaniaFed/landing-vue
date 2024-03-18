@@ -1,12 +1,10 @@
 <script>
 import BaseStack from "@/components/BaseStack.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 
 export default {
   props: {},
   components: {
     BaseStack,
-    BaseParagraph,
   },
 };
 </script>
@@ -22,16 +20,14 @@ export default {
           <h4 class="heading_24 rate-item__from">от</h4>
           <h4 class="heading_40 rate-item__amount">3%</h4>
         </div>
-        <BaseParagraph class="rate-item__text"
-          >действует первые три года</BaseParagraph
-        >
+        <span class="plain_18 rate-item__text">действует первые три года</span>
       </div>
       <div class="rate-item">
         <div class="rate-item__header">
           <h5 class="heading_24 rate-item__from">от</h5>
           <h5 class="heading_40 rate-item__amount">11%</h5>
         </div>
-        <BaseParagraph class="rate-item__text">далее</BaseParagraph>
+        <span class="plain_16 rate-item__text">далее</span>
       </div>
     </BaseStack>
   </div>

@@ -1,6 +1,5 @@
 <script>
 import BaseStack from "@/components/BaseStack.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
 import IconGears from "@/components/icons/IconGears.vue";
 import IconCart from "@/components/icons/IconCart.vue";
@@ -15,7 +14,6 @@ export default {
   },
   components: {
     BaseStack,
-    BaseParagraph,
     CircleIcon,
     IconCart,
     IconGears,
@@ -34,9 +32,10 @@ export default {
         <CircleIcon class="opportunities__circle-icon">
           <component :is="item.iconName" class="opportunities__icon" />
         </CircleIcon>
-        <BaseParagraph class="opportunities__text">
+
+        <p class="opportunities__text">
           {{ item.text }}
-        </BaseParagraph>
+        </p>
       </div>
     </BaseStack>
   </div>

@@ -1,7 +1,6 @@
 <script>
 import BaseSection from "@/components/BaseSection.vue";
 import BaseStack from "@/components/BaseStack.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import CircleNumberOutlined from "@/components/CircleNumberOutlined.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
 import IconLogoCompact from "@/components/icons/IconLogoCompact.vue";
@@ -13,7 +12,6 @@ export default {
   components: {
     BaseSection,
     BaseStack,
-    BaseParagraph,
     CircleNumberOutlined,
     CircleIcon,
     IconLogoCompact,
@@ -96,9 +94,7 @@ export default {
           <CircleIcon class="invest-card__circle-icon">
             <IconCheckMark class="check-mark" />
           </CircleIcon>
-          <BaseParagraph class="invest-card__text">{{
-            item.text
-          }}</BaseParagraph>
+          <p class="plain_18 invest-card__text">{{ item.text }}</p>
         </div>
       </BaseStack>
     </div>

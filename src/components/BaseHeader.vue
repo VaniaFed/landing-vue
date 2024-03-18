@@ -2,7 +2,6 @@
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseTabList from "@/components/BaseTabList.vue";
 import BaseTag from "@/components/BaseTag.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import IconLogo from "@/components/icons/IconLogo.vue";
 import IconSearch from "@/components/icons/IconSearch.vue";
 import IconBurger from "@/components/icons/IconBurger.vue";
@@ -19,7 +18,6 @@ export default {
     BaseTag,
     BaseContainer,
     BaseTabList,
-    BaseParagraph,
   },
   data() {
     return {
@@ -103,7 +101,7 @@ export default {
             >Кластер «Ломоносов»</BaseTag
           >
           <a class="login-block" href="/sing-in">
-            <span class="login-block__label paragraph_14 paragraph_500">
+            <span class="login-block__label plain_14 plain_500">
               Авторизация
             </span>
             <IconUser class="login-block__icon" />
@@ -124,7 +122,7 @@ export default {
                   :href="navItem.href"
                   :class="{
                     nav__link: true,
-                    paragraph_14: true,
+                    plain_14: true,
                     nav__link_active: navItem.isActive,
                   }"
                 >

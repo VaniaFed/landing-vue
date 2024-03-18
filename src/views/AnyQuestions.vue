@@ -1,10 +1,9 @@
 <script>
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseSection from "@/components/BaseSection.vue";
 
 export default {
   props: {},
-  components: { BaseSection, BaseParagraph },
+  components: { BaseSection },
 };
 </script>
 
@@ -17,7 +16,7 @@ export default {
       </div>
       <div class="contacts">
         <div class="contacts__item">
-          <BaseParagraph size="16" class="contacts__key">Телефон</BaseParagraph>
+          <span class="plain_16 contacts__key">Телефон</span>
           <a
             href="tel:+7 499 577 00 55 доб 1"
             class="contacts__value heading_24"
@@ -26,7 +25,7 @@ export default {
           </a>
         </div>
         <div class="contacts__item">
-          <BaseParagraph size="16" class="contacts__key">Почта</BaseParagraph>
+          <span class="plain_16 contacts__key">Почта</span>
           <a
             href="mailto:measures@cluster.mos.ru"
             class="contacts__value heading_24"
@@ -95,6 +94,7 @@ export default {
   }
 
   &__key {
+    display: block;
     margin-bottom: 2px;
     color: $gray-12;
     line-height: 120%;

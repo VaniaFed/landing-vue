@@ -1,6 +1,5 @@
 <script>
 import BaseContainer from "@/components/BaseContainer.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
 import IconLogoLarge from "@/components/icons/IconLogoLarge.vue";
@@ -13,7 +12,6 @@ export default {
   props: {},
   components: {
     BaseContainer,
-    BaseParagraph,
     BaseButton,
     CircleIcon,
     IconLogoLarge,
@@ -123,13 +121,13 @@ export default {
           </div>
           <div class="contacts__bottom">
             <div class="contacts__links">
-              <a class="link paragraph_16" href="tel:8 495 870-45-55">
+              <a class="link plain_16" href="tel:8 495 870-45-55">
                 <i class="link__icon-wrapper">
                   <IconPhone class="link__icon" />
                 </i>
                 8 495 870-45-55
               </a>
-              <a class="link paragraph_16" href="mailto:">
+              <a class="link plain_16" href="mailto:">
                 <i class="link__icon-wrapper">
                   <IconMail class="link__icon" />
                 </i>
@@ -147,12 +145,12 @@ export default {
             }"
             v-for="link in links"
           >
-            <BaseParagraph class="column__heading" weight="500">{{
+            <span class="plain_18 plain_500 column__heading">{{
               link.category
-            }}</BaseParagraph>
+            }}</span>
             <div class="column__links">
               <a
-                class="column__link paragraph_16"
+                class="plain_16 column__link"
                 :href="linkItem.href"
                 v-for="linkItem in link.list"
               >
@@ -163,11 +161,10 @@ export default {
         </div>
       </div>
       <div class="base-footer__bottom">
-        <BaseParagraph size="14" class="base-footer__user-agreement"
-          >Соглашение о пользовании информационной системы обеспечения
-          деятельности инновационного кластера на территории города
-          Москвы</BaseParagraph
-        >
+        <span class="plain_14 base-footer__user-agreement">
+          Соглашение о пользовании информационной системы обеспечения
+          деятельности инновационного кластера на территории города Москвы
+        </span>
       </div>
     </BaseContainer>
   </footer>

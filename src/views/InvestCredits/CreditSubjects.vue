@@ -1,12 +1,10 @@
 <script>
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
 import IconMspBank from "@/components/icons/IconMspBank.vue";
 
 export default {
   props: {},
   components: {
-    BaseParagraph,
     CircleIcon,
     IconMspBank,
   },
@@ -29,11 +27,11 @@ export default {
         </CircleIcon>
       </div>
       <div class="credit-subjects__texting">
-        <BaseParagraph weight="500" class="credit-subjects__title"
-          >МСП Банк и&nbsp;Корпорация МСП</BaseParagraph
+        <span class="plain_18 plain_500 credit-subjects__title"
+          >МСП Банк и&nbsp;Корпорация МСП</span
         >
-        <BaseParagraph class="credit-subjects__text"
-          >выдают заемные средства</BaseParagraph
+        <span class="plain_18 credit-subjects__text"
+          >выдают заемные средства</span
         >
       </div>
     </div>
@@ -48,11 +46,11 @@ export default {
         </CircleIcon>
       </div>
       <div class="credit-subjects__texting">
-        <BaseParagraph weight="500" class="credit-subjects__title"
-          >Правительство Москвы</BaseParagraph
+        <span class="plain_18 plain_500 credit-subjects__title"
+          >Правительство Москвы</span
         >
-        <BaseParagraph class="credit-subjects__text"
-          >субсидирует ставку по кредиту</BaseParagraph
+        <span class="plain_18 credit-subjects__text"
+          >субсидирует ставку по кредиту</span
         >
       </div>
     </div>

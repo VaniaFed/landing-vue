@@ -1,5 +1,4 @@
 <script>
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseSection from "@/components/BaseSection.vue";
 import CircleNumberFilled from "@/components/CircleNumberFilled.vue";
 
@@ -7,7 +6,6 @@ export default {
   props: {},
   components: {
     BaseSection,
-    BaseParagraph,
     CircleNumberFilled,
   },
   data() {
@@ -47,9 +45,7 @@ export default {
         <CircleNumberFilled :number="i + 1" class="steps__circle" />
         <div class="steps__texting">
           <h3 class="heading_24 steps__title">{{ step.title }}</h3>
-          <BaseParagraph size="16" class="steps__text">{{
-            step.text
-          }}</BaseParagraph>
+          <p class="plain_16 steps__text">{{ step.text }}</p>
         </div>
       </div>
     </div>

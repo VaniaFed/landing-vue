@@ -1,6 +1,5 @@
 <script>
 import BaseSection from "@/components/BaseSection.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import IconMembers from "@/components/icons/IconMembers.vue";
 
@@ -8,7 +7,6 @@ export default {
   props: {},
   components: {
     BaseSection,
-    BaseParagraph,
     BaseButton,
     IconMembers,
   },
@@ -29,23 +27,23 @@ export default {
           <h3 class="heading_32 card__title">
             Компании из Реестра стартапов и технологических компаний
           </h3>
-          <BaseParagraph class="card__text">
+          <p class="plain_16 card__text">
             В столице появился Реестр стартапов и технологических компаний.
             Её участниками могут стать московские инновационные компании.
             Они получают упрощённый доступ к мерам поддержки от города.
-          </BaseParagraph>
+          </p>
         </div>
         <div class="card__credit-to-all">
           <div class="card__icon-wrapper">
             <IconMembers class="card__icon" />
           </div>
-          <BaseParagraph class="card__paragraph" size="16">
+          <p class="plain_16 card__paragraph">
             Все участники Реестра могут получить льготный кредит
-            <bold class="card__paragraph_bold"
-              >вне зависимости от сферы деятельности</bold
-            >
-            при соответствии основным требованиям для заемщиков</BaseParagraph
-          >
+            <bold class="card__paragraph_bold">
+              вне зависимости от сферы деятельности
+            </bold>
+            при соответствии основным требованиям для заемщиков
+          </p>
         </div>
         <BaseButton variant="primary" class="card__button"
           >Подробнее о Реестре</BaseButton

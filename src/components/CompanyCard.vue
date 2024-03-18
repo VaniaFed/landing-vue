@@ -1,6 +1,5 @@
 <script>
 import BaseCard from "@/components/BaseCard.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 
 export default {
   props: {
@@ -9,7 +8,6 @@ export default {
     details: String,
   },
   components: {
-    BaseParagraph,
     BaseCard,
   },
 };
@@ -22,13 +20,13 @@ export default {
     </template>
 
     <template v-slot:content>
-      <BaseParagraph weight="500" class="company-card__title">
+      <span class="plain_18 plain_500 company-card__title">
         {{ title }}
-      </BaseParagraph>
+      </span>
       <h5 class="heading_24 company-card__code">{{ code }}</h5>
-      <BaseParagraph size="14" class="company-card__details" v-if="details">
+      <span class="plain_14 company-card__details" v-if="details">
         {{ details }}
-      </BaseParagraph>
+      </span>
     </template>
   </BaseCard>
 </template>

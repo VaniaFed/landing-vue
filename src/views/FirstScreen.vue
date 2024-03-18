@@ -1,7 +1,6 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
 import BaseContainer from "@/components/BaseContainer.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseStack from "@/components/BaseStack.vue";
 import BigWordItem from "@/components/BigWordItem.vue";
 
@@ -9,7 +8,6 @@ export default {
   components: {
     BaseButton,
     BaseContainer,
-    BaseParagraph,
     BaseStack,
     BigWordItem,
   },
@@ -44,11 +42,11 @@ export default {
     <BaseStack gap="40" class="first-screen__content">
       <div class="first-screen__text">
         <h1 class="heading_40">Льготные кредиты на&nbsp;инвестиционные цели</h1>
-        <BaseParagraph class="first-screen__description" size="16"
-          >Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
+        <p class="plain_16 first-screen__description">
+          Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
           для компаний, реализующих инвестиционные проекты в сферах науки,
-          промышленности и ИТ</BaseParagraph
-        >
+          промышленности и ИТ
+        </p>
       </div>
       <BaseStack asRow gap="50" class="first-screen__details">
         <li v-for="item in creditData" :key="item.title">

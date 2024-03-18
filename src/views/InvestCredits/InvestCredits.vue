@@ -1,5 +1,4 @@
 <script>
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseSection from "@/components/BaseSection.vue";
 import Opportunities from "./Opportunities.vue";
 import CreditSubjects from "./CreditSubjects.vue";
@@ -12,7 +11,6 @@ export default {
     CreditRateCard,
     Opportunities,
     BaseSection,
-    BaseParagraph,
   },
   data() {
     return {
@@ -39,10 +37,10 @@ export default {
     title="Льготные кредиты на&nbsp;инвестиционные цели для&nbsp;субъектов МСП"
     withPlus
   >
-    <BaseParagraph class="invest-credits__text">
+    <p class="plain_18 invest-credits__text">
       — это мера финансовой поддержки, реализуемая Правительством Москвы,
       Корпорацией МСП и МСП Банк.
-    </BaseParagraph>
+    </p>
     <div class="invest-credits__top">
       <CreditSubjects class="invest-credits__credit-subjects" />
       <CreditRateCard class="invest-credits__credit-rate-card" />

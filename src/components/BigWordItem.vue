@@ -1,15 +1,15 @@
 <script>
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseStack from "@/components/BaseStack.vue";
 
 export default {
   props: ["title", "text_before", "big_text", "text_after"],
-  components: { BaseParagraph, BaseStack },
+  components: { BaseStack },
 };
 </script>
 
 <template>
-  <BaseParagraph class="big-word-item__title">{{ title }}</BaseParagraph>
+  <span class="plain_18 big-word-item__title">{{ title }}</span>
+
   <BaseStack gap="10" asRow class="big-word-item__list">
     <h4
       class="heading_24 big-word-item__before"

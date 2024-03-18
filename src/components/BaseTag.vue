@@ -1,5 +1,4 @@
 <script>
-import BaseParagraph from "@/components/BaseParagraph.vue";
 export default {
   props: {
     size: {
@@ -8,7 +7,7 @@ export default {
     },
     href: String,
   },
-  components: { BaseParagraph },
+  components: {},
 };
 </script>
 

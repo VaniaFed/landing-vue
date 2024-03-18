@@ -1,7 +1,6 @@
 <script>
 import BaseSection from "@/components/BaseSection.vue";
 import RequirementsCard from "@/components/RequirementsCard.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseLink from "@/components/BaseLink.vue";
 import IconEdit from "@/components/icons/IconEdit.vue";
 import IconClusterMember from "@/components/icons/IconClusterMember.vue";
@@ -18,7 +17,6 @@ export default {
   components: {
     BaseSection,
     RequirementsCard,
-    BaseParagraph,
     BaseLink,
     IconEdit,
     IconClusterMember,
@@ -102,15 +100,15 @@ export default {
           <component :is="card.iconName" />
         </template>
         <template v-slot:content>
-          <BaseParagraph weight="500" class="requirements-card__title">
+          <span class="plain_18 plain_500 requirements-card__title">
             {{ card.title }}
-          </BaseParagraph>
-          <BaseParagraph size="16" class="requirements-card__text">
+          </span>
+          <p class="plain_16 requirements-card__text">
             {{ card.description }}
             <BaseLink v-if="card.link" v-bind="card.link.attrs">
               {{ card.link.text }}
             </BaseLink>
-          </BaseParagraph>
+          </p>
         </template>
       </RequirementsCard>
     </div>

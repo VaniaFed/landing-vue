@@ -5,13 +5,11 @@ import IconDrilling from "@/components/icons/IconDrilling.vue";
 import IconCommunication from "@/components/icons/IconCommunication.vue";
 import IconFreelancer from "@/components/icons/IconFreelancer.vue";
 import BaseStack from "@/components/BaseStack.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import CompanyCard from "@/components/CompanyCard.vue";
 
 export default {
   components: {
     BaseSection,
-    BaseParagraph,
     BaseStack,
     BaseCard,
     IconDrilling,
