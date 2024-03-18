@@ -154,11 +154,11 @@ export default {
 
   &__top {
     display: flex;
-    height: 70px;
+    min-height: 70px;
     border-bottom: 1px solid $gray-35;
 
     @include media-mobile {
-      height: 38px;
+      min-height: 38px;
     }
   }
 
@@ -228,7 +228,7 @@ export default {
   }
 
   &__bottom {
-    height: 48px;
+    min-height: 48px;
     display: flex;
 
     @include media-mobile {
