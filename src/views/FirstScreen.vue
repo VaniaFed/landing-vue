@@ -48,7 +48,7 @@ export default {
           промышленности и ИТ
         </p>
       </div>
-      <BaseStack asRow gap="50" class="first-screen__details">
+      <ul class="first-screen__details">
         <li v-for="item in creditData" :key="item.title">
           <BigWordItem
             :title="item.title"
@@ -57,7 +57,7 @@ export default {
             :text_after="item.text_after"
           />
         </li>
-      </BaseStack>
+      </ul>
       <BaseStack asRow gap="10" class="first-screen__buttons">
         <BaseButton variant="primary">Подать заявку</BaseButton>
         <BaseButton>Получить консультацию</BaseButton>
@@ -112,10 +112,16 @@ export default {
   &__details {
     z-index: 5;
     position: relative;
+    display: flex;
+    gap: 50px;
 
     @include media-laptop {
       flex-direction: column;
       gap: 30px;
+    }
+
+    @include media-tablet-small {
+      gap: 20px;
     }
   }
 
@@ -176,16 +182,6 @@ export default {
     margin: 0 auto;
     background: #e9f8f8;
     filter: blur(400px);
-  }
-}
-
-.first-screen .first-screen__details {
-  @include media-laptop {
-    gap: 30px !important;
-  }
-
-  @include media-tablet-small {
-    gap: 20px !important;
   }
 }
 
