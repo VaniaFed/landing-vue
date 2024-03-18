@@ -1,7 +1,6 @@
 <script>
 import BaseSection from "@/components/BaseSection.vue";
 import BaseStack from "@/components/BaseStack.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import CircleNumberOutlined from "@/components/CircleNumberOutlined.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
@@ -14,7 +13,6 @@ export default {
   components: {
     BaseSection,
     BaseStack,
-    BaseHeading,
     BaseParagraph,
     CircleNumberOutlined,
     CircleIcon,
@@ -87,10 +85,7 @@ export default {
       <div class="invest-card__meta">
         <header class="invest-card__header">
           <CircleNumberOutlined :number="i + 1" class="invest-card__number" />
-          <!-- TODO: there is no need to use BaseHeading. Better use <h1></h1> так же про BaseParagraph-->
-          <BaseHeading variant="heading_24" class="invest-card__title">{{
-            card.title
-          }}</BaseHeading>
+          <h2 class="heading_24 invest-card__title">{{ card.title }}</h2>
         </header>
         <CircleIcon class="invest-card__btn-icon">
           <component :is="card.iconName" class="invest-card__icon" />

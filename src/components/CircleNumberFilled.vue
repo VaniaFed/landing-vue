@@ -1,6 +1,4 @@
 <script>
-import BaseHeading from "@/components/BaseHeading.vue";
-
 export default {
   props: {
     number: {
@@ -8,21 +6,13 @@ export default {
       required: true,
     },
   },
-  components: {
-    BaseHeading,
-  },
+  components: {},
 };
 </script>
 
 <template>
   <div class="circle-number-filled">
-    <BaseHeading
-      variant="heading_36"
-      class="circle-number-filled__title"
-      level="h3"
-    >
-      {{ number }}
-    </BaseHeading>
+    <h3 class="circle-number-filled__title">{{ number }}</h3>
   </div>
 </template>
 
@@ -47,12 +37,17 @@ export default {
   }
 
   &__title {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 110%;
+
     @include media-tablet {
       font-size: 24px;
     }
 
     @include media-mobile {
       font-size: 16px;
+      line-height: 120%;
     }
   }
 }

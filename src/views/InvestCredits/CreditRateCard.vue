@@ -1,13 +1,11 @@
 <script>
 import BaseStack from "@/components/BaseStack.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 
 export default {
   props: {},
   components: {
     BaseStack,
-    BaseHeading,
     BaseParagraph,
   },
 };
@@ -15,18 +13,14 @@ export default {
 
 <template>
   <div class="credit-rate-card">
-    <BaseHeading class="credit-rate-card__title" variant="heading_24" level="h3"
-      >Льготная ставка в&nbsp;рамках программы</BaseHeading
-    >
+    <h3 class="heading_24 credit-rate-card__title">
+      Льготная ставка в&nbsp;рамках программы
+    </h3>
     <BaseStack asRow gap="43" class="credit-rate-card__list">
       <div class="rate-item">
         <div class="rate-item__header">
-          <BaseHeading class="rate-item__from" variant="heading_24" level="h4"
-            >от</BaseHeading
-          >
-          <BaseHeading class="rate-item__amount" variant="heading_40" level="h4"
-            >3%</BaseHeading
-          >
+          <h4 class="heading_24 rate-item__from">от</h4>
+          <h4 class="heading_40 rate-item__amount">3%</h4>
         </div>
         <BaseParagraph class="rate-item__text"
           >действует первые три года</BaseParagraph
@@ -34,12 +28,8 @@ export default {
       </div>
       <div class="rate-item">
         <div class="rate-item__header">
-          <BaseHeading class="rate-item__from" variant="heading_24" level="h5"
-            >от</BaseHeading
-          >
-          <BaseHeading class="rate-item__amount" variant="heading_40" level="h5"
-            >11%</BaseHeading
-          >
+          <h5 class="heading_24 rate-item__from">от</h5>
+          <h5 class="heading_40 rate-item__amount">11%</h5>
         </div>
         <BaseParagraph class="rate-item__text">далее</BaseParagraph>
       </div>

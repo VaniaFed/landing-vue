@@ -1,7 +1,6 @@
 <script>
 import BaseCard from "@/components/BaseCard.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 
 export default {
   props: {
@@ -10,7 +9,6 @@ export default {
     details: String,
   },
   components: {
-    BaseHeading,
     BaseParagraph,
     BaseCard,
   },
@@ -27,9 +25,7 @@ export default {
       <BaseParagraph weight="500" class="company-card__title">
         {{ title }}
       </BaseParagraph>
-      <BaseHeading level="h5" variant="heading_24" class="company-card__code">
-        {{ code }}
-      </BaseHeading>
+      <h5 class="heading_24 company-card__code">{{ code }}</h5>
       <BaseParagraph size="14" class="company-card__details" v-if="details">
         {{ details }}
       </BaseParagraph>

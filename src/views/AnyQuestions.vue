@@ -1,11 +1,10 @@
 <script>
 import BaseParagraph from "@/components/BaseParagraph.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 import BaseSection from "@/components/BaseSection.vue";
 
 export default {
   props: {},
-  components: { BaseSection, BaseHeading, BaseParagraph },
+  components: { BaseSection, BaseParagraph },
 };
 </script>
 
@@ -13,16 +12,8 @@ export default {
   <BaseSection class="any-questions-container">
     <div class="any-questions">
       <div class="any-questions__top">
-        <BaseHeading level="h2" class="any-questions__title"
-          >Остались вопросы?</BaseHeading
-        >
-        <BaseHeading
-          level="h3"
-          variant="heading_24"
-          class="any-questions__subtitle"
-        >
-          Свяжитесь с нами</BaseHeading
-        >
+        <h2 class="heading_40 any-questions__title">Остались вопросы?</h2>
+        <h3 class="heading_24 any-questions__subtitle">Свяжитесь с нами</h3>
       </div>
       <div class="contacts">
         <div class="contacts__item">

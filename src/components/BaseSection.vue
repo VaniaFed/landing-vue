@@ -1,6 +1,5 @@
 <script>
 import BaseContainer from "@/components/BaseContainer.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 import BaseTag from "@/components/BaseTag.vue";
 import PlusIcon from "@/components/icons/PlusIcon.vue";
 
@@ -17,7 +16,6 @@ export default {
   },
   components: {
     BaseContainer,
-    BaseHeading,
     BaseTag,
     PlusIcon,
   },
@@ -30,11 +28,15 @@ export default {
       v-if="title"
       :class="{ 'base-section__header': true, [headerClass]: headerClass }"
     >
-      <BaseHeading
-        :class="{ 'base-section__title': true, [headingClass]: headingClass }"
+      <h2
+        :class="{
+          heading_40: true,
+          'base-section__title': true,
+          [headingClass]: headingClass,
+        }"
       >
         {{ title }}
-      </BaseHeading>
+      </h2>
       <BaseTag v-if="tagLabel" size="large">
         {{ tagLabel }}
       </BaseTag>

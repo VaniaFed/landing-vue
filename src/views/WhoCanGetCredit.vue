@@ -1,6 +1,5 @@
 <script>
 import BaseSection from "@/components/BaseSection.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import IconMembers from "@/components/icons/IconMembers.vue";
@@ -9,7 +8,6 @@ export default {
   props: {},
   components: {
     BaseSection,
-    BaseHeading,
     BaseParagraph,
     BaseButton,
     IconMembers,
@@ -28,9 +26,9 @@ export default {
     <div class="card">
       <div class="card__content">
         <div class="card__top">
-          <BaseHeading class="card__title" variant="heading_32" level="h3">
+          <h3 class="heading_32 card__title">
             Компании из Реестра стартапов и технологических компаний
-          </BaseHeading>
+          </h3>
           <BaseParagraph class="card__text">
             В столице появился Реестр стартапов и технологических компаний.
             Её участниками могут стать московские инновационные компании.

@@ -1,32 +1,26 @@
 <script>
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseStack from "@/components/BaseStack.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 
 export default {
   props: ["title", "text_before", "big_text", "text_after"],
-  components: { BaseParagraph, BaseStack, BaseHeading },
+  components: { BaseParagraph, BaseStack },
 };
 </script>
 
 <template>
   <BaseParagraph class="big-word-item__title">{{ title }}</BaseParagraph>
   <BaseStack gap="10" asRow class="big-word-item__list">
-    <BaseHeading
+    <h4
+      class="heading_24 big-word-item__before"
       v-if="text_before !== undefined"
-      level="h3"
-      variant="heading_24"
-      class="big-word-item__before"
-      >{{ text_before }}</BaseHeading
     >
-    <BaseHeading level="h3" variant="great">{{ big_text }}</BaseHeading>
-    <BaseHeading
-      v-if="text_after !== undefined"
-      level="h4"
-      variant="heading_24"
-      class="big-word-item__after"
-      >{{ text_after }}</BaseHeading
-    >
+      {{ text_before }}
+    </h4>
+    <h3 class="heading_great">{{ big_text }}</h3>
+    <h4 v-if="text_after !== undefined" class="heading_24 big-word-item__after">
+      {{ text_after }}
+    </h4>
   </BaseStack>
 </template>
 

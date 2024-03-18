@@ -1,5 +1,4 @@
 <script>
-import BaseHeading from "@/components/BaseHeading.vue";
 import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseSection from "@/components/BaseSection.vue";
 import CircleNumberFilled from "@/components/CircleNumberFilled.vue";
@@ -8,7 +7,6 @@ export default {
   props: {},
   components: {
     BaseSection,
-    BaseHeading,
     BaseParagraph,
     CircleNumberFilled,
   },
@@ -48,9 +46,7 @@ export default {
       <div class="steps__item" v-for="(step, i) in steps">
         <CircleNumberFilled :number="i + 1" class="steps__circle" />
         <div class="steps__texting">
-          <BaseHeading variant="heading_24" class="steps__title" level="h3">{{
-            step.title
-          }}</BaseHeading>
+          <h3 class="heading_24 steps__title">{{ step.title }}</h3>
           <BaseParagraph size="16" class="steps__text">{{
             step.text
           }}</BaseParagraph>
