@@ -27,7 +27,7 @@ export default {
           <h5 class="heading_24 rate-item__from">от</h5>
           <h5 class="heading_40 rate-item__amount">11%</h5>
         </div>
-        <span class="plain_16 rate-item__text">далее</span>
+        <span class="plain_18 rate-item__text">далее</span>
       </div>
     </BaseStack>
   </div>
