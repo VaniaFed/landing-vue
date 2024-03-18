@@ -51,6 +51,7 @@ export default {
     @include media-mobile {
     }
   }
+
   &__code {
     margin-top: 10px;
 
@@ -64,6 +65,7 @@ export default {
   }
 
   &__details {
+    display: block;
     margin-top: 20px;
     color: $gray-0;
 

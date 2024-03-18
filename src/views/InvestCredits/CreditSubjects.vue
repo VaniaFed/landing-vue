@@ -126,6 +126,8 @@ export default {
   }
 
   &__title {
+    display: block;
+
     @include media-tablet {
       max-width: 189px;
       line-height: 120%;
@@ -138,6 +140,7 @@ export default {
   }
 
   &__text {
+    display: block;
     margin-top: 10px;
 
     @include media-tablet {

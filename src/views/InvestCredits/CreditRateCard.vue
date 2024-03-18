@@ -77,6 +77,7 @@ export default {
   }
 
   &__text {
+    display: block;
     margin-top: 2px;
 
     @include media-tablet {

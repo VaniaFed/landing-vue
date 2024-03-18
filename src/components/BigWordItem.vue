@@ -27,6 +27,7 @@ export default {
 <style lang="scss">
 .big-word-item {
   &__title {
+    display: block;
     margin-bottom: 18px;
 
     @include media-tablet {

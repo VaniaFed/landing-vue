@@ -19,7 +19,7 @@ export default {
           <span class="plain_16 contacts__key">Телефон</span>
           <a
             href="tel:+7 499 577 00 55 доб 1"
-            class="contacts__value heading_24"
+            class="heading_40 contacts__value"
           >
             +7 499 577 00 55 доб 1
           </a>
@@ -28,7 +28,7 @@ export default {
           <span class="plain_16 contacts__key">Почта</span>
           <a
             href="mailto:measures@cluster.mos.ru"
-            class="contacts__value heading_24"
+            class="heading_40 contacts__value"
           >
             measures@cluster.mos.ru
           </a>
