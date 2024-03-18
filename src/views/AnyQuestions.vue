@@ -12,7 +12,7 @@ export default {
     <div class="any-questions">
       <div class="any-questions__top">
         <h2 class="heading_40 any-questions__title">Остались вопросы?</h2>
-        <h3 class="heading_24 any-questions__subtitle">Свяжитесь с нами</h3>
+        <span class="heading_24 any-questions__subtitle">Свяжитесь с нами</span>
       </div>
       <div class="contacts">
         <div class="contacts__item">

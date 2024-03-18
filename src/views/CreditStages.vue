@@ -83,7 +83,7 @@ export default {
       <div class="invest-card__meta">
         <header class="invest-card__header">
           <CircleNumberOutlined :number="i + 1" class="invest-card__number" />
-          <h2 class="heading_24 invest-card__title">{{ card.title }}</h2>
+          <h3 class="heading_24 invest-card__title">{{ card.title }}</h3>
         </header>
         <CircleIcon class="invest-card__btn-icon">
           <component :is="card.iconName" class="invest-card__icon" />
@@ -94,7 +94,7 @@ export default {
           <CircleIcon class="invest-card__circle-icon">
             <IconCheckMark class="check-mark" />
           </CircleIcon>
-          <p class="plain_18 invest-card__text">{{ item.text }}</p>
+          <span class="plain_18 invest-card__text">{{ item.text }}</span>
         </div>
       </BaseStack>
     </div>

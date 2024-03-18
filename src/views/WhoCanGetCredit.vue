@@ -24,26 +24,26 @@ export default {
     <div class="card">
       <div class="card__content">
         <div class="card__top">
-          <h3 class="heading_32 card__title">
+          <h4 class="heading_32 card__title">
             Компании из Реестра стартапов и технологических компаний
-          </h3>
-          <p class="plain_18 card__text">
+          </h4>
+          <span class="plain_18 card__text">
             В столице появился Реестр стартапов и технологических компаний.
             Её участниками могут стать московские инновационные компании.
             Они получают упрощённый доступ к мерам поддержки от города.
-          </p>
+          </span>
         </div>
         <div class="card__credit-to-all">
           <div class="card__icon-wrapper">
             <IconMembers class="card__icon" />
           </div>
-          <p class="plain_16 card__paragraph">
+          <span class="plain_16 card__paragraph">
             Все участники Реестра могут получить льготный кредит
             <bold class="card__paragraph_bold">
               вне зависимости от сферы деятельности
             </bold>
             при соответствии основным требованиям для заемщиков
-          </p>
+          </span>
         </div>
         <BaseButton variant="primary" class="card__button"
           >Подробнее о Реестре</BaseButton
@@ -111,7 +111,9 @@ export default {
   }
 
   &__text {
+    display: block;
     margin-top: 20px;
+
     @include media-tablet {
       line-height: 19.2px;
     }

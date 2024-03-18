@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div class="circle-number-filled">
-    <h3 class="circle-number-filled__title">{{ number }}</h3>
+    <span class="circle-number-filled__title">{{ number }}</span>
   </div>
 </template>
 

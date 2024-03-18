@@ -33,9 +33,9 @@ export default {
           <component :is="item.iconName" class="opportunities__icon" />
         </CircleIcon>
 
-        <p class="opportunities__text">
+        <div class="plain_18 opportunities__text">
           {{ item.text }}
-        </p>
+        </div>
       </div>
     </BaseStack>
   </div>

@@ -45,7 +45,7 @@ export default {
         <CircleNumberFilled :number="i + 1" class="steps__circle" />
         <div class="steps__texting">
           <h3 class="heading_24 steps__title">{{ step.title }}</h3>
-          <p class="plain_16 steps__text">{{ step.text }}</p>
+          <span class="plain_16 steps__text">{{ step.text }}</span>
         </div>
       </div>
     </div>

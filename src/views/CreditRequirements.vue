@@ -103,12 +103,15 @@ export default {
           <span class="plain_18 plain_500 requirements-card__title">
             {{ card.title }}
           </span>
-          <p class="plain_16 requirements-card__text">
+          <span
+            class="plain_16 requirements-card__text"
+            v-if="card.description"
+          >
             {{ card.description }}
             <BaseLink v-if="card.link" v-bind="card.link.attrs">
               {{ card.link.text }}
             </BaseLink>
-          </p>
+          </span>
         </template>
       </RequirementsCard>
     </div>
@@ -143,6 +146,7 @@ export default {
   }
 
   &__text {
+    display: block;
     margin-top: 8px;
   }
 }

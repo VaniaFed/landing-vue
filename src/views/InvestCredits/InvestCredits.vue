@@ -37,10 +37,10 @@ export default {
     title="Льготные кредиты на&nbsp;инвестиционные цели для&nbsp;субъектов МСП"
     withPlus
   >
-    <p class="plain_18 invest-credits__text">
+    <div class="plain_18 invest-credits__text">
       — это мера финансовой поддержки, реализуемая Правительством Москвы,
       Корпорацией МСП и МСП Банк.
-    </p>
+    </div>
     <div class="invest-credits__top">
       <CreditSubjects class="invest-credits__credit-subjects" />
       <CreditRateCard class="invest-credits__credit-rate-card" />

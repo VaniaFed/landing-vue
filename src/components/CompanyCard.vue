@@ -23,7 +23,7 @@ export default {
       <span class="plain_18 plain_500 company-card__title">
         {{ title }}
       </span>
-      <h5 class="heading_24 company-card__code">{{ code }}</h5>
+      <span class="heading_24 company-card__code">{{ code }}</span>
       <span class="plain_14 company-card__details" v-if="details">
         {{ details }}
       </span>
@@ -54,6 +54,7 @@ export default {
   }
 
   &__code {
+    display: block;
     margin-top: 10px;
 
     @include media-tablet {

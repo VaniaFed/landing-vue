@@ -42,11 +42,11 @@ export default {
     <BaseStack gap="40" class="first-screen__content">
       <div class="first-screen__text">
         <h1 class="heading_40">Льготные кредиты на&nbsp;инвестиционные цели</h1>
-        <p class="plain_16 first-screen__description">
+        <span class="plain_16 first-screen__description">
           Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
           для компаний, реализующих инвестиционные проекты в сферах науки,
           промышленности и ИТ
-        </p>
+        </span>
       </div>
       <ul class="first-screen__details">
         <li v-for="item in creditData" :key="item.title">
@@ -100,6 +100,7 @@ export default {
   }
 
   &__description {
+    display: block;
     margin-top: 10px;
     text-shadow: $shadow-text;
 

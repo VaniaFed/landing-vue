@@ -17,15 +17,15 @@ export default {
     <BaseStack asRow gap="43" class="credit-rate-card__list">
       <div class="rate-item">
         <div class="rate-item__header">
-          <h4 class="heading_24 rate-item__from">от</h4>
-          <h4 class="heading_40 rate-item__amount">3%</h4>
+          <span class="heading_24 rate-item__from">от</span>
+          <span class="heading_40 rate-item__amount">3%</span>
         </div>
         <span class="plain_18 rate-item__text">действует первые три года</span>
       </div>
       <div class="rate-item">
         <div class="rate-item__header">
-          <h5 class="heading_24 rate-item__from">от</h5>
-          <h5 class="heading_40 rate-item__amount">11%</h5>
+          <span class="heading_24 rate-item__from">от</span>
+          <span class="heading_40 rate-item__amount">11%</span>
         </div>
         <span class="plain_18 rate-item__text">далее</span>
       </div>

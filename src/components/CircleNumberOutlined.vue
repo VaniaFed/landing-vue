@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div class="circle-number-outlined">
-    <h3 class="circle-number-outlined__title">{{ number }}</h3>
+    <span class="circle-number-outlined__title">{{ number }}</span>
   </div>
 </template>
 
