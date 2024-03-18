@@ -11,16 +11,19 @@ export default {
   <span class="plain_18 big-word-item__title">{{ title }}</span>
 
   <BaseStack gap="10" asRow class="big-word-item__list">
-    <h4
+    <span
       class="heading_24 big-word-item__before"
       v-if="text_before !== undefined"
     >
       {{ text_before }}
-    </h4>
-    <h3 class="heading_great">{{ big_text }}</h3>
-    <h4 v-if="text_after !== undefined" class="heading_24 big-word-item__after">
+    </span>
+    <span class="heading_great">{{ big_text }}</span>
+    <span
+      v-if="text_after !== undefined"
+      class="heading_24 big-word-item__after"
+    >
       {{ text_after }}
-    </h4>
+    </span>
   </BaseStack>
 </template>
 
