@@ -28,16 +28,18 @@ export default {
 </script>
 
 <template>
-  <ul class="base-tab-list">
+  <div class="base-tab-list">
     <template v-for="(item, index) in filteredItems" :key="item.text">
-      <BaseTabItem :active="item.active" class="base-tab-list__item">
-        {{ item.text }}
+      <BaseTabItem :active="item.active">
+        <a :href="item.link">
+          {{ item.text }}
+        </a>
       </BaseTabItem>
       <BaseDivider
         v-if="filteredItems.length !== 1 && index !== filteredItems.length - 1"
       />
     </template>
-  </ul>
+  </div>
 </template>
 
 <style scoped lang="scss">

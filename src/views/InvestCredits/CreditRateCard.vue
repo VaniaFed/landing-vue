@@ -15,16 +15,16 @@ export default {
 
 <template>
   <div class="credit-rate-card">
-    <BaseHeading class="credit-rate-card__title" variant="medium_24" level="h3"
+    <BaseHeading class="credit-rate-card__title" variant="heading_24" level="h3"
       >Льготная ставка в&nbsp;рамках программы</BaseHeading
     >
     <BaseStack asRow gap="43" class="credit-rate-card__list">
       <div class="rate-item">
         <div class="rate-item__header">
-          <BaseHeading class="rate-item__from" variant="medium_24" level="h4"
+          <BaseHeading class="rate-item__from" variant="heading_24" level="h4"
             >от</BaseHeading
           >
-          <BaseHeading class="rate-item__amount" variant="medium_40" level="h4"
+          <BaseHeading class="rate-item__amount" variant="heading_40" level="h4"
             >3%</BaseHeading
           >
         </div>
@@ -34,10 +34,10 @@ export default {
       </div>
       <div class="rate-item">
         <div class="rate-item__header">
-          <BaseHeading class="rate-item__from" variant="medium_24" level="h5"
+          <BaseHeading class="rate-item__from" variant="heading_24" level="h5"
             >от</BaseHeading
           >
-          <BaseHeading class="rate-item__amount" variant="medium_40" level="h5"
+          <BaseHeading class="rate-item__amount" variant="heading_40" level="h5"
             >11%</BaseHeading
           >
         </div>

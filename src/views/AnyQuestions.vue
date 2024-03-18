@@ -18,7 +18,7 @@ export default {
         >
         <BaseHeading
           level="h3"
-          variant="medium_24"
+          variant="heading_24"
           class="any-questions__subtitle"
         >
           Свяжитесь с нами</BaseHeading
@@ -27,18 +27,20 @@ export default {
       <div class="contacts">
         <div class="contacts__item">
           <BaseParagraph size="16" class="contacts__key">Телефон</BaseParagraph>
-          <a href="tel:+7 499 577 00 55 доб 1">
-            <BaseHeading class="contacts__value">
-              +7 499 577 00 55 доб 1
-            </BaseHeading>
+          <a
+            href="tel:+7 499 577 00 55 доб 1"
+            class="contacts__value heading_24"
+          >
+            +7 499 577 00 55 доб 1
           </a>
         </div>
         <div class="contacts__item">
           <BaseParagraph size="16" class="contacts__key">Почта</BaseParagraph>
-          <a href="mailto:measures@cluster.mos.ru">
-            <BaseHeading class="contacts__value">
-              measures@cluster.mos.ru
-            </BaseHeading>
+          <a
+            href="mailto:measures@cluster.mos.ru"
+            class="contacts__value heading_24"
+          >
+            measures@cluster.mos.ru
           </a>
         </div>
       </div>

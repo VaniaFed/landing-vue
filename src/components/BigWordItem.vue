@@ -15,7 +15,7 @@ export default {
     <BaseHeading
       v-if="text_before !== undefined"
       level="h3"
-      variant="medium_24"
+      variant="heading_24"
       class="big-word-item__before"
       >{{ text_before }}</BaseHeading
     >
@@ -23,7 +23,7 @@ export default {
     <BaseHeading
       v-if="text_after !== undefined"
       level="h4"
-      variant="medium_24"
+      variant="heading_24"
       class="big-word-item__after"
       >{{ text_after }}</BaseHeading
     >

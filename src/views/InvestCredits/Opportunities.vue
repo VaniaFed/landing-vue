@@ -28,7 +28,7 @@ export default {
 
 <template>
   <div class="opportunities">
-    <BaseHeading class="opportunities__title" variant="medium_32" level="h3">
+    <BaseHeading class="opportunities__title" variant="heading_32" level="h3">
       <slot />
     </BaseHeading>
     <BaseStack spaceBetween asRow class="opportunities__list">

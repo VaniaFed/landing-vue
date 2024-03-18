@@ -27,7 +27,7 @@ export default {
       <BaseParagraph weight="500" class="company-card__title">
         {{ title }}
       </BaseParagraph>
-      <BaseHeading level="h5" variant="medium_24" class="company-card__code">
+      <BaseHeading level="h5" variant="heading_24" class="company-card__code">
         {{ code }}
       </BaseHeading>
       <BaseParagraph size="14" class="company-card__details" v-if="details">

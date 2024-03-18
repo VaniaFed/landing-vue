@@ -48,7 +48,7 @@ export default {
       <div class="steps__item" v-for="(step, i) in steps">
         <CircleNumberFilled :number="i + 1" class="steps__circle" />
         <div class="steps__texting">
-          <BaseHeading variant="medium_24" class="steps__title" level="h3">{{
+          <BaseHeading variant="heading_24" class="steps__title" level="h3">{{
             step.title
           }}</BaseHeading>
           <BaseParagraph size="16" class="steps__text">{{

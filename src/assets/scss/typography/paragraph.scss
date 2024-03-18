@@ -1,0 +1,51 @@
+@mixin paragraph_12 {
+  font-size: 12px;
+  line-height: 120%;
+}
+
+@mixin paragraph_14 {
+  font-size: 14px;
+  line-height: 120%;
+}
+
+@mixin paragraph_16 {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.paragraph_14 {
+  @include paragraph_14;
+}
+
+.paragraph_16 {
+  @include paragraph_16;
+
+  @include media-tablet {
+    @include paragraph_14;
+  }
+}
+
+.paragraph_18 {
+  font-size: 18px;
+  line-height: 120%;
+
+  @include media-tablet {
+    @include paragraph_16;
+  }
+
+  @include media-mobile {
+    @include paragraph_14;
+  }
+}
+
+.paragraph_400 {
+  font-weight: 400;
+}
+
+.paragraph_500 {
+  font-weight: 500;
+}
+
+.paragraph_600 {
+  font-weight: 600;
+}

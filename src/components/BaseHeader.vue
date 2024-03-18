@@ -1,24 +1,22 @@
 <script>
 import BaseContainer from "@/components/BaseContainer.vue";
 import BaseTabList from "@/components/BaseTabList.vue";
-import HeaderLogin from "@/components/HeaderLogin.vue";
 import BaseTag from "@/components/BaseTag.vue";
+import BaseParagraph from "@/components/BaseParagraph.vue";
 import IconLogo from "@/components/icons/IconLogo.vue";
 import IconSearch from "@/components/icons/IconSearch.vue";
 import IconBurger from "@/components/icons/IconBurger.vue";
+import IconUser from "@/components/icons/IconUser.vue";
 import useDeviceDetection from "@/hooks/useDeviceDetection.js";
-import IconButton from "@/components/IconButton.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 
 export default {
   props: {},
   components: {
-    IconButton,
     IconLogo,
     IconSearch,
     IconBurger,
+    IconUser,
     BaseTag,
-    HeaderLogin,
     BaseContainer,
     BaseTabList,
     BaseParagraph,
@@ -29,14 +27,21 @@ export default {
         {
           text: "Организациям и ИП",
           active: true,
+          link: "/1",
         },
         {
           text: "Физическим лицам",
           active: false,
+          link: "/2",
         },
       ],
       hideInactiveOn: ["laptop"],
       navs: [
+        {
+          text: "Инвестиции",
+          href: "#",
+          isActive: true,
+        },
         {
           text: "Спрос и кооперация",
           href: "#",
@@ -85,41 +90,53 @@ export default {
             <IconLogo class="header__logo" />
           </a>
           <BaseTabList
-            :items="tabs"
             class="header__tabs"
+            :items="tabs"
             :hideInactiveOn="hideInactiveOn"
           />
         </div>
         <div class="header__right">
-          <a href="/clusters/lomonosov" class="header__cluster">
-            <BaseTag size="small">Кластер «Ломоносов»</BaseTag>
+          <BaseTag
+            size="small"
+            href="/clusters/lomonosov"
+            class="header__cluster"
+            >Кластер «Ломоносов»</BaseTag
+          >
+          <a class="login-block" href="/sing-in">
+            <span class="login-block__label paragraph_14 paragraph_500">
+              Авторизация
+            </span>
+            <IconUser class="login-block__icon" />
           </a>
-          <div class="login-block">
-            <HeaderLogin />
-          </div>
-          <IconButton class="header__burger-button">
-            <IconBurger class="header__burger-icon" />
-          </IconButton>
+          <button class="burger-button">
+            <IconBurger class="burger-button__icon" />
+          </button>
         </div>
       </BaseContainer>
     </div>
     <div class="header__bottom">
       <BaseContainer class="header__bottom-container">
-        <BaseParagraph class="header__category" size="14" weight="600">
-          Инвестиции
-        </BaseParagraph>
         <div class="header__nav-wrapper">
-          <nav class="header__nav">
-            <li v-for="navItem in navs" :key="navItem.text" class="nav__item">
-              <a :href="navItem">
-                <BaseParagraph size="14" class="nav__paragraph">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li v-for="navItem in navs" :key="navItem.text" class="nav__item">
+                <a
+                  :href="navItem.href"
+                  :class="{
+                    nav__link: true,
+                    paragraph_14: true,
+                    nav__link_active: navItem.isActive,
+                  }"
+                >
                   {{ navItem.text }}
-                </BaseParagraph>
-              </a>
-            </li>
+                </a>
+              </li>
+            </ul>
           </nav>
         </div>
-        <IconSearch class="header__search-icon" />
+        <button class="button-search">
+          <IconSearch class="button-search__icon" />
+        </button>
       </BaseContainer>
     </div>
   </header>
@@ -185,8 +202,6 @@ export default {
 
     @include media-mobile {
       flex-grow: 0;
-      gap: 0px;
-      margin-right: -14px;
     }
   }
 
@@ -208,25 +223,6 @@ export default {
     align-items: center;
   }
 
-  &__search-icon {
-    width: 18px;
-    margin-left: 10px;
-  }
-
-  &__burger {
-    &-icon {
-      width: 18px;
-    }
-
-    &-button {
-      display: none;
-
-      @include media-mobile {
-        display: flex;
-      }
-    }
-  }
-
   &__bottom-container {
     display: flex;
     justify-content: space-between;
@@ -242,48 +238,94 @@ export default {
     }
   }
 
-  &__category {
-    display: flex;
-    align-items: center;
-    margin-right: 42px;
-    text-shadow: $shadow-text-bold;
-
-    @include media-tablet {
-      margin-right: 20px;
-      font-size: 12px;
-      font-weight: 400;
-      text-shadow: none;
-    }
-  }
-
   &__nav-wrapper {
     flex: 1;
     display: flex;
     overflow: auto;
     align-items: center;
   }
-
-  &__nav {
-    display: flex;
-    gap: 42px;
-    min-height: min-content;
-
-    @include media-tablet {
-      gap: 20px;
-    }
-  }
 }
 
 .nav {
+  &__list {
+    display: flex;
+    gap: 42px;
+    min-height: min-content;
+  }
+
+  @include media-tablet {
+    gap: 20px;
+  }
+
   &__item {
+    display: flex;
     width: max-content;
   }
 
-  &__paragraph {
+  &__link {
     @include media-tablet {
       font-size: 12px;
       font-weight: 400;
     }
+  }
+
+  &__link_active {
+    text-shadow: $shadow-text-bold;
+
+    @include media-tablet {
+      text-shadow: none;
+    }
+  }
+}
+
+.login-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__label {
+    color: #1c1d22;
+
+    @include media-laptop {
+      display: none;
+    }
+  }
+
+  &__button {
+    padding: 0;
+
+    @include media-mobile {
+      padding: 12px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 18px;
+  }
+}
+
+.button-search {
+  margin-left: 10px;
+  cursor: pointer;
+
+  &__icon {
+    display: block;
+    width: 18px;
+  }
+}
+
+.burger-button {
+  display: none;
+  cursor: pointer;
+
+  @include media-mobile {
+    display: flex;
+  }
+
+  &__icon {
+    display: block;
+    width: 18px;
   }
 }
 </style>

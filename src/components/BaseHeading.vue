@@ -7,7 +7,7 @@ export default {
     },
     variant: {
       type: String,
-      default: "medium_40",
+      default: "heading_40",
     },
   },
 };
@@ -34,62 +34,4 @@ export default {
   </h6>
 </template>
 
-<style scoped lang="scss">
-.great {
-  font-size: 70px;
-  font-weight: 600;
-  line-height: 70px;
-
-  @include media-tablet {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  @include media-mobile {
-    font-size: 30px;
-    line-height: 30px;
-  }
-}
-
-.medium_40 {
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 110%;
-
-  @include media-tablet {
-    font-size: 30px;
-  }
-
-  @include media-mobile {
-    font-size: 20px;
-  }
-}
-
-.medium_36 {
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 39.6px;
-
-  @include media-mobile {
-    font-size: 30px;
-    line-height: 33px;
-  }
-}
-
-.medium_32 {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 38.4px;
-
-  @include media-tablet {
-    font-size: 24px;
-    line-height: 26.4px;
-  }
-}
-
-.medium_24 {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 120%;
-}
-</style>
+<style scoped lang="scss"></style>

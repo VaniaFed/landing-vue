@@ -87,7 +87,8 @@ export default {
       <div class="invest-card__meta">
         <header class="invest-card__header">
           <CircleNumberOutlined :number="i + 1" class="invest-card__number" />
-          <BaseHeading variant="medium_24" class="invest-card__title">{{
+          <!-- TODO: there is no need to use BaseHeading. Better use <h1></h1> так же про BaseParagraph-->
+          <BaseHeading variant="heading_24" class="invest-card__title">{{
             card.title
           }}</BaseHeading>
         </header>

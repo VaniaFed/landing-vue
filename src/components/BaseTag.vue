@@ -6,6 +6,7 @@ export default {
       type: String,
       default: "large",
     },
+    href: String,
   },
   components: { BaseParagraph },
 };
@@ -13,7 +14,9 @@ export default {
 
 <template>
   <div :class="['base-tag', `base-tag_${size}`]">
-    <slot />
+    <a :href="href">
+      <slot />
+    </a>
   </div>
 </template>
 

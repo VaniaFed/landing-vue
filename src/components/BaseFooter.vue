@@ -123,17 +123,17 @@ export default {
           </div>
           <div class="contacts__bottom">
             <div class="contacts__links">
-              <a class="link" href="tel:8 495 870-45-55">
+              <a class="link paragraph_16" href="tel:8 495 870-45-55">
                 <i class="link__icon-wrapper">
                   <IconPhone class="link__icon" />
                 </i>
-                <BaseParagraph size="16">8 495 870-45-55</BaseParagraph>
+                8 495 870-45-55
               </a>
-              <a class="link" href="mailto:">
+              <a class="link paragraph_16" href="mailto:">
                 <i class="link__icon-wrapper">
                   <IconMail class="link__icon" />
                 </i>
-                <BaseParagraph size="16">support@i.moscow</BaseParagraph>
+                support@i.moscow
               </a>
             </div>
             <BaseButton class="contacts__button">Служба поддержки</BaseButton>
@@ -152,13 +152,11 @@ export default {
             }}</BaseParagraph>
             <div class="column__links">
               <a
-                class="column__link"
+                class="column__link paragraph_16"
                 :href="linkItem.href"
                 v-for="linkItem in link.list"
               >
-                <BaseParagraph size="16">
-                  {{ linkItem.text }}
-                </BaseParagraph>
+                {{ linkItem.text }}
               </a>
             </div>
           </div>

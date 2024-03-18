@@ -17,7 +17,7 @@ export default {
 <template>
   <div class="circle-number-filled">
     <BaseHeading
-      variant="medium_36"
+      variant="heading_36"
       class="circle-number-filled__title"
       level="h3"
     >
