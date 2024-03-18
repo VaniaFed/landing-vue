@@ -199,7 +199,7 @@ export default {
       gap: 62px;
     }
 
-    @include media-mobile {
+    @include media-tablet-small {
       margin-bottom: 40px;
       text-align: center;
     }
@@ -214,7 +214,7 @@ export default {
       padding-bottom: 16px;
     }
 
-    @include media-mobile {
+    @include media-tablet-small {
       margin: 0 -20px;
       padding: 11px 20px 14px;
     }
@@ -229,7 +229,7 @@ export default {
   }
 
   &__contacts {
-    @include media-mobile {
+    @include media-tablet-small {
       width: 100%;
     }
   }
@@ -246,7 +246,7 @@ export default {
       margin-right: -20px;
     }
 
-    @include media-mobile {
+    @include media-tablet-small {
       display: none;
     }
   }
@@ -325,7 +325,7 @@ export default {
       gap: 16px;
     }
 
-    @include media-mobile {
+    @include media-tablet-small {
       align-items: center;
     }
   }
@@ -333,7 +333,7 @@ export default {
   &__button {
     margin-top: 24px;
 
-    @include media-mobile {
+    @include media-tablet-small {
       width: 100%;
       margin-top: 20px;
     }
@@ -348,7 +348,7 @@ export default {
       margin-top: 34px;
     }
 
-    @include media-mobile {
+    @include media-tablet-small {
       justify-content: center;
       margin-top: 25px;
     }

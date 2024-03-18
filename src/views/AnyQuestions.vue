@@ -105,6 +105,7 @@ export default {
   }
 
   &__value {
+    word-break: break-word;
     background: $gradient-green-2;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

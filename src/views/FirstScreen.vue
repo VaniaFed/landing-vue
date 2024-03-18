@@ -182,6 +182,10 @@ export default {
     margin: 0 auto;
     background: #e9f8f8;
     filter: blur(400px);
+
+    @include media-tablet {
+      display: none;
+    }
   }
 }
 

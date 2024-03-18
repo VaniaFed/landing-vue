@@ -79,6 +79,10 @@ $border-size: 2px;
   justify-content: space-between;
   gap: 40px;
 
+  @include media-laptop {
+    gap: 20px;
+  }
+
   @include media-tablet {
     flex-direction: column;
     gap: 34px;

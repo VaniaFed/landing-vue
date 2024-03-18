@@ -61,13 +61,21 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 20px;
     margin-bottom: 40px;
 
+    @include media-laptop {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     @include media-tablet {
+      flex-direction: row;
+      align-items: flex-end;
       margin-bottom: 30px;
     }
 
-    @include media-mobile {
+    @include media-tablet-medium {
       margin-bottom: 20px;
       flex-direction: column;
       gap: 10px;
