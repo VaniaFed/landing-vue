@@ -138,6 +138,10 @@ export default {
 }
 
 .requirements-card {
+  @include media-mobile {
+    min-height: 247px;
+  }
+
   &__title {
     @include media-mobile {
       font-size: 16px;

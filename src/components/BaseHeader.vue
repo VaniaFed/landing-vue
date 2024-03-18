@@ -249,10 +249,10 @@ export default {
     display: flex;
     gap: 42px;
     min-height: min-content;
-  }
 
-  @include media-tablet {
-    gap: 20px;
+    @include media-tablet {
+      gap: 20px;
+    }
   }
 
   &__item {

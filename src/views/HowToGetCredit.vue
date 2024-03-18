@@ -54,6 +54,15 @@ export default {
 
 <style scoped lang="scss">
 .how-to-get-credit {
+  @include media-tablet {
+    padding-top: 80px;
+  }
+
+  @include media-mobile {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+
   & :deep(.how-to-get-credit__header) {
     margin-bottom: 60px;
 
