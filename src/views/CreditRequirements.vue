@@ -90,6 +90,7 @@ export default {
 
 <template>
   <BaseSection title="Требования для получения льготного кредита" withPlus>
+    <!-- TODO: directive @slider-on-mobile НА ЛАЙАУТ обертка -->
     <div class="credit-requirements__layout">
       <RequirementsCard
         v-for="card in cards"
@@ -124,15 +125,11 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
-  @include media-laptop {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   @include media-tablet {
     gap: 16px;
   }
 
-  @include media-tablet-small {
+  @include media-mobile {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -143,6 +140,11 @@ export default {
   }
 
   &__title {
+    @include media-tablet {
+      font-size: 14px;
+      line-height: 120%;
+    }
+
     @include media-mobile {
       font-size: 16px;
       line-height: 112%;
