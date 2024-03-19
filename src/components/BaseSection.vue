@@ -64,11 +64,6 @@ export default {
     gap: 20px;
     margin-bottom: 40px;
 
-    @include media-laptop {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
     @include media-tablet {
       flex-direction: row;
       align-items: flex-end;
