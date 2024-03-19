@@ -10,8 +10,6 @@ export default {
     BaseButton,
     IconMembers,
   },
-
-  // TODO: img parallax
 };
 </script>
 
@@ -49,14 +47,23 @@ export default {
           >Подробнее о Реестре</BaseButton
         >
       </div>
-      <img
-        src="/images/user-from-list.png"
-        alt="user from list"
-        class="card__img"
-      />
-      <img src="/images/vector-1.png" class="card__vector vector-1" />
-      <img src="/images/vector-2.png" class="card__vector vector-2" />
-      <img src="/images/vector-3.png" class="card__vector vector-3" />
+      <picture>
+        <source
+          srcset="/images/register-mobile.png"
+          media="(max-width: 768px)"
+          class="card__img"
+        />
+        <source
+          srcset="/images/register-tablet.png"
+          media="(max-width: 1024px)"
+          class="card__img"
+        />
+        <img
+          src="/images/register-desktop.png"
+          alt="register"
+          class="card__img"
+        />
+      </picture>
     </div>
   </BaseSection>
 </template>
@@ -189,56 +196,18 @@ export default {
   }
 
   &__img {
+    z-index: 5;
     position: absolute;
-    z-index: 7;
+    top: 0;
+    right: 0;
     bottom: 0;
-    right: 11px;
-
-    @include media-tablet {
-      width: 320px;
-      bottom: 18px;
-      right: -22px;
-      top: unset;
-    }
+    height: 100%;
 
     @include media-mobile {
-      top: unset;
-      right: 0;
-      bottom: 69px;
-      left: -10px;
-      transform: rotate(3deg);
-      width: 224px;
-      margin: 0 auto;
+      width: 100%;
+      object-fit: cover;
+      object-position: center 85%;
     }
   }
-}
-
-// TODO: доделать векторы для tablet и mobile
-.card__vector {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  height: 100%;
-  user-select: none;
-  max-block-size: unset;
-}
-
-.vector-3 {
-  z-index: 8;
-
-  @include media-tablet {
-    top: -35px;
-    right: -90px;
-    height: 110%;
-    transform: rotate(3deg);
-  }
-}
-
-.vector-2 {
-  z-index: 6;
-}
-
-.vector-1 {
-  z-index: 1;
 }
 </style>

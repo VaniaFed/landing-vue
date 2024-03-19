@@ -3,7 +3,7 @@ import BaseHeader from "@/components/BaseHeader.vue";
 import BaseFooter from "@/components/BaseFooter.vue";
 import FirstScreen from "@/views/FirstScreen.vue";
 import InvestCredits from "@/views/InvestCredits/InvestCredits.vue";
-// import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
+import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
 import CreditCanGet from "@/views/CreditCanGet.vue";
 import CreditRequirements from "@/views/CreditRequirements.vue";
 import CreditStages from "@/views/CreditStages.vue";
@@ -15,7 +15,7 @@ export default {
     BaseHeader,
     FirstScreen,
     InvestCredits,
-    // WhoCanGetCredit,
+    WhoCanGetCredit,
     CreditCanGet,
     CreditRequirements,
     CreditStages,
@@ -31,14 +31,12 @@ export default {
   <main>
     <FirstScreen />
     <InvestCredits />
+    <WhoCanGetCredit />
     <CreditCanGet />
     <CreditRequirements />
     <CreditStages />
     <HowToGetCredit />
     <AnyQuestions />
-    <!-- 
-    <WhoCanGetCredit />
-    -->
   </main>
   <BaseFooter />
 </template>
