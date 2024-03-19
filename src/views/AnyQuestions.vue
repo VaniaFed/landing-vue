@@ -100,6 +100,7 @@ export default {
     line-height: 120%;
 
     @include media-mobile {
+      font-size: 14px;
       line-height: 140%;
     }
   }
