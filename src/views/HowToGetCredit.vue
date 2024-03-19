@@ -59,7 +59,7 @@ export default {
   }
 
   @include media-mobile {
-    padding-top: 20px;
+    padding-top: 50px;
     padding-bottom: 60px;
   }
 

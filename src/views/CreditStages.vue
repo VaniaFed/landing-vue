@@ -105,6 +105,10 @@ export default {
 .credit-stages {
   padding-top: 80px;
 
+  @include media-tablet {
+    padding-top: 40px;
+  }
+
   @include media-mobile {
     padding: 0;
     padding-top: 40px;

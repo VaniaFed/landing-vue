@@ -68,6 +68,12 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.credit-can-get {
+  @include media-mobile {
+    padding-top: 20px;
+  }
+}
+
 .credit-can-get__layout {
   @include media-tablet {
     flex-direction: column !important;
