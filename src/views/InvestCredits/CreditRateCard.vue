@@ -59,7 +59,6 @@ export default {
     max-width: 266px;
 
     @include media-tablet {
-      max-width: 194px;
       margin-bottom: 22px;
       font-size: 16px;
       line-height: 120%;
@@ -69,6 +68,10 @@ export default {
   &__list {
     @include media-laptop {
       gap: 28px !important;
+    }
+
+    @include media-mobile {
+      gap: 12px !important;
     }
   }
 }

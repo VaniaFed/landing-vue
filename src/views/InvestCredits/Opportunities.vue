@@ -72,20 +72,9 @@ export default {
   &__list {
     display: flex;
 
-    @include media-laptop {
-      flex-direction: column;
-    }
-
-    @include media-tablet {
-      flex-direction: row;
-    }
-
-    @media (max-width: 720px) {
-      flex-direction: column;
-    }
-
     @include media-mobile {
       gap: 16px !important;
+      flex-direction: column;
     }
   }
 

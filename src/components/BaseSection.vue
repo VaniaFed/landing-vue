@@ -75,7 +75,7 @@ export default {
       margin-bottom: 30px;
     }
 
-    @include media-tablet-medium {
+    @include media-mobile {
       margin-bottom: 20px;
       flex-direction: column;
       gap: 10px;

@@ -88,15 +88,15 @@ export default {
     }
 
     @include media-tablet {
-      align-items: stretch;
       gap: 29px;
       margin-top: 0;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
-    @include media-tablet-medium {
+    @include media-mobile {
       flex-direction: column;
-      gap: 40px;
+      gap: 20px;
+      margin-bottom: 40px;
     }
   }
 
@@ -112,7 +112,7 @@ export default {
   &:deep(.invest-credits__credit-subjects) {
     margin-bottom: 13px;
 
-    @include media-tablet {
+    @include media-mobile {
       margin-bottom: 0;
     }
   }
