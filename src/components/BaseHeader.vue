@@ -147,7 +147,6 @@ export default {
     justify-content: space-between;
 
     @include media-tablet {
-      justify-content: flex-start;
       gap: 20px;
     }
   }
@@ -168,11 +167,7 @@ export default {
     gap: 20px;
 
     @include media-tablet {
-      gap: 6px;
-    }
-
-    @include media-mobile {
-      flex-grow: 1;
+      gap: 4px;
     }
   }
 
@@ -181,12 +176,8 @@ export default {
     align-items: center;
     gap: 60px;
 
-    @include media-desktop {
-      gap: 30px;
-    }
-
     @include media-laptop {
-      gap: 20px;
+      gap: 40px;
     }
 
     @include media-tablet {
@@ -194,25 +185,9 @@ export default {
       justify-content: space-between;
     }
 
-    @include media-tablet-medium {
-      justify-content: flex-end;
-    }
-
     @include media-mobile {
       flex-grow: 0;
-    }
-  }
-
-  &__tabs,
-  &__cluster {
-    @include media-mobile {
-      display: none;
-    }
-  }
-
-  &__cluster {
-    @include media-tablet-medium {
-      display: none;
+      gap: 20px;
     }
   }
 
@@ -230,10 +205,6 @@ export default {
   &__bottom {
     min-height: 48px;
     display: flex;
-
-    @include media-mobile {
-      display: none;
-    }
   }
 
   &__nav-wrapper {
@@ -241,6 +212,14 @@ export default {
     display: flex;
     overflow: auto;
     align-items: center;
+  }
+
+  &__tabs,
+  &__cluster,
+  &__bottom {
+    @include media-mobile {
+      display: none;
+    }
   }
 }
 
@@ -284,7 +263,11 @@ export default {
   &__label {
     color: #1c1d22;
 
-    @include media-laptop {
+    @include media-tablet {
+      display: none;
+    }
+
+    @include media-mobile {
       display: none;
     }
   }
