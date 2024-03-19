@@ -7,7 +7,7 @@ import InvestCredits from "@/views/InvestCredits/InvestCredits.vue";
 import CreditCanGet from "@/views/CreditCanGet.vue";
 import CreditRequirements from "@/views/CreditRequirements.vue";
 import CreditStages from "@/views/CreditStages.vue";
-// import HowToGetCredit from "@/views/HowToGetCredit.vue";
+import HowToGetCredit from "@/views/HowToGetCredit.vue";
 // import AnyQuestions from "@/views/AnyQuestions.vue";
 
 export default {
@@ -19,7 +19,7 @@ export default {
     CreditCanGet,
     CreditRequirements,
     CreditStages,
-    // HowToGetCredit,
+    HowToGetCredit,
     // AnyQuestions,
     BaseFooter,
   },
@@ -34,9 +34,9 @@ export default {
     <CreditCanGet />
     <CreditRequirements />
     <CreditStages />
+    <HowToGetCredit />
     <!-- 
     <WhoCanGetCredit />
-    <HowToGetCredit />
     <AnyQuestions /> -->
   </main>
   <BaseFooter />
