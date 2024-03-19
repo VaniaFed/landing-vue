@@ -33,7 +33,6 @@ export default {
           link: "/2",
         },
       ],
-      hideInactiveOn: ["laptop"],
       navs: [
         {
           text: "Инвестиции",
@@ -87,11 +86,7 @@ export default {
           <a href="/" class="header__logo-link">
             <IconLogo class="header__logo" />
           </a>
-          <BaseTabList
-            class="header__tabs"
-            :items="tabs"
-            :hideInactiveOn="hideInactiveOn"
-          />
+          <BaseTabList class="header__tabs" :items="tabs" />
         </div>
         <div class="header__right">
           <BaseTag

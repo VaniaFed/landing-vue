@@ -175,6 +175,7 @@ export default {
   margin-top: 40px;
   border-top: 1px solid $gray-3;
 
+  // TODO: check this later
   @include media-tablet {
     margin-top: 20px;
   }
@@ -199,7 +200,7 @@ export default {
       gap: 62px;
     }
 
-    @include media-tablet-small {
+    @include media-mobile {
       margin-bottom: 40px;
       text-align: center;
     }
@@ -214,7 +215,7 @@ export default {
       padding-bottom: 16px;
     }
 
-    @include media-tablet-small {
+    @include media-mobile {
       margin: 0 -20px;
       padding: 11px 20px 14px;
     }
@@ -226,27 +227,25 @@ export default {
     @include media-tablet {
       width: 179px;
     }
-  }
 
-  &__contacts {
-    @include media-tablet-small {
-      width: 100%;
+    @include media-mobile {
+      width: 179px;
     }
   }
 
   &__links {
     display: flex;
-    flex-grow: 1;
     justify-content: space-between;
+    flex-grow: 1;
     flex-wrap: wrap;
     gap: 30px;
 
     @include media-tablet {
-      flex-grow: 20px;
-      margin-right: -20px;
+      justify-content: flex-start;
+      gap: 70px;
     }
 
-    @include media-tablet-small {
+    @include media-mobile {
       display: none;
     }
   }
@@ -258,7 +257,6 @@ export default {
 
     @include media-tablet {
       gap: 20px;
-      width: 224px;
     }
   }
 
@@ -293,17 +291,17 @@ export default {
 
 .links-part {
   @include media-tablet {
-    margin-top: -15px;
-  }
-
-  .column__heading {
-    @media (max-width: 882px) {
-      display: none;
-    }
+    order: 1;
+    width: 100%;
+    margin-top: -95px;
   }
 }
 
 .contacts {
+  @include media-mobile {
+    width: 100%;
+  }
+
   &__bottom {
     margin-top: 50px;
 
@@ -325,7 +323,7 @@ export default {
       gap: 16px;
     }
 
-    @include media-tablet-small {
+    @include media-mobile {
       align-items: center;
     }
   }
@@ -333,7 +331,7 @@ export default {
   &__button {
     margin-top: 24px;
 
-    @include media-tablet-small {
+    @include media-mobile {
       width: 100%;
       margin-top: 20px;
     }
@@ -348,7 +346,7 @@ export default {
       margin-top: 34px;
     }
 
-    @include media-tablet-small {
+    @include media-mobile {
       justify-content: center;
       margin-top: 25px;
     }
@@ -366,22 +364,17 @@ export default {
   align-items: center;
   gap: 10px;
 
+  @include media-mobile {
+    font-size: 14px;
+    line-height: 120%;
+  }
+
   &__icon-wrapper {
     display: flex;
   }
 
   &__icon {
     width: 18px;
-  }
-}
-
-.links-part {
-  @include media-tablet {
-    order: 1;
-  }
-
-  @media (max-width: 762px) {
-    order: 0;
   }
 }
 </style>

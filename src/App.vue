@@ -1,6 +1,6 @@
 <script>
 import BaseHeader from "@/components/BaseHeader.vue";
-// import BaseFooter from "@/components/BaseFooter.vue";
+import BaseFooter from "@/components/BaseFooter.vue";
 // import FirstScreen from "@/views/FirstScreen.vue";
 // import InvestCredits from "@/views/InvestCredits/InvestCredits.vue";
 // import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
@@ -21,7 +21,7 @@ export default {
     // CreditStages,
     // HowToGetCredit,
     // AnyQuestions,
-    // BaseFooter,
+    BaseFooter,
   },
 };
 </script>
@@ -38,7 +38,7 @@ export default {
     <HowToGetCredit />
     <AnyQuestions /> -->
   </main>
-  <!-- <BaseFooter /> -->
+  <BaseFooter />
 </template>
 
 <style lang="scss">
