@@ -35,14 +35,14 @@ export default {
 .company-card {
   box-shadow: $shadow-2;
 
-  @include media-laptop {
+  @include media-tablet {
     flex-direction: row;
     gap: 20px;
   }
 
-  @include media-tablet-small {
+  @include media-mobile {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
   &__title {
@@ -71,11 +71,8 @@ export default {
     margin-top: 20px;
     color: $gray-0;
 
-    @include media-tablet-small {
-      margin-top: 16px;
-    }
-
     @include media-mobile {
+      margin-top: 16px;
       font-size: 12px;
     }
   }

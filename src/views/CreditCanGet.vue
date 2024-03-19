@@ -69,11 +69,8 @@ export default {
 
 <style lang="scss" scoped>
 .credit-can-get__layout {
-  @include media-laptop {
-    flex-direction: column;
-  }
-
   @include media-tablet {
+    flex-direction: column !important;
     gap: 10px !important;
   }
 }
@@ -81,7 +78,7 @@ export default {
 .credit-can-get__small-card {
   max-width: 370px;
 
-  @include media-laptop {
+  @include media-tablet {
     max-width: none;
   }
 }
