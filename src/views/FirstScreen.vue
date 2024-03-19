@@ -85,10 +85,6 @@ export default {
     border-radius: 0 0 60px 60px;
   }
 
-  @include media-tablet-small {
-    margin: 0;
-  }
-
   @include media-mobile {
     padding: 40px 20px;
     border-radius: 0 0 30px 30px;
@@ -104,7 +100,7 @@ export default {
     margin-top: 10px;
     text-shadow: $shadow-text;
 
-    @include media-tablet-small {
+    @include media-mobile {
       margin-top: 16px;
       line-height: 19.6px;
     }
@@ -116,12 +112,12 @@ export default {
     display: flex;
     gap: 50px;
 
-    @include media-laptop {
+    @include media-tablet {
       flex-direction: column;
       gap: 30px;
     }
 
-    @include media-tablet-small {
+    @include media-mobile {
       gap: 20px;
     }
   }
@@ -129,6 +125,10 @@ export default {
   &__content {
     position: relative;
     z-index: 10;
+
+    @include media-mobile {
+      gap: 30px !important;
+    }
   }
 
   &__image-wrapper {
@@ -137,37 +137,35 @@ export default {
     right: 34px;
     bottom: -140px;
 
-    @include media-desktop-medium {
+    @include media-desktop-small {
       right: -130px;
       max-width: 500px;
       bottom: -100px;
     }
 
-    @include media-desktop {
+    @include media-laptop {
       right: -150px;
       max-width: 510px;
     }
 
-    @include media-laptop {
-      max-width: none;
-      bottom: -130px;
-    }
-
     @include media-tablet {
-      right: -70px;
-      bottom: -180px;
+      bottom: -230px;
+      max-width: 1000px;
+      width: 710px;
+      right: -103px;
     }
 
     @include media-mobile {
-      max-width: 300px;
       right: -85px;
-      bottom: 34px;
+      bottom: 30px;
+      max-width: 300px;
     }
   }
 
   &__img {
     z-index: 2;
     position: relative;
+    width: 100%;
     max-block-size: unset;
   }
 
@@ -191,7 +189,7 @@ export default {
 }
 
 .first-screen .first-screen__buttons {
-  @include media-tablet-small {
+  @include media-mobile {
     flex-direction: column;
   }
 }

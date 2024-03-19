@@ -1,7 +1,7 @@
 <script>
 import BaseHeader from "@/components/BaseHeader.vue";
 import BaseFooter from "@/components/BaseFooter.vue";
-// import FirstScreen from "@/views/FirstScreen.vue";
+import FirstScreen from "@/views/FirstScreen.vue";
 // import InvestCredits from "@/views/InvestCredits/InvestCredits.vue";
 // import WhoCanGetCredit from "@/views/WhoCanGetCredit.vue";
 // import CreditCanGet from "@/views/CreditCanGet.vue";
@@ -13,7 +13,7 @@ import BaseFooter from "@/components/BaseFooter.vue";
 export default {
   components: {
     BaseHeader,
-    // FirstScreen,
+    FirstScreen,
     // InvestCredits,
     // WhoCanGetCredit,
     // CreditCanGet,
@@ -29,7 +29,8 @@ export default {
 <template>
   <BaseHeader />
   <main>
-    <!-- <FirstScreen />
+    <FirstScreen />
+    <!-- 
     <InvestCredits />
     <WhoCanGetCredit />
     <CreditCanGet />
