@@ -1,8 +1,9 @@
 export default function useMobile(initBreakpoints) {
   const breakpoints = initBreakpoints || {
-    laptop: 1024,
-    tablet: 768,
-    mobile: 420,
+    desktopSmall: 1440,
+    laptop: 1280,
+    tablet: 1024,
+    mobile: 768,
   };
 
   if (screen.width <= breakpoints.mobile) {
@@ -11,6 +12,8 @@ export default function useMobile(initBreakpoints) {
     return "tablet";
   } else if (screen.width <= breakpoints.laptop) {
     return "laptop";
+  } else if (screen.width <= breakpoints.desktopSmall) {
+    return "desktop-small";
   }
 
   return "desktop";
