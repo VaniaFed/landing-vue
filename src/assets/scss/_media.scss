@@ -7,31 +7,25 @@
 }
 
 @mixin media-desktop-small {
-  @media (1280px <= width < 1440px) {
+  @media (width < 1440px) {
     @content;
   }
 }
 
 @mixin media-laptop {
-  @media (1024px <= width < 1280px) {
+  @media (width < 1280px) {
     @content;
   }
 }
 
 @mixin media-tablet {
-  @media (768px <= width < 1024px) {
-    @content;
-  }
-}
-
-@mixin media-tablet-horizontal {
-  @media (990px <= width < 1024px) {
+  @media (width < 1024px) {
     @content;
   }
 }
 
 @mixin media-tablet-vertical {
-  @media (768px <= width < 990px) {
+  @media (width < 990px) {
     @content;
   }
 }
