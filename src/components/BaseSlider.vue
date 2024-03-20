@@ -16,11 +16,21 @@ export default {
     const sliderContentRef = ref(null);
     const currentSlideIndex = ref(0);
     const slideWidth = ref(0);
+    const gapSize = ref(10);
+    const isDown = ref(false);
+    const scrollLeft = ref(0);
+    const currentX = ref(0);
+    const direction = ref(null);
 
     return {
       sliderContentRef,
       currentSlideIndex,
       slideWidth,
+      gapSize,
+      isDown,
+      scrollLeft,
+      currentX,
+      direction,
     };
   },
   methods: {
@@ -39,30 +49,73 @@ export default {
     prev() {
       if (this.currentSlideIndex > 0) {
         this.currentSlideIndex--;
-        this.sliderContentRef.scrollLeft -= this.slideWidth + 10;
+        this.sliderContentRef.scrollLeft -= this.slideWidth + this.gapSize;
       }
     },
     next() {
       if (this.currentSlideIndex < this.count - 1) {
         this.currentSlideIndex++;
-        this.sliderContentRef.scrollLeft += this.slideWidth + 10;
+        this.sliderContentRef.scrollLeft += this.slideWidth + this.gapSize;
       }
     },
     slideTo(index) {
       if (index >= 0 && index < this.count) {
         this.currentSlideIndex = index;
-        this.sliderContentRef.scrollLeft = (this.slideWidth + 10) * index;
+        this.sliderContentRef.scrollLeft =
+          (this.slideWidth + this.gapSize) * index;
       }
     },
-    dragStart(e) {
-      this.dragX = e.clientX;
+    mouseDown(e) {
+      this.isDown = true;
+      if (e.clientX) {
+        this.currentX = e.clientX;
+      }
+      this.scrollLeft = this.sliderContentRef.scrollLeft;
     },
-    dragEnd(e) {
-      if (this.dragX >= e.clientX) {
-        this.next();
+    mouseUp(e) {
+      this.isDown = false;
+
+      const TIME = 500;
+      const distance = Math.abs(e.clientX - this.currentX);
+      const speed = (distance / TIME) * 60;
+
+      const slide = () => {
+        if (this.direction === "right") {
+          this.sliderContentRef.scrollLeft += speed;
+        } else {
+          this.sliderContentRef.scrollLeft -= speed;
+        }
+      };
+
+      const intervalId = setInterval(() => {
+        slide();
+        this.updateIndex();
+      }, TIME / 60);
+
+      setTimeout(() => {
+        clearInterval(intervalId);
+      }, TIME);
+    },
+    updateIndex() {
+      this.currentSlideIndex = Math.ceil(
+        (this.sliderContentRef.scrollLeft - this.gapSize) / this.slideWidth
+      );
+    },
+    mouseMove(e) {
+      if (!this.isDown) {
+        return;
+      }
+
+      this.sliderContentRef.scrollLeft =
+        this.scrollLeft + this.currentX - e.clientX;
+
+      if (this.currentX > e.clientX) {
+        this.direction = "right";
       } else {
-        this.prev();
+        this.direction = "left";
       }
+
+      this.updateIndex();
     },
   },
   mounted() {
@@ -80,9 +133,9 @@ export default {
           <div
             class="slider__content"
             ref="sliderContentRef"
-            draggable="true"
-            @dragstart="dragStart($event)"
-            @dragend="dragEnd($event)"
+            @mousedown="mouseDown($event)"
+            @mouseup="mouseUp($event)"
+            @mousemove="mouseMove($event)"
           >
             <slot />
           </div>
