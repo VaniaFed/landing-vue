@@ -14,7 +14,7 @@ export default {
   components: {},
   setup(props) {
     const sliderContentRef = ref(null);
-    const currentSlideIndex = ref(0);
+    const index = ref(0);
     const slideWidth = ref(0);
     const gapSize = ref(10);
     const isDown = ref(false);
@@ -24,7 +24,7 @@ export default {
 
     return {
       sliderContentRef,
-      currentSlideIndex,
+      index,
       slideWidth,
       gapSize,
       isDown,
@@ -47,20 +47,20 @@ export default {
       return false;
     },
     prev() {
-      if (this.currentSlideIndex > 0) {
-        this.currentSlideIndex--;
+      if (this.index > 0) {
+        this.index--;
         this.sliderContentRef.scrollLeft -= this.slideWidth + this.gapSize;
       }
     },
     next() {
-      if (this.currentSlideIndex < this.count - 1) {
-        this.currentSlideIndex++;
+      if (this.index < this.count - 1) {
+        this.index++;
         this.sliderContentRef.scrollLeft += this.slideWidth + this.gapSize;
       }
     },
     slideTo(index) {
       if (index >= 0 && index < this.count) {
-        this.currentSlideIndex = index;
+        this.index = index;
         this.sliderContentRef.scrollLeft =
           (this.slideWidth + this.gapSize) * index;
       }
@@ -97,7 +97,7 @@ export default {
       }, TIME);
     },
     updateIndex() {
-      this.currentSlideIndex = Math.ceil(
+      this.index = Math.ceil(
         (this.sliderContentRef.scrollLeft - this.gapSize) / this.slideWidth
       );
     },
@@ -143,12 +143,12 @@ export default {
       </div>
       <div class="slider__circles">
         <button
-          v-for="(, index) in count"
+          v-for="(, i) in count"
           :class="{
             circle: true,
-            circle_active: index === currentSlideIndex,
+            circle_active: i === index,
           }"
-          @click="slideTo(index)"
+          @click="slideTo(i)"
         ></button>
       </div>
     </div>
