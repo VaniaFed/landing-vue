@@ -2,7 +2,7 @@
 export default {
   props: {
     number: {
-      type: String,
+      type: Number,
       required: true,
     },
   },
