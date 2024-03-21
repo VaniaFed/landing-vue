@@ -50,12 +50,12 @@ export default {
       <picture>
         <source
           srcset="/images/register-mobile.png"
-          media="(max-width: 768px)"
+          media="(max-width: 400px)"
           class="card__img"
         />
         <source
           srcset="/images/register-tablet.png"
-          media="(max-width: 1024px)"
+          media="(max-width: 1023px)"
           class="card__img"
         />
         <img
@@ -97,6 +97,10 @@ export default {
     z-index: 10;
     position: relative;
     padding-right: 420px;
+
+    @include media-laptop {
+      padding-right: 240px;
+    }
 
     @include media-tablet {
       padding-right: 130px;
@@ -191,6 +195,10 @@ export default {
     margin-top: 40px;
 
     @include media-mobile {
+      margin-top: 104px;
+    }
+
+    @include media-mobile-small {
       margin-top: 208px;
     }
   }
@@ -203,7 +211,19 @@ export default {
     bottom: 0;
     height: 100%;
 
+    @include media-laptop {
+      right: -180px;
+    }
+
+    @include media-tablet {
+      right: 0;
+    }
+
     @include media-mobile {
+      object-fit: cover;
+    }
+
+    @include media-mobile-small {
       width: 100%;
       object-fit: cover;
       object-position: center 85%;
