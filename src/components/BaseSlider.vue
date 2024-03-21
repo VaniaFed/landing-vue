@@ -14,7 +14,7 @@ const props = defineProps({
 });
 
 const slideWidth = ref(0);
-const gapSize = ref(10);
+const gapSize = ref(0);
 
 const shouldUseSlider = () => {
   if (props.sliderOn === undefined) {
@@ -41,6 +41,11 @@ const {
 onMounted(() => {
   const sliderItem = document.querySelector(".slider-item");
   slideWidth.value = sliderItem.clientWidth;
+
+  // window.addEventListener("resize", () => {
+  //   const sliderItem = document.querySelector(".slider-item");
+  //   slideWidth.value = sliderItem.clientWidth;
+  // });
 });
 </script>
 

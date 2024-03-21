@@ -78,7 +78,7 @@ export function useSlider(slidesCount, slideWidth, gapSize) {
         sliderContentRef.value.scrollLeft =
           currentScrollPosition + distanceToScroll * fraction;
 
-        currentIndex.value = Math.floor(
+        currentIndex.value = Math.ceil(
           currentScrollPosition / slideWidth.value
         );
         window.requestAnimationFrame(animateScroll);

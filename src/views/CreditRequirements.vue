@@ -98,8 +98,12 @@ export default {
   >
     <BaseSlider sliderOn="mobile" :count="cards.length">
       <div class="credit-requirements__layout">
-        <div class="card-wrapper" v-for="card in cards" :key="card.title">
-          <RequirementsCard class="requirements-card slider-item">
+        <div
+          class="card-wrapper slider-item"
+          v-for="card in cards"
+          :key="card.title"
+        >
+          <RequirementsCard class="requirements-card">
             <template v-slot:icon>
               <component :is="card.iconName" />
             </template>
@@ -138,10 +142,6 @@ export default {
     width: 100%;
     min-height: 247px;
     padding: 0 5px;
-
-    &:first-child {
-      padding-left: 0;
-    }
 
     &:last-child {
       padding-right: 20px;
