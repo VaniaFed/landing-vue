@@ -2,6 +2,7 @@
 import BaseSection from "@/components/BaseSection.vue";
 import RequirementsCard from "@/components/RequirementsCard.vue";
 import BaseLink from "@/components/BaseLink.vue";
+import BaseSlider from "@/components/BaseSlider.vue";
 import IconEdit from "@/components/icons/IconEdit.vue";
 import IconClusterMember from "@/components/icons/IconClusterMember.vue";
 import IconPriorities from "@/components/icons/IconPriorities.vue";
@@ -18,6 +19,7 @@ export default {
     BaseSection,
     RequirementsCard,
     BaseLink,
+    BaseSlider,
     IconEdit,
     IconClusterMember,
     IconPriorities,
@@ -89,37 +91,46 @@ export default {
 </script>
 
 <template>
-  <BaseSection title="Требования для получения льготного кредита" withPlus>
-    <!-- TODO: directive @slider-on-mobile НА ЛАЙАУТ обертка -->
-    <div class="credit-requirements__layout">
-      <RequirementsCard
-        v-for="card in cards"
-        :key="card.title"
-        class="requirements-card"
-      >
-        <template v-slot:icon>
-          <component :is="card.iconName" />
-        </template>
-        <template v-slot:content>
-          <span class="plain_18 plain_500 requirements-card__title">
-            {{ card.title }}
-          </span>
-          <span
-            class="plain_16 requirements-card__text"
-            v-if="card.description"
-          >
-            {{ card.description }}
-            <BaseLink v-if="card.link" v-bind="card.link.attrs">
-              {{ card.link.text }}
-            </BaseLink>
-          </span>
-        </template>
-      </RequirementsCard>
-    </div>
+  <BaseSection
+    title="Требования для получения льготного кредита"
+    withPlus
+    class="credit-requirements"
+  >
+    <BaseSlider sliderOn="mobile" :count="cards.length">
+      <div class="credit-requirements__layout">
+        <RequirementsCard
+          v-for="card in cards"
+          :key="card.title"
+          class="requirements-card slider-item"
+        >
+          <template v-slot:icon>
+            <component :is="card.iconName" />
+          </template>
+          <template v-slot:content>
+            <span class="plain_18 plain_500 requirements-card__title">
+              {{ card.title }}
+            </span>
+            <span
+              class="plain_16 requirements-card__text"
+              v-if="card.description"
+            >
+              {{ card.description }}
+              <BaseLink v-if="card.link" v-bind="card.link.attrs">
+                {{ card.link.text }}
+              </BaseLink>
+            </span>
+          </template>
+        </RequirementsCard>
+      </div>
+    </BaseSlider>
   </BaseSection>
 </template>
 
 <style scoped lang="scss">
+.credit-requirements {
+  overflow: hidden;
+}
+
 .credit-requirements__layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -130,12 +141,14 @@ export default {
   }
 
   @include media-mobile {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    gap: 10px;
   }
 }
 
 .requirements-card {
   @include media-mobile {
+    flex: 0 0 auto;
     min-height: 247px;
   }
 

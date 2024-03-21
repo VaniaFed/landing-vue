@@ -111,7 +111,7 @@ export default {
 
   @include media-mobile {
     padding: 0;
-    padding-top: 40px;
+    padding-top: 10px;
   }
 
   &:deep(.credit-stages__header) {

@@ -1,4 +1,4 @@
-export default function useMobile(initBreakpoints) {
+export default function useDeviceDetection(initBreakpoints) {
   const breakpoints = initBreakpoints || {
     desktopSmall: 1440,
     laptop: 1280,
