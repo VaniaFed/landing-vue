@@ -1,6 +1,4 @@
 <script>
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseSection from "@/components/BaseSection.vue";
 import CircleNumberFilled from "@/components/CircleNumberFilled.vue";
 
@@ -8,8 +6,6 @@ export default {
   props: {},
   components: {
     BaseSection,
-    BaseHeading,
-    BaseParagraph,
     CircleNumberFilled,
   },
   data() {
@@ -48,12 +44,8 @@ export default {
       <div class="steps__item" v-for="(step, i) in steps">
         <CircleNumberFilled :number="i + 1" class="steps__circle" />
         <div class="steps__texting">
-          <BaseHeading variant="medium_24" class="steps__title" level="h3">{{
-            step.title
-          }}</BaseHeading>
-          <BaseParagraph size="16" class="steps__text">{{
-            step.text
-          }}</BaseParagraph>
+          <h3 class="heading_24 steps__title">{{ step.title }}</h3>
+          <span class="plain_16 steps__text">{{ step.text }}</span>
         </div>
       </div>
     </div>
@@ -62,6 +54,15 @@ export default {
 
 <style scoped lang="scss">
 .how-to-get-credit {
+  @include media-tablet {
+    padding-top: 80px;
+  }
+
+  @include media-mobile {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+
   & :deep(.how-to-get-credit__header) {
     margin-bottom: 60px;
 
@@ -86,6 +87,10 @@ $border-size: 2px;
   display: flex;
   justify-content: space-between;
   gap: 40px;
+
+  @include media-laptop {
+    gap: 20px;
+  }
 
   @include media-tablet {
     flex-direction: column;

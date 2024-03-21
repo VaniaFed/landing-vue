@@ -1,8 +1,6 @@
 <script>
 import BaseSection from "@/components/BaseSection.vue";
 import BaseStack from "@/components/BaseStack.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import CircleNumberOutlined from "@/components/CircleNumberOutlined.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
 import IconLogoCompact from "@/components/icons/IconLogoCompact.vue";
@@ -14,8 +12,6 @@ export default {
   components: {
     BaseSection,
     BaseStack,
-    BaseHeading,
-    BaseParagraph,
     CircleNumberOutlined,
     CircleIcon,
     IconLogoCompact,
@@ -87,9 +83,7 @@ export default {
       <div class="invest-card__meta">
         <header class="invest-card__header">
           <CircleNumberOutlined :number="i + 1" class="invest-card__number" />
-          <BaseHeading variant="medium_24" class="invest-card__title">{{
-            card.title
-          }}</BaseHeading>
+          <h3 class="heading_24 invest-card__title">{{ card.title }}</h3>
         </header>
         <CircleIcon class="invest-card__btn-icon">
           <component :is="card.iconName" class="invest-card__icon" />
@@ -100,9 +94,7 @@ export default {
           <CircleIcon class="invest-card__circle-icon">
             <IconCheckMark class="check-mark" />
           </CircleIcon>
-          <BaseParagraph class="invest-card__text">{{
-            item.text
-          }}</BaseParagraph>
+          <span class="plain_18 invest-card__text">{{ item.text }}</span>
         </div>
       </BaseStack>
     </div>
@@ -113,9 +105,13 @@ export default {
 .credit-stages {
   padding-top: 80px;
 
+  @include media-tablet {
+    padding-top: 40px;
+  }
+
   @include media-mobile {
     padding: 0;
-    padding-top: 40px;
+    padding-top: 10px;
   }
 
   &:deep(.credit-stages__header) {

@@ -1,0 +1,51 @@
+@mixin plain_12 {
+  font-size: 12px;
+  line-height: 120%;
+}
+
+@mixin plain_14 {
+  font-size: 14px;
+  line-height: 120%;
+}
+
+@mixin plain_16 {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.plain_14 {
+  @include plain_14;
+}
+
+.plain_16 {
+  @include plain_16;
+
+  @include media-tablet {
+    @include plain_14;
+  }
+}
+
+.plain_18 {
+  font-size: 18px;
+  line-height: 120%;
+
+  @include media-tablet {
+    @include plain_16;
+  }
+
+  @include media-mobile {
+    @include plain_14;
+  }
+}
+
+.plain_400 {
+  font-weight: 400;
+}
+
+.plain_500 {
+  font-weight: 500;
+}
+
+.plain_600 {
+  font-weight: 600;
+}

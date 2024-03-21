@@ -1,11 +1,9 @@
 <script>
-import BaseParagraph from "@/components/BaseParagraph.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 import BaseSection from "@/components/BaseSection.vue";
 
 export default {
   props: {},
-  components: { BaseSection, BaseHeading, BaseParagraph },
+  components: { BaseSection },
 };
 </script>
 
@@ -13,32 +11,26 @@ export default {
   <BaseSection class="any-questions-container">
     <div class="any-questions">
       <div class="any-questions__top">
-        <BaseHeading level="h2" class="any-questions__title"
-          >Остались вопросы?</BaseHeading
-        >
-        <BaseHeading
-          level="h3"
-          variant="medium_24"
-          class="any-questions__subtitle"
-        >
-          Свяжитесь с нами</BaseHeading
-        >
+        <h2 class="heading_40 any-questions__title">Остались вопросы?</h2>
+        <span class="heading_24 any-questions__subtitle">Свяжитесь с нами</span>
       </div>
       <div class="contacts">
         <div class="contacts__item">
-          <BaseParagraph size="16" class="contacts__key">Телефон</BaseParagraph>
-          <a href="tel:+7 499 577 00 55 доб 1">
-            <BaseHeading class="contacts__value">
-              +7 499 577 00 55 доб 1
-            </BaseHeading>
+          <span class="plain_16 contacts__key">Телефон</span>
+          <a
+            href="tel:+7 499 577 00 55 доб 1"
+            class="heading_40 contacts__value"
+          >
+            +7 499 577 00 55 доб 1
           </a>
         </div>
         <div class="contacts__item">
-          <BaseParagraph size="16" class="contacts__key">Почта</BaseParagraph>
-          <a href="mailto:measures@cluster.mos.ru">
-            <BaseHeading class="contacts__value">
-              measures@cluster.mos.ru
-            </BaseHeading>
+          <span class="plain_16 contacts__key">Почта</span>
+          <a
+            href="mailto:measures@cluster.mos.ru"
+            class="heading_40 contacts__value"
+          >
+            measures@cluster.mos.ru
           </a>
         </div>
       </div>
@@ -102,16 +94,19 @@ export default {
   }
 
   &__key {
+    display: block;
     margin-bottom: 2px;
     color: $gray-12;
     line-height: 120%;
 
     @include media-mobile {
+      font-size: 14px;
       line-height: 140%;
     }
   }
 
   &__value {
+    word-break: break-word;
     background: $gradient-green-2;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

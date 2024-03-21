@@ -5,13 +5,7 @@ export default {
 </script>
 
 <template>
-  <svg
-    width="70"
-    height="70"
-    viewBox="0 0 70 70"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M51 61L35 19L19 61" stroke="black" />
     <circle cx="35" cy="19" r="4" fill="url(#paint0_linear_34_1083)" />
     <path

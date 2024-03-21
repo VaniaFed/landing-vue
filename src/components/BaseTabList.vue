@@ -14,30 +14,20 @@ export default {
     },
   },
   components: { BaseTabItem, BaseDivider },
-  computed: {
-    filteredItems() {
-      const device = useDeviceDetection();
-      if (this.hideInactiveOn.includes(device)) {
-        return this.items.filter((item) => item.active);
-      }
-
-      return this.items;
-    },
-  },
 };
 </script>
 
 <template>
-  <ul class="base-tab-list">
-    <template v-for="(item, index) in filteredItems" :key="item.text">
-      <BaseTabItem :active="item.active" class="base-tab-list__item">
-        {{ item.text }}
+  <div class="base-tab-list">
+    <template v-for="(item, index) in items" :key="item.text">
+      <BaseTabItem :active="item.active">
+        <a :href="item.link">
+          {{ item.text }}
+        </a>
       </BaseTabItem>
-      <BaseDivider
-        v-if="filteredItems.length !== 1 && index !== filteredItems.length - 1"
-      />
+      <BaseDivider v-if="items.length !== 1 && index !== items.length - 1" />
     </template>
-  </ul>
+  </div>
 </template>
 
 <style scoped lang="scss">

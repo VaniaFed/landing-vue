@@ -1,47 +1,37 @@
-@mixin media-desktop-large {
-  @media (max-width: $desktop-large-breakpoint) {
-    @content;
-  }
-}
-
-@mixin media-desktop-medium {
-  @media (max-width: $desktop-medium-breakpoint) {
-    @content;
-  }
-}
+@forward "variables";
 
 @mixin media-desktop {
-  @media (max-width: $desktop-breakpoint) {
+  @media (width >= 1440px) {
+    @content;
+  }
+}
+
+@mixin media-desktop-small {
+  @media (width < 1440px) {
     @content;
   }
 }
 
 @mixin media-laptop {
-  @media (max-width: $laptop-breakpoint) {
+  @media (width < 1280px) {
     @content;
   }
 }
 
 @mixin media-tablet {
-  @media (max-width: $tablet-breakpoint) {
+  @media (width < 1024px) {
     @content;
   }
 }
 
-@mixin media-tablet-medium {
-  @media (max-width: $tablet-medium-breakpoint) {
-    @content;
-  }
-}
-
-@mixin media-tablet-small {
-  @media (max-width: $tablet-small-breakpoint) {
+@mixin media-tablet-vertical {
+  @media (width < 990px) {
     @content;
   }
 }
 
 @mixin media-mobile {
-  @media (max-width: $mobile-breakpoint) {
+  @media (width <= 768px) {
     @content;
   }
 }
