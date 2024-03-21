@@ -59,11 +59,15 @@ export default {
       }
     },
     slideTo(index) {
-      if (index >= 0 && index < this.count) {
-        this.index = index;
-        this.sliderContentRef.scrollLeft =
-          (this.slideWidth + this.gapSize) * index;
+      if (!(index >= 0 && index < this.count)) {
+        return;
       }
+
+      let finalScrollPosition = index * (this.slideWidth + this.gapSize);
+
+      const ANIMATION_DURATION = 500;
+
+      this.move(finalScrollPosition, ANIMATION_DURATION);
     },
     mouseDown(e) {
       this.isDown = true;
@@ -72,33 +76,53 @@ export default {
       }
       this.scrollLeft = this.sliderContentRef.scrollLeft;
     },
+    move(distance, time) {
+      const startTime = Date.now();
+
+      const animateScroll = setInterval(() => {
+        const elapsed = Date.now() - startTime;
+        const fraction = elapsed / time;
+
+        if (elapsed >= time) {
+          clearInterval(animateScroll);
+          this.sliderContentRef.scrollLeft = distance;
+        } else {
+          const currentScrollPosition = this.sliderContentRef.scrollLeft;
+          const distanceToScroll = distance - currentScrollPosition;
+          this.sliderContentRef.scrollLeft =
+            currentScrollPosition + distanceToScroll * fraction;
+
+          this.index = Math.floor(currentScrollPosition / this.slideWidth);
+        }
+      }, 500 / 60);
+    },
     mouseUp(e) {
       this.isDown = false;
 
-      const TIME = 500;
-      const distance = Math.abs(e.clientX - this.currentX);
-      const speed = (distance / TIME) * 60;
+      const dx = Math.abs(e.clientX - this.currentX);
 
-      const slide = () => {
-        if (this.direction === "right") {
-          this.sliderContentRef.scrollLeft += speed;
-        } else {
-          this.sliderContentRef.scrollLeft -= speed;
-        }
-      };
+      // Новая позиция скролла с учетом перемещения
+      const newScrollLeft =
+        this.direction === "right"
+          ? this.sliderContentRef.scrollLeft + dx
+          : this.sliderContentRef.scrollLeft - dx;
 
-      const intervalId = setInterval(() => {
-        slide();
-        this.updateIndex();
-      }, TIME / 60);
+      // Определяем индекс ближайшей карточки (округляем к ближайшему целому)
+      const closestCardIndex = Math.round(newScrollLeft / this.slideWidth);
 
-      setTimeout(() => {
-        clearInterval(intervalId);
-      }, TIME);
+      // Вычисляем целевое расстояние для анимации, оно должно соответствовать позиции одной из карточек
+      const targetDistance =
+        closestCardIndex * (this.slideWidth + this.gapSize);
+
+      const time = 500;
+
+      this.move(targetDistance, time);
     },
     updateIndex() {
-      this.index = Math.ceil(
-        (this.sliderContentRef.scrollLeft - this.gapSize) / this.slideWidth
+      this.index = Math.abs(
+        Math.floor(
+          this.sliderContentRef.scrollLeft + this.slideWidth * (this.index + 1)
+        )
       );
     },
     mouseMove(e) {
