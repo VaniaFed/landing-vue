@@ -72,7 +72,7 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .slider {
-  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: -20px;
@@ -90,20 +90,35 @@ onMounted(() => {
   }
 
   &__circles {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    width: 100%;
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
-    min-height: 10px;
-    padding: 0 30px;
+    padding: 30px;
   }
 }
 
 .circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 6px;
   height: 6px;
   background: $black;
   border-radius: 12px;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 100px;
+  }
 
   &_active {
     width: 10px;

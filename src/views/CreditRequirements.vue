@@ -127,6 +127,7 @@ export default {
 <style scoped lang="scss">
 .credit-requirements {
   overflow: hidden;
+  padding-bottom: 50px;
 }
 
 .card-wrapper {
@@ -137,6 +138,11 @@ export default {
     width: 100%;
     min-height: 247px;
     padding: 0 5px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
     &:last-child {
       padding-right: 20px;
     }
