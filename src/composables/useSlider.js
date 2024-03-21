@@ -66,12 +66,11 @@ export function useSlider(slidesCount, slideWidth, gapSize) {
   const move = (distance, time) => {
     const startTime = Date.now();
 
-    const animateScroll = setInterval(() => {
+    const animateScroll = () => {
       const elapsed = Date.now() - startTime;
       const fraction = elapsed / time;
 
       if (elapsed >= time) {
-        clearInterval(animateScroll);
         sliderContentRef.value.scrollLeft = distance;
       } else {
         const currentScrollPosition = sliderContentRef.value.scrollLeft;
@@ -82,8 +81,11 @@ export function useSlider(slidesCount, slideWidth, gapSize) {
         currentIndex.value = Math.floor(
           currentScrollPosition / slideWidth.value
         );
+        window.requestAnimationFrame(animateScroll);
       }
-    }, time / 60);
+    };
+
+    window.requestAnimationFrame(animateScroll);
   };
 
   return {
