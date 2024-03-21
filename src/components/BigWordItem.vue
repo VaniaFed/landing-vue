@@ -1,38 +1,36 @@
 <script>
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseStack from "@/components/BaseStack.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 
 export default {
   props: ["title", "text_before", "big_text", "text_after"],
-  components: { BaseParagraph, BaseStack, BaseHeading },
+  components: { BaseStack },
 };
 </script>
 
 <template>
-  <BaseParagraph class="big-word-item__title">{{ title }}</BaseParagraph>
+  <span class="plain_18 big-word-item__title">{{ title }}</span>
+
   <BaseStack gap="10" asRow class="big-word-item__list">
-    <BaseHeading
+    <span
+      class="heading_24 big-word-item__before"
       v-if="text_before !== undefined"
-      level="h3"
-      variant="medium_24"
-      class="big-word-item__before"
-      >{{ text_before }}</BaseHeading
     >
-    <BaseHeading level="h3" variant="great">{{ big_text }}</BaseHeading>
-    <BaseHeading
+      {{ text_before }}
+    </span>
+    <span class="heading_great">{{ big_text }}</span>
+    <span
       v-if="text_after !== undefined"
-      level="h4"
-      variant="medium_24"
-      class="big-word-item__after"
-      >{{ text_after }}</BaseHeading
+      class="heading_24 big-word-item__after"
     >
+      {{ text_after }}
+    </span>
   </BaseStack>
 </template>
 
 <style lang="scss">
 .big-word-item {
   &__title {
+    display: block;
     margin-bottom: 18px;
 
     @include media-tablet {

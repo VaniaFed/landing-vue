@@ -1,47 +1,33 @@
 <script>
 import BaseStack from "@/components/BaseStack.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 
 export default {
   props: {},
   components: {
     BaseStack,
-    BaseHeading,
-    BaseParagraph,
   },
 };
 </script>
 
 <template>
   <div class="credit-rate-card">
-    <BaseHeading class="credit-rate-card__title" variant="medium_24" level="h3"
-      >Льготная ставка в&nbsp;рамках программы</BaseHeading
-    >
+    <h3 class="heading_24 credit-rate-card__title">
+      Льготная ставка в&nbsp;рамках программы
+    </h3>
     <BaseStack asRow gap="43" class="credit-rate-card__list">
       <div class="rate-item">
         <div class="rate-item__header">
-          <BaseHeading class="rate-item__from" variant="medium_24" level="h4"
-            >от</BaseHeading
-          >
-          <BaseHeading class="rate-item__amount" variant="medium_40" level="h4"
-            >3%</BaseHeading
-          >
+          <span class="heading_24 rate-item__from">от</span>
+          <span class="heading_40 rate-item__amount">3%</span>
         </div>
-        <BaseParagraph class="rate-item__text"
-          >действует первые три года</BaseParagraph
-        >
+        <span class="plain_18 rate-item__text">действует первые три года</span>
       </div>
       <div class="rate-item">
         <div class="rate-item__header">
-          <BaseHeading class="rate-item__from" variant="medium_24" level="h5"
-            >от</BaseHeading
-          >
-          <BaseHeading class="rate-item__amount" variant="medium_40" level="h5"
-            >11%</BaseHeading
-          >
+          <span class="heading_24 rate-item__from">от</span>
+          <span class="heading_40 rate-item__amount">11%</span>
         </div>
-        <BaseParagraph class="rate-item__text">далее</BaseParagraph>
+        <span class="plain_18 rate-item__text">далее</span>
       </div>
     </BaseStack>
   </div>
@@ -58,6 +44,10 @@ export default {
     padding-bottom: 40px;
   }
 
+  @include media-tablet {
+    margin-top: 17px;
+  }
+
   @include media-mobile {
     width: 100%;
     padding: 30px 20px 32px;
@@ -69,7 +59,6 @@ export default {
     max-width: 266px;
 
     @include media-tablet {
-      max-width: 194px;
       margin-bottom: 22px;
       font-size: 16px;
       line-height: 120%;
@@ -79,6 +68,10 @@ export default {
   &__list {
     @include media-laptop {
       gap: 28px !important;
+    }
+
+    @include media-mobile {
+      gap: 12px !important;
     }
   }
 }
@@ -91,6 +84,7 @@ export default {
   }
 
   &__text {
+    display: block;
     margin-top: 2px;
 
     @include media-tablet {

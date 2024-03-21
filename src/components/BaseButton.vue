@@ -27,6 +27,7 @@ export default {
   }
 
   @include media-tablet {
+    padding: 8px 18px;
     font-size: 14px;
     line-height: 16.8px;
   }

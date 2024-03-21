@@ -1,7 +1,5 @@
 <script>
 import BaseStack from "@/components/BaseStack.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
 import IconGears from "@/components/icons/IconGears.vue";
 import IconCart from "@/components/icons/IconCart.vue";
@@ -16,8 +14,6 @@ export default {
   },
   components: {
     BaseStack,
-    BaseHeading,
-    BaseParagraph,
     CircleIcon,
     IconCart,
     IconGears,
@@ -28,17 +24,18 @@ export default {
 
 <template>
   <div class="opportunities">
-    <BaseHeading class="opportunities__title" variant="medium_32" level="h3">
+    <h3 class="heading_32 opportunities__title">
       <slot />
-    </BaseHeading>
+    </h3>
     <BaseStack spaceBetween asRow class="opportunities__list">
       <div class="opportunities__item" v-for="item in items">
         <CircleIcon class="opportunities__circle-icon">
           <component :is="item.iconName" class="opportunities__icon" />
         </CircleIcon>
-        <BaseParagraph class="opportunities__text">
+
+        <div class="plain_18 opportunities__text">
           {{ item.text }}
-        </BaseParagraph>
+        </div>
       </div>
     </BaseStack>
   </div>
@@ -74,12 +71,10 @@ export default {
 
   &__list {
     display: flex;
-    @media (max-width: 720px) {
-      flex-direction: column !important;
-    }
 
     @include media-mobile {
       gap: 16px !important;
+      flex-direction: column;
     }
   }
 

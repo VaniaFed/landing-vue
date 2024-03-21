@@ -5,15 +5,11 @@ import IconDrilling from "@/components/icons/IconDrilling.vue";
 import IconCommunication from "@/components/icons/IconCommunication.vue";
 import IconFreelancer from "@/components/icons/IconFreelancer.vue";
 import BaseStack from "@/components/BaseStack.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 import CompanyCard from "@/components/CompanyCard.vue";
 
 export default {
   components: {
     BaseSection,
-    BaseHeading,
-    BaseParagraph,
     BaseStack,
     BaseCard,
     IconDrilling,
@@ -72,12 +68,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.credit-can-get__layout {
-  @include media-laptop {
-    flex-direction: column;
+.credit-can-get {
+  @include media-mobile {
+    padding-top: 20px;
   }
+}
 
+.credit-can-get__layout {
   @include media-tablet {
+    flex-direction: column !important;
     gap: 10px !important;
   }
 }
@@ -85,7 +84,7 @@ export default {
 .credit-can-get__small-card {
   max-width: 370px;
 
-  @include media-laptop {
+  @include media-tablet {
     max-width: none;
   }
 }

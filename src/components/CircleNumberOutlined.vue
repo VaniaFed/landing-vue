@@ -1,24 +1,18 @@
 <script>
-import BaseHeading from "@/components/BaseHeading.vue";
-
 export default {
   props: {
     number: {
-      type: String,
+      type: Number,
       required: true,
     },
   },
-  components: {
-    BaseHeading,
-  },
+  components: {},
 };
 </script>
 
 <template>
   <div class="circle-number-outlined">
-    <BaseHeading level="h3" class="circle-number-outlined__title">
-      {{ number }}
-    </BaseHeading>
+    <span class="circle-number-outlined__title">{{ number }}</span>
   </div>
 </template>
 
@@ -38,9 +32,8 @@ export default {
   }
 
   &__title {
-    @include media-tablet {
-      font-size: 36px !important;
-    }
+    font-size: 36px;
+    font-weight: 500;
 
     @include media-mobile {
       font-size: 30px !important;

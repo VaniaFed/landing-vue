@@ -1,7 +1,5 @@
 <script>
 import BaseCard from "@/components/BaseCard.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
 
 export default {
   props: {
@@ -10,8 +8,6 @@ export default {
     details: String,
   },
   components: {
-    BaseHeading,
-    BaseParagraph,
     BaseCard,
   },
 };
@@ -24,15 +20,13 @@ export default {
     </template>
 
     <template v-slot:content>
-      <BaseParagraph weight="500" class="company-card__title">
+      <span class="plain_18 plain_500 company-card__title">
         {{ title }}
-      </BaseParagraph>
-      <BaseHeading level="h5" variant="medium_24" class="company-card__code">
-        {{ code }}
-      </BaseHeading>
-      <BaseParagraph size="14" class="company-card__details" v-if="details">
+      </span>
+      <h4 class="heading_24 company-card__code">{{ code }}</h4>
+      <span class="plain_14 company-card__details" v-if="details">
         {{ details }}
-      </BaseParagraph>
+      </span>
     </template>
   </BaseCard>
 </template>
@@ -41,22 +35,24 @@ export default {
 .company-card {
   box-shadow: $shadow-2;
 
-  @include media-laptop {
+  @include media-tablet {
     flex-direction: row;
     gap: 20px;
   }
 
-  @include media-tablet-small {
+  @include media-mobile {
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
   &__title {
     line-height: 120%;
 
     @include media-mobile {
+      font-size: 14px;
     }
   }
+
   &__code {
     margin-top: 10px;
 
@@ -65,16 +61,19 @@ export default {
     }
 
     @include media-mobile {
+      font-size: 18px;
       line-height: 120%;
     }
   }
 
   &__details {
+    display: block;
     margin-top: 20px;
     color: $gray-0;
 
-    @include media-tablet-small {
+    @include media-mobile {
       margin-top: 16px;
+      font-size: 12px;
     }
   }
 }

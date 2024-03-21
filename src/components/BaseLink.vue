@@ -13,6 +13,7 @@ export default {
 <style scoped lang="scss">
 .link {
   position: relative;
+  display: inline-block;
   font: inherit;
   background: transparent;
 

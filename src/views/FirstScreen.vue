@@ -1,8 +1,6 @@
 <script>
 import BaseButton from "@/components/BaseButton.vue";
 import BaseContainer from "@/components/BaseContainer.vue";
-import BaseHeading from "@/components/BaseHeading.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseStack from "@/components/BaseStack.vue";
 import BigWordItem from "@/components/BigWordItem.vue";
 
@@ -10,8 +8,6 @@ export default {
   components: {
     BaseButton,
     BaseContainer,
-    BaseHeading,
-    BaseParagraph,
     BaseStack,
     BigWordItem,
   },
@@ -45,16 +41,14 @@ export default {
   <BaseContainer class="first-screen">
     <BaseStack gap="40" class="first-screen__content">
       <div class="first-screen__text">
-        <BaseHeading level="h1"
-          >Льготные кредиты на&nbsp;инвестиционные цели</BaseHeading
-        >
-        <BaseParagraph class="first-screen__description" size="16"
-          >Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
+        <h1 class="heading_40">Льготные кредиты на&nbsp;инвестиционные цели</h1>
+        <span class="plain_16 first-screen__description">
+          Совместная программа Правительства Москвы, Корпорации МСП и МСП Банка
           для компаний, реализующих инвестиционные проекты в сферах науки,
-          промышленности и ИТ</BaseParagraph
-        >
+          промышленности и ИТ
+        </span>
       </div>
-      <BaseStack asRow gap="50" class="first-screen__details">
+      <ul class="first-screen__details">
         <li v-for="item in creditData" :key="item.title">
           <BigWordItem
             :title="item.title"
@@ -63,7 +57,7 @@ export default {
             :text_after="item.text_after"
           />
         </li>
-      </BaseStack>
+      </ul>
       <BaseStack asRow gap="10" class="first-screen__buttons">
         <BaseButton variant="primary">Подать заявку</BaseButton>
         <BaseButton>Получить консультацию</BaseButton>
@@ -91,10 +85,6 @@ export default {
     border-radius: 0 0 60px 60px;
   }
 
-  @include media-tablet-small {
-    margin: 0;
-  }
-
   @include media-mobile {
     padding: 40px 20px;
     border-radius: 0 0 30px 30px;
@@ -106,10 +96,11 @@ export default {
   }
 
   &__description {
+    display: block;
     margin-top: 10px;
     text-shadow: $shadow-text;
 
-    @include media-tablet-small {
+    @include media-mobile {
       margin-top: 16px;
       line-height: 19.6px;
     }
@@ -118,16 +109,26 @@ export default {
   &__details {
     z-index: 5;
     position: relative;
+    display: flex;
+    gap: 50px;
 
-    @include media-laptop {
+    @include media-tablet {
       flex-direction: column;
       gap: 30px;
+    }
+
+    @include media-mobile {
+      gap: 20px;
     }
   }
 
   &__content {
     position: relative;
     z-index: 10;
+
+    @include media-mobile {
+      gap: 30px !important;
+    }
   }
 
   &__image-wrapper {
@@ -136,37 +137,35 @@ export default {
     right: 34px;
     bottom: -140px;
 
-    @include media-desktop-medium {
+    @include media-desktop-small {
       right: -130px;
       max-width: 500px;
       bottom: -100px;
     }
 
-    @include media-desktop {
+    @include media-laptop {
       right: -150px;
       max-width: 510px;
     }
 
-    @include media-laptop {
-      max-width: none;
-      bottom: -130px;
-    }
-
     @include media-tablet {
-      right: -70px;
-      bottom: -180px;
+      bottom: -230px;
+      max-width: 1000px;
+      width: 710px;
+      right: -103px;
     }
 
     @include media-mobile {
-      max-width: 300px;
       right: -85px;
-      bottom: 34px;
+      bottom: 30px;
+      max-width: 300px;
     }
   }
 
   &__img {
     z-index: 2;
     position: relative;
+    width: 100%;
     max-block-size: unset;
   }
 
@@ -182,21 +181,15 @@ export default {
     margin: 0 auto;
     background: #e9f8f8;
     filter: blur(400px);
-  }
-}
 
-.first-screen .first-screen__details {
-  @include media-laptop {
-    gap: 30px !important;
-  }
-
-  @include media-tablet-small {
-    gap: 20px !important;
+    @include media-tablet {
+      display: none;
+    }
   }
 }
 
 .first-screen .first-screen__buttons {
-  @include media-tablet-small {
+  @include media-mobile {
     flex-direction: column;
   }
 }

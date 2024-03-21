@@ -1,6 +1,5 @@
 <script>
 import BaseContainer from "@/components/BaseContainer.vue";
-import BaseParagraph from "@/components/BaseParagraph.vue";
 import BaseButton from "@/components/BaseButton.vue";
 import CircleIcon from "@/components/CircleIcon.vue";
 import IconLogoLarge from "@/components/icons/IconLogoLarge.vue";
@@ -13,7 +12,6 @@ export default {
   props: {},
   components: {
     BaseContainer,
-    BaseParagraph,
     BaseButton,
     CircleIcon,
     IconLogoLarge,
@@ -123,17 +121,17 @@ export default {
           </div>
           <div class="contacts__bottom">
             <div class="contacts__links">
-              <a class="link" href="tel:8 495 870-45-55">
+              <a class="link plain_16" href="tel:8 495 870-45-55">
                 <i class="link__icon-wrapper">
                   <IconPhone class="link__icon" />
                 </i>
-                <BaseParagraph size="16">8 495 870-45-55</BaseParagraph>
+                8 495 870-45-55
               </a>
-              <a class="link" href="mailto:">
+              <a class="link plain_16" href="mailto:">
                 <i class="link__icon-wrapper">
                   <IconMail class="link__icon" />
                 </i>
-                <BaseParagraph size="16">support@i.moscow</BaseParagraph>
+                support@i.moscow
               </a>
             </div>
             <BaseButton class="contacts__button">Служба поддержки</BaseButton>
@@ -147,29 +145,26 @@ export default {
             }"
             v-for="link in links"
           >
-            <BaseParagraph class="column__heading" weight="500">{{
+            <span class="plain_18 plain_500 column__heading">{{
               link.category
-            }}</BaseParagraph>
+            }}</span>
             <div class="column__links">
               <a
-                class="column__link"
+                class="plain_16 column__link"
                 :href="linkItem.href"
                 v-for="linkItem in link.list"
               >
-                <BaseParagraph size="16">
-                  {{ linkItem.text }}
-                </BaseParagraph>
+                {{ linkItem.text }}
               </a>
             </div>
           </div>
         </div>
       </div>
       <div class="base-footer__bottom">
-        <BaseParagraph size="14" class="base-footer__user-agreement"
-          >Соглашение о пользовании информационной системы обеспечения
-          деятельности инновационного кластера на территории города
-          Москвы</BaseParagraph
-        >
+        <span class="plain_14 base-footer__user-agreement">
+          Соглашение о пользовании информационной системы обеспечения
+          деятельности инновационного кластера на территории города Москвы
+        </span>
       </div>
     </BaseContainer>
   </footer>
@@ -180,6 +175,7 @@ export default {
   margin-top: 40px;
   border-top: 1px solid $gray-3;
 
+  // TODO: check this later
   @include media-tablet {
     margin-top: 20px;
   }
@@ -231,24 +227,22 @@ export default {
     @include media-tablet {
       width: 179px;
     }
-  }
 
-  &__contacts {
     @include media-mobile {
-      width: 100%;
+      width: 179px;
     }
   }
 
   &__links {
     display: flex;
-    flex-grow: 1;
     justify-content: space-between;
+    flex-grow: 1;
     flex-wrap: wrap;
     gap: 30px;
 
     @include media-tablet {
-      flex-grow: 20px;
-      margin-right: -20px;
+      justify-content: flex-start;
+      gap: 70px;
     }
 
     @include media-mobile {
@@ -263,11 +257,11 @@ export default {
 
     @include media-tablet {
       gap: 20px;
-      width: 224px;
     }
   }
 
   &__user-agreement {
+    display: block;
     color: $text-tertiary;
 
     @include media-mobile {
@@ -297,17 +291,17 @@ export default {
 
 .links-part {
   @include media-tablet {
-    margin-top: -15px;
-  }
-
-  .column__heading {
-    @media (max-width: 882px) {
-      display: none;
-    }
+    order: 1;
+    width: 100%;
+    margin-top: -95px;
   }
 }
 
 .contacts {
+  @include media-mobile {
+    width: 100%;
+  }
+
   &__bottom {
     margin-top: 50px;
 
@@ -370,22 +364,17 @@ export default {
   align-items: center;
   gap: 10px;
 
+  @include media-mobile {
+    font-size: 14px;
+    line-height: 120%;
+  }
+
   &__icon-wrapper {
     display: flex;
   }
 
   &__icon {
     width: 18px;
-  }
-}
-
-.links-part {
-  @include media-tablet {
-    order: 1;
-  }
-
-  @media (max-width: 762px) {
-    order: 0;
   }
 }
 </style>

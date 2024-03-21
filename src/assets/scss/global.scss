@@ -1,8 +1,9 @@
-@forward "variables";
 @import "media";
 @import "fonts";
+@import "typography/plain";
+@import "typography/heading";
 
-body {
+:root {
   font: 16px "TT Firs Neue";
 }
 
