@@ -187,7 +187,6 @@ export default {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   margin: -20px;
 
   &__content {
@@ -207,6 +206,7 @@ export default {
     gap: 20px;
     justify-content: center;
     align-items: center;
+    min-height: 10px;
     padding: 0 30px;
   }
 }
