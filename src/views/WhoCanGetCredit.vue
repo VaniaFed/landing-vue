@@ -71,7 +71,7 @@ export default {
 <style scoped lang="scss">
 .who-can-get-credit {
   @include media-mobile {
-    padding-top: 20px !important;
+    padding-top: 20px;
   }
 }
 

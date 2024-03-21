@@ -48,7 +48,7 @@ export default {
   border-radius: 20px;
 
   @include media-mobile {
-    padding: 30px 20px 40px !important;
+    padding: 30px 20px 40px;
   }
 
   &__top {
@@ -135,7 +135,7 @@ export default {
 
 .any-questions-container {
   @include media-mobile {
-    padding: 0 !important;
+    padding: 0;
   }
 }
 </style>
