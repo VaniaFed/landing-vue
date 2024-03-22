@@ -61,14 +61,14 @@ export default {
 
   &__text {
     max-width: 638px;
-    line-height: 120% !important;
+    line-height: 120%;
 
     @include media-tablet {
       margin-bottom: 40px;
     }
 
     @include media-mobile {
-      line-height: 140% !important;
+      line-height: 140%;
       margin-bottom: 20px;
     }
   }
@@ -106,7 +106,7 @@ export default {
 
   &:deep(.invest-credits__header) {
     max-width: 818px;
-    margin-bottom: 20px !important;
+    margin-bottom: 20px;
   }
 
   &:deep(.invest-credits__credit-subjects) {

@@ -1,7 +1,7 @@
 <script setup>
+import { computed } from "vue";
 import { useSlider } from "@/composables/useSlider";
 import useDeviceDetection from "@/hooks/useDeviceDetection.js";
-import { onMounted, ref } from "vue";
 
 const props = defineProps({
   count: {
@@ -13,10 +13,7 @@ const props = defineProps({
   },
 });
 
-const slideWidth = ref(0);
-const gapSize = ref(10);
-
-const shouldUseSlider = () => {
+const shouldUseSlider = computed(() => {
   if (props.sliderOn === undefined) {
     return true;
   }
@@ -27,7 +24,7 @@ const shouldUseSlider = () => {
   }
 
   return false;
-};
+});
 
 const {
   currentIndex,
@@ -36,16 +33,11 @@ const {
   onMouseDown,
   onMouseUp,
   onMouseMove,
-} = useSlider(props.count, slideWidth, gapSize);
-
-onMounted(() => {
-  const sliderItem = document.querySelector(".slider-item");
-  slideWidth.value = sliderItem.clientWidth;
-});
+} = useSlider(props.count);
 </script>
 
 <template>
-  <template v-if="shouldUseSlider()">
+  <template v-if="shouldUseSlider">
     <div class="slider">
       <div
         class="slider__content"
@@ -72,7 +64,7 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .slider {
-  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: -20px;
@@ -90,20 +82,39 @@ onMounted(() => {
   }
 
   &__circles {
-    display: flex;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: none;
     gap: 20px;
     justify-content: center;
     align-items: center;
-    min-height: 10px;
-    padding: 0 30px;
+    padding: 30px;
+
+    @include media-mobile {
+      display: flex;
+    }
   }
 }
 
 .circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 6px;
   height: 6px;
   background: $black;
   border-radius: 12px;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 100px;
+  }
 
   &_active {
     width: 10px;

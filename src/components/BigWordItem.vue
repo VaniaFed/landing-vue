@@ -39,7 +39,7 @@ export default {
 
     @include media-mobile {
       margin-bottom: 2px;
-      font-size: 16px !important;
+      font-size: 16px;
     }
   }
 
@@ -50,7 +50,7 @@ export default {
   &__before,
   &__after {
     @include media-mobile {
-      font-size: 18px !important;
+      font-size: 18px;
     }
   }
 }

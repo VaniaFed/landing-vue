@@ -50,12 +50,12 @@ export default {
       <picture>
         <source
           srcset="/images/register-mobile.png"
-          media="(max-width: 768px)"
+          media="(max-width: 520px)"
           class="card__img"
         />
         <source
           srcset="/images/register-tablet.png"
-          media="(max-width: 1024px)"
+          media="(max-width: 1023px)"
           class="card__img"
         />
         <img
@@ -71,7 +71,7 @@ export default {
 <style scoped lang="scss">
 .who-can-get-credit {
   @include media-mobile {
-    padding-top: 20px !important;
+    padding-top: 20px;
   }
 }
 
@@ -98,11 +98,15 @@ export default {
     position: relative;
     padding-right: 420px;
 
+    @include media-laptop {
+      padding-right: 240px;
+    }
+
     @include media-tablet {
       padding-right: 130px;
     }
 
-    @include media-mobile {
+    @include media-mobile-medium {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -136,7 +140,7 @@ export default {
     gap: 20px;
     margin-top: 40px;
 
-    @include media-mobile {
+    @include media-mobile-medium {
       align-items: flex-start;
       margin-top: 30px;
     }
@@ -191,7 +195,15 @@ export default {
     margin-top: 40px;
 
     @include media-mobile {
-      margin-top: 208px;
+      margin-top: 104px;
+    }
+
+    @include media-mobile-medium {
+      margin-top: 308px;
+    }
+
+    @include media-mobile-small {
+      margin-top: 280px;
     }
   }
 
@@ -203,7 +215,21 @@ export default {
     bottom: 0;
     height: 100%;
 
+    @include media-laptop {
+      right: -180px;
+    }
+
+    @include media-tablet {
+      right: 0;
+    }
+
     @include media-mobile {
+      right: -60px;
+      object-fit: cover;
+    }
+
+    @include media-mobile-medium {
+      right: 0;
       width: 100%;
       object-fit: cover;
       object-position: center 85%;

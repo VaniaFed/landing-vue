@@ -98,29 +98,31 @@ export default {
   >
     <BaseSlider sliderOn="mobile" :count="cards.length">
       <div class="credit-requirements__layout">
-        <RequirementsCard
+        <div
+          class="card-wrapper slider-item"
           v-for="card in cards"
           :key="card.title"
-          class="requirements-card slider-item"
         >
-          <template v-slot:icon>
-            <component :is="card.iconName" />
-          </template>
-          <template v-slot:content>
-            <span class="plain_18 plain_500 requirements-card__title">
-              {{ card.title }}
-            </span>
-            <span
-              class="plain_16 requirements-card__text"
-              v-if="card.description"
-            >
-              {{ card.description }}
-              <BaseLink v-if="card.link" v-bind="card.link.attrs">
-                {{ card.link.text }}
-              </BaseLink>
-            </span>
-          </template>
-        </RequirementsCard>
+          <RequirementsCard class="requirements-card">
+            <template v-slot:icon>
+              <component :is="card.iconName" />
+            </template>
+            <template v-slot:content>
+              <span class="plain_18 plain_500 requirements-card__title">
+                {{ card.title }}
+              </span>
+              <span
+                class="plain_16 requirements-card__text"
+                v-if="card.description"
+              >
+                {{ card.description }}
+                <BaseLink v-if="card.link" v-bind="card.link.attrs">
+                  {{ card.link.text }}
+                </BaseLink>
+              </span>
+            </template>
+          </RequirementsCard>
+        </div>
       </div>
     </BaseSlider>
   </BaseSection>
@@ -129,6 +131,22 @@ export default {
 <style scoped lang="scss">
 .credit-requirements {
   overflow: hidden;
+  padding-bottom: 50px;
+}
+
+.card-wrapper {
+  display: flex;
+
+  @include media-mobile {
+    flex: 0 0 auto;
+    width: 100%;
+    min-height: 247px;
+    padding: 0 5px;
+
+    &:last-child {
+      padding-right: 20px;
+    }
+  }
 }
 
 .credit-requirements__layout {
@@ -142,7 +160,7 @@ export default {
 
   @include media-mobile {
     display: flex;
-    gap: 10px;
+    gap: 0px;
   }
 }
 

@@ -76,7 +76,7 @@ export default {
 
 .credit-can-get__layout {
   @include media-tablet {
-    flex-direction: column !important;
+    flex-direction: column;
     gap: 10px !important;
   }
 }

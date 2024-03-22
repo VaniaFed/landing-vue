@@ -98,13 +98,13 @@ export default {
   }
 
   &__circle-icon {
-    width: 94px !important;
-    height: 94px !important;
+    width: 94px;
+    height: 94px;
     box-shadow: $shadow-2;
 
     @include media-tablet {
-      width: 60px !important;
-      height: 60px !important;
+      width: 60px;
+      height: 60px;
     }
   }
 

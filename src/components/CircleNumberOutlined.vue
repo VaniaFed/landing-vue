@@ -36,7 +36,7 @@ export default {
     font-weight: 500;
 
     @include media-mobile {
-      font-size: 30px !important;
+      font-size: 30px;
     }
   }
 }

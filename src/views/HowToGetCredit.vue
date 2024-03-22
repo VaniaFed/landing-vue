@@ -181,11 +181,11 @@ $border-size: 2px;
   }
 
   &__text {
-    line-height: 140% !important;
+    line-height: 140%;
     font-size: 16px;
 
     @include media-tablet {
-      line-height: 120% !important;
+      line-height: 120%;
     }
 
     @include media-mobile {
