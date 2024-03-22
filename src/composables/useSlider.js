@@ -95,8 +95,11 @@ export function useSlider(slidesCount, initialGapSize = 0) {
     slideWidth.value = sliderItem.clientWidth;
 
     window.addEventListener("resize", () => {
-      slideWidth.value = sliderItem.clientWidth;
-      sliderContentRef.value.scrollLeft = currentIndex.value * slideWidth.value;
+      if (sliderContentRef.value) {
+        slideWidth.value = sliderItem.clientWidth;
+        sliderContentRef.value.scrollLeft =
+          currentIndex.value * slideWidth.value;
+      }
     });
   });
 
