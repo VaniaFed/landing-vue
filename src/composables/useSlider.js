@@ -1,8 +1,10 @@
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
-export function useSlider(slidesCount, slideWidth, gapSize) {
+export function useSlider(slidesCount, initialGapSize = 0) {
   const sliderContentRef = ref(null);
   const currentIndex = ref(0);
+  const slideWidth = ref(0);
+  const gapSize = ref(initialGapSize);
   const isDown = ref(false);
   const scrollLeft = ref(0);
   const currentX = ref(0);
@@ -87,6 +89,16 @@ export function useSlider(slidesCount, slideWidth, gapSize) {
 
     window.requestAnimationFrame(animateScroll);
   };
+
+  onMounted(() => {
+    const sliderItem = document.querySelector(".slider-item");
+    slideWidth.value = sliderItem.clientWidth;
+
+    window.addEventListener("resize", () => {
+      slideWidth.value = sliderItem.clientWidth;
+      sliderContentRef.value.scrollLeft = currentIndex.value * slideWidth.value;
+    });
+  });
 
   return {
     currentIndex,
