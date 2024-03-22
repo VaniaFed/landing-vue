@@ -50,7 +50,7 @@ export default {
       <picture>
         <source
           srcset="/images/register-mobile.png"
-          media="(max-width: 400px)"
+          media="(max-width: 520px)"
           class="card__img"
         />
         <source
@@ -106,7 +106,7 @@ export default {
       padding-right: 130px;
     }
 
-    @include media-mobile {
+    @include media-mobile-medium {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -140,7 +140,7 @@ export default {
     gap: 20px;
     margin-top: 40px;
 
-    @include media-mobile {
+    @include media-mobile-medium {
       align-items: flex-start;
       margin-top: 30px;
     }
@@ -198,8 +198,12 @@ export default {
       margin-top: 104px;
     }
 
+    @include media-mobile-medium {
+      margin-top: 308px;
+    }
+
     @include media-mobile-small {
-      margin-top: 208px;
+      margin-top: 280px;
     }
   }
 
@@ -220,10 +224,12 @@ export default {
     }
 
     @include media-mobile {
+      right: -60px;
       object-fit: cover;
     }
 
-    @include media-mobile-small {
+    @include media-mobile-medium {
+      right: 0;
       width: 100%;
       object-fit: cover;
       object-position: center 85%;
